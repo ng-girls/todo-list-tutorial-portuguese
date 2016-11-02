@@ -1,6 +1,6 @@
 # Summary
 
 * [About](README.md)
-* [Introduction](chapter1.md)
+* [Introduction](introduction.md)
 * [Installations](installations.md)
 
