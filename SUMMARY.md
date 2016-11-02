@@ -13,4 +13,5 @@
 * [Element ref - #](element_ref_-.md)
 * The list
 * New component todo-item
+* Add items
 
