@@ -17,7 +17,7 @@
 * [Refactor App Component](refactor_app_component.md)
 * [Service](service.md)
 * [Add more abilities to service](add_more_abilities_to_service.md)
-* Local storage
+* [Local storage](local_storage.md)
 * Remove item
 * Deploy to GithubPages
 * Enrich the todo-item component
