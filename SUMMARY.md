@@ -18,4 +18,5 @@
 * Service
 * Add more abilities to service
 * Local storage
+* Remove item
 
