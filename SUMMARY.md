@@ -15,4 +15,5 @@
 * New component todo-item
 * Add items
 * Refactor App Component
+* Service
 
