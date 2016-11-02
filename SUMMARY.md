@@ -13,7 +13,7 @@
 * [Element ref - #](element_ref_-.md)
 * [The list](the_list.md)
 * [New component todo-item](new_component_todo-item.md)
-* Add items
+* [Add items](add_items.md)
 * Refactor App Component
 * Service
 * Add more abilities to service
