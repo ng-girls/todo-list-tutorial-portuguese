@@ -21,4 +21,5 @@
 * [Remove item](remove_item.md)
 * [Deploy to GithubPages](deploy_to_githubpages.md)
 * [Enrich the todo-item component](enrich_the_todo-item_component.md)
+* Adding Style
 
