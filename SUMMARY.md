@@ -16,6 +16,6 @@
 * Add items
 * Refactor App Component
 * Service
-   * Add more abilities to service
+* Add more abilities to service
 * Local storage
 
