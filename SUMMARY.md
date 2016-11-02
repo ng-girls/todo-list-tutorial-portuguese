@@ -9,6 +9,6 @@
 * [A new component](a_new_component.md)
 * [Class](class.md)
 * [Property binding](property_binding.md)
-* Event binding
+* [Event binding](event_binding.md)
 * Element ref - #
 
