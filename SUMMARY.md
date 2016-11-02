@@ -19,4 +19,5 @@
 * Add more abilities to service
 * Local storage
 * Remove item
+* Deploy to GithubPages
 
