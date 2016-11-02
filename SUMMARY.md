@@ -19,6 +19,6 @@
 * [Add more abilities to service](add_more_abilities_to_service.md)
 * [Local storage](local_storage.md)
 * [Remove item](remove_item.md)
-* Deploy to GithubPages
+* [Deploy to GithubPages](deploy_to_githubpages.md)
 * Enrich the todo-item component
 
