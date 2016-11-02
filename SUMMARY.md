@@ -20,4 +20,5 @@
 * Local storage
 * Remove item
 * Deploy to GithubPages
+* Enrich the todo-item component
 
