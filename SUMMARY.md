@@ -12,7 +12,7 @@
 * [Event binding](event_binding.md)
 * [Element ref - #](element_ref_-.md)
 * [The list](the_list.md)
-* New component todo-item
+* [New component todo-item](new_component_todo-item.md)
 * Add items
 * Refactor App Component
 * Service
