@@ -8,5 +8,5 @@
 * [Component](component.md)
 * [A new component](a_new_component.md)
 * [Class](class.md)
-* Property binding
+* [Property binding](property_binding.md)
 
