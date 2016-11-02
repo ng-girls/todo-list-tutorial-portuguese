@@ -6,5 +6,5 @@
 * [Generating a new project](generating_a_new_project.md)
 * [Angular kicks in](angular_kicks_in.md)
 * [Component](component.md)
-* A new component
+* [A new component](a_new_component.md)
 
