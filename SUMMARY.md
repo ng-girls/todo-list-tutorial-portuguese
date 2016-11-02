@@ -15,11 +15,11 @@
 * [New component todo-item](new_component_todo-item.md)
 * [Add items](add_items.md)
 * [Refactor App Component](refactor_app_component.md)
+* [Adding Style](adding_style.md)
 * [Service](service.md)
 * [Add more abilities to service](add_more_abilities_to_service.md)
 * [Local storage](local_storage.md)
 * [Remove item](remove_item.md)
 * [Deploy to GithubPages](deploy_to_githubpages.md)
 * [Enrich the todo-item component](enrich_the_todo-item_component.md)
-* [Adding Style](adding_style.md)
 
