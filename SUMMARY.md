@@ -14,7 +14,7 @@
 * [The list](the_list.md)
 * [New component todo-item](new_component_todo-item.md)
 * [Add items](add_items.md)
-* Refactor App Component
+* [Refactor App Component](refactor_app_component.md)
 * Service
 * Add more abilities to service
 * Local storage
