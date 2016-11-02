@@ -10,5 +10,5 @@
 * [Class](class.md)
 * [Property binding](property_binding.md)
 * [Event binding](event_binding.md)
-* Element ref - #
+* [Element ref - #](element_ref_-.md)
 
