@@ -1,3 +1,3 @@
-# My Awesome Book
+# Angular 2 Tutorial for Beginners: Todo List
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+The tutorial will take you step by step for creating your own todo list application with Angular 2. You will use Angular-CLI, save the list in local storage and deploy to Github Pages.
