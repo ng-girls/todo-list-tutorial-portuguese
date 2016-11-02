@@ -7,5 +7,5 @@
 * [Angular kicks in](angular_kicks_in.md)
 * [Component](component.md)
 * [A new component](a_new_component.md)
-* Class
+* [Class](class.md)
 
