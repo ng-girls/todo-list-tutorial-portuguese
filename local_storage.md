@@ -4,7 +4,6 @@
 
 Local storage, as it's name implies, is a tool for storing data locally.
 As similiar to cookies, local storage stores the data on the user's computer, and by that it lets us, as developers, a quick way to access this data for both reading and writing.
-Some of the advangtages of local storage 
 
 ## Browser support
 
