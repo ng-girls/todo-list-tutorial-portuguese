@@ -5,7 +5,13 @@ Every developer needs a set of tools and libraries to start working. In our case
 
 ## Tools
 
+
+### Browser
+
 Our first tool is the **browser**. We'll use it to see the result of our work and debug it. We recommend [Google Chrome](https://www.google.com/chrome/browser/desktop/) - it has great developer tools. [Firefox](https://www.mozilla.org/en-US/firefox/new/) is also awesome. If you don't already have one of those, just follow the link and the instructions to download the browser you choose.
+
+
+### IDE
 
 Our next tool is the **IDE** -  integrated development environment. It's a software that helps you write the code. IDEs can do a lot of amazing things: 
 * show you all the files in the project, 
@@ -18,6 +24,9 @@ JetBrains [Webstorm](https://www.jetbrains.com/webstorm/download/) is a wonderfu
 Microsoft [Visual Studio](https://www.visualstudio.com/vs/) is also a great choice that gains a lot of popularity lately. It is free for individuals.
 
 Choose the IDE you'd like to work with and follow the downloading instructions on its website. 
+
+
+### NodeJS and NPM
 
 Another tool which most web developers use is **NodeJS**, which comes with **NPM** - Node Package Manager. 
 
@@ -33,6 +42,9 @@ If it's lower than 4.0, download the new version from the website and install it
 
 Once installed, you should also have NPM. Check its version by running:
 ```npm -v```
+
+
+### Angular-CLI
 
 [Angular-CLI](https://github.com/angular/angular-cli) is a powerful tool that takes care of a lot of the development process, including installing libraries you'll use in your project. Install it by running: ```npm i -g angular-cli```. 
 
