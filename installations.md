@@ -26,6 +26,16 @@ Microsoft [Visual Studio](https://www.visualstudio.com/vs/) is also a great choi
 Choose the IDE you'd like to work with and follow the downloading instructions on its website. 
 
 
+### Git
+Git is a tool that helps you manage versions of your code, and work on a project with a team. There is a lot to know about it, but we will cover only minimal usage of Git in this tutorial.
+
+Download it [here](https://git-scm.com/) and follow the installation instructions. 
+
+
+### Github
+[Github](https://github.com/) is a code repository which integrates with Git. It allows you to publish your project on the Web, use other open source projects, and collaborate. If you'd like to publish the project you're developing with this tutorial, and/or deploy it, make sure you have a Github user. 
+
+
 ### NodeJS and NPM
 
 Another tool which most web developers use is **NodeJS**, which comes with **NPM** - Node Package Manager. 
