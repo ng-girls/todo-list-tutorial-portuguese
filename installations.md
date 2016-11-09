@@ -61,3 +61,21 @@ Once installed, you should also have NPM. Check its version by running:
 We're using the recently installed NPM here - it knows where to find the package you're looking for by the name of the package you provide. 'i' is a short form of 'install'. '-g' stands for 'global' - we'd like to have this tool globaly installed on the computer, so we can use it from any folder.
 
 Read more about Angular-CLI in the following section. 
+
+### Create a Project
+
+Create a folder for your projects, for example *myProjects*, and enter this folder in the terminal: ```cd the-path-to-your-folder/myProjects```
+
+create a new project called *todo-list* in this folder, using Angular-CLI, by running: ```ng new todo-list```. This can take a few minutes, since many packages are being installed.
+
+Now enter the new folder that Angular-CLI created for this project: ```cd todo-list```
+Run the application: ```ng serve```
+Open your browser and enter in the URL line: ```localhost:4200```
+You should see the title **app works!**
+
+###Congratulations!
+You have a running Angular 2 application!
+To stop it from running, press ```Ctrl+C``` in the terminal.
+As long as it's running, any change you make in the project code will be immediately reflected in the browser thanks to the hot reload option.
+
+In the next sections you will learn about the project and start developing your todo list application!
