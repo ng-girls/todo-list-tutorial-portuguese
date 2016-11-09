@@ -64,9 +64,11 @@ Read more about Angular-CLI in the following section.
 
 ### Create a Project
 
-Create a folder for your projects, for example *myProjects*, and enter this folder in the terminal: ```cd the-path-to-your-folder/myProjects```
+Create a folder for your projects, for example *myProjects*, and enter this folder in the terminal:
+```cd the-path-to-your-folder/myProjects```
 
-create a new project called *todo-list* in this folder, using Angular-CLI, by running: ```ng new todo-list```. This can take a few minutes, since many packages are being installed.
+create a new project called *todo-list* in this folder, using Angular-CLI, by running:
+```ng new todo-list```. This can take a few minutes, since many packages are being installed.
 
 Now enter the new folder that Angular-CLI created for this project: ```cd todo-list```
 Run the application: ```ng serve```
