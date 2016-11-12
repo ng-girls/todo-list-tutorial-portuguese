@@ -30,20 +30,21 @@ export class InputComponent implements OnInit {
 }
 ```
 
-Now, we want to take the value of the input and save it to our currently imaginary database when we press a button.
+Now, we want to take the value of the input and change the title when we press the button.
 
 How do we do that?
 
-We already now how to create a button and react to click on it.
+We already know how to create a button and react to click on it.
 
 ```html
 <input [value]="title"              
-       (keyup.enter)="changeTitle($event.target.value)"
-       id="my-beautiful-input">
+       (keyup.enter)="changeTitle($event.target.value)">
 
 <button (click)="changeTitle()">
   Save
 </button>
+
+{{ title }}
 ```
 
 ```javascript
@@ -52,9 +53,9 @@ changeTitle(newTitle: string): void {
 }
 ```
 
-But wait, the change method expect that we pass it the value of the new title. How does we pass the input value to the function from the template ?
+But wait, the change method expects that we pass it the value of the new title. How do we pass the input value to the function from the template?
 
-Let go back a little and see how would we do that in the function itself without the parameter.
+Let's go back a little and see how we do that in the function itself in pure JavaScript without Angular's help.
 
 ```javascript
 changeTitle(): void {
@@ -64,9 +65,9 @@ changeTitle(): void {
 }
 ```
 
-Angular, in the Template world, helps us do exactly that and access and get the element we want into a variable like `inputElement` by a simple syntax.
+Angular, in the Template world, helps us do exactly that and access and get the element we want into a variable like `inputElement` by a simple syntax. Add `#myInput` to the `input` element, and use it this way:
 
-```htm
+```html
 <input [value]="title"              
        (keyup.enter)="changeTitle($event.target.value)"
        #myInput>
@@ -78,9 +79,9 @@ Angular, in the Template world, helps us do exactly that and access and get the 
 
 What is that `#` we see ?
 
-Angular let's use define a new local variable named `myInput` that hold the dom element we defined it on, and then use it any way we want. In our case, to access the value property of the input.
+Angular lets us define a new local variable named `myInput` (or any name you choose) that holds a reference to the element we defined it on, and then use it any way we want. In our case, to access the value property of the input.
 
-Instead of hunting down the elements via dom query, we now can put element references in the template and access each element we want declaratively.
+Instead of hunting down the elements via DOM query (which is bad practice as we discussed), we now can put element references in the template and access each element we want declaratively.
 
 On to the next chapter...
 
