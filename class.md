@@ -21,7 +21,7 @@ Let's take a look at the class ```inputComponent```.
 ###implements OnInit
 
 First, you see something was added to the class declaration: 
-```
+```ts
 export class InputComponent implements OnInit {
   ...
 }
@@ -31,7 +31,7 @@ OnInit is an interface - a structure defined but not implemented as a class. It 
 
 Angular-CLI adds this statement to remind us that it's best to initialize things on the component through the ```ngOnInit``` method. You can see it also added the method in the body of the class:
 
-```
+```ts
 ngOnInit() {
 }
 ```
