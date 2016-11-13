@@ -90,7 +90,7 @@ export class InputComponent implements OnInit {
 
   ngOnInit() {
     let that = this;
-    timeout(() => {
+    setTimeout(() => {
       that.title = 'This is not the title you are looking for';  
     }, 3000);
   }
