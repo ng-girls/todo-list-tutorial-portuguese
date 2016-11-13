@@ -30,7 +30,7 @@ In the `todo-item` component class (itemComponent) add the line:
 ```ts
 @Input() itemTitle: string;
 ```
-It tells the component to expect an input of type string and to assign it to the class property called `itemTitle`. Now we can use it inside the `todo-item` template:
+It tells the component to expect an input of type string and to assign it to the class property called `itemTitle`. Make sure that `Input` is added to the import statement in the first line in the file. Now we can use it inside the `todo-item` template:
 ```html
 {{ itemTitle }}
 ```
