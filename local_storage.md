@@ -308,7 +308,7 @@ addItem(item) {
 Now we have one last modification to make. Open up `list-manager.component.ts`, and let's modify `addItem` method this way:
 ```
 addItem(title:string) {
-    this.todoList = this.todoListService.addItem({ title });
+    this.todoList = this.todoListService.addItem({ item:title });
 }
 ```
 
