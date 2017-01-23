@@ -58,10 +58,8 @@ But wait, the change method expects that we pass it the value of the new title. 
 Let's go back a little and see how we do that in the function itself in pure JavaScript without Angular's help.
 
 ```javascript
-changeTitle(): void {
-  let inputElement = document.getElementById('my-beautiful-input');
-
-  this.title = inputElement.value;              
+changeTitle(newTitle: string): void { 
+  this.title = newTitle;              
 }
 ```
 
