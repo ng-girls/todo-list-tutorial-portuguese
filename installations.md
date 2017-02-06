@@ -102,7 +102,7 @@ You should see the title **App works!**
 
 You have a running Angular application!  
 To stop it from running, press `Ctrl+C` in the terminal.
-As long as it's running, any change you make in the project code, it will be reflected immediately in the web browser.
+As long as it's running, any change you make in the project code will be reflected immediately in the web browser.
 
 Now we're ready to start with our project!
 
