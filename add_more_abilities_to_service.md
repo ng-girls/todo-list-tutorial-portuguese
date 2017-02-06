@@ -6,7 +6,7 @@ First, lets open our app's service file which is available at - `app/todo-list.s
 
 There we'll add a new function to the service, called `addItem`, like so:
 ```javascript
-addItem(item) { 
+addItem(item): void { 
     this.todoList.push(item); 
 } 
 ```
@@ -16,7 +16,7 @@ This will allow us to call the same function from everywhere across the applicat
 And now we can change our code in `app/list-manager/list-manager.component.ts` to call the `addItem` function directly from the service like so: 
 
 ```javascript
-addItem(item) { 
+addItem(item): void { 
     this.todoListService.addItem(item); 
 } 
 ```

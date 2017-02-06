@@ -21,7 +21,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 Now, whenever we call `this.submit.emit()` an event will be emitted to the parent component. Let's call it in the changeTitle method:
 
 ```ts
-changeTitle(newTitle:string):void {
+changeTitle(newTitle: string): void {
   this.submit.emit(newTitle);
 }
 ```
@@ -41,7 +41,7 @@ Now all we need to do is catch the event in the parent component and attach logi
 Now all is left is to implement the `addItem` method, which receives a string and adds it to the list:
 
 ```ts
-addItem(title:string) {    
+addItem(title: string): void {    
   this.todoList.push({ title });
 }
 ```
