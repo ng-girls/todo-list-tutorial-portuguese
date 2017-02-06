@@ -17,7 +17,7 @@ And now we can change our code in `app/list-manager/list-manager.component.ts` t
 
 ```javascript
 addItem(item) { 
-    this.todoListService.addItem({ title }); 
+    this.todoListService.addItem({ item:title }); 
 } 
 ```
 
