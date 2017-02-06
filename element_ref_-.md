@@ -1,4 +1,4 @@
-# Element ref - #
+# Element ref
 
 In the last chapter, we ended with our beautiful input component that can reflect and change the value of title of our todo item.
 
@@ -79,11 +79,13 @@ Angular, in the Template world, helps us do exactly that and access and get the 
 
 What is that `#` we see ?
 
-Angular lets us define a new local variable named `myInput` (or any name you choose) that holds a reference to the element we defined it on, and then use it any way we want. In our case, to access the value property of the input.
+Angular lets us define a new local variable named `myInput` \(or any name you choose\) that holds a reference to the element we defined it on, and then use it any way we want. In our case, to access the value property of the input.
 
-Instead of hunting down the elements via DOM query (which is bad practice as we discussed), we now can put element references in the template and access each element we want declaratively.
+Instead of hunting down the elements via DOM query \(which is bad practice as we discussed\), we now can put element references in the template and access each element we want declaratively.
 
 On to the next chapter...
 
 ## Resources
+
 [Angular Template Reference Variables](https://angular.io/docs/ts/latest/guide/template-syntax.html#!#ref-vars)
+
