@@ -33,15 +33,15 @@ Angular takes care of synchronizing the members of the component with the compon
 </h1>
 ```
 
-The double curly braces and their content are called Interpolation. This is one way to bind data in Angular. As we mentioned before, the code in this file is not used as is when the browser renders the component. Angular compiles it to JavaScript code. In one of the compilation steps it looks for Interpolations inside the template. The content of the Interpolation is an expression, written in JavaScript. In run time the expression is evaluated, and then you see the result.
+The double curly braces and their content are called **Interpolation**. This is one way to bind data in Angular. As we mentioned before, the code in this file is not used as is when the browser renders the component. Angular compiles it to JavaScript code. In one of the compilation steps it looks for Interpolations inside the template. The content of the Interpolation is an expression, written in JavaScript. In run time the expression is evaluated, and then you see the result.
 
 Interpolation is one of the strongest, most basic features in Angular. It exists from the very beginning of Angular - in the first version. It makes it really simple to insert dynamic data to the view.
 
-In this component, the expression is simply the member of the component class, `title`. Let's try to change it. Try out the following and see the result in the browser. \(With every change you make in the file, the browser will refresh automatically!\)
+In this component, the expression is simply the member of the component class, `title`. **Let's try to change it**. Try out the following and see the result in the browser. \(With every change you make in the file, the browser will refresh automatically!\)
 
 * Remove the curly braces and keep just the content `title`
 * Put back the curly braces and replace the content with some mathematical expression, for example: `{% raw %}{{ 2 + 2 }}{% endraw %}`. \(The spaces are not mandatory, they just make the code more readable.\)
-* Write a mathematical expression combined with the `title` member. For example: `{% raw %}{{ title + 10 }}{% endraw %}`
+* Write a mathematical expression combined with the `title` member: `{% raw %}{{ title + 10 }}{% endraw %}`
 * Pass an undefined variable to the expression - a variable which was not declared in the component class. For example: `{% raw %}{{ x }}{% endraw %}`
 * Try out anything you'd like. Don't worry - you can't do any harm to the browser or the computer! In the worst case, the browser will run out of memory and will get stuck. \(But you'll have to write something really complicated to make that happen!\)
 
@@ -51,7 +51,7 @@ Let's go back to the file `app.component.ts` and look at the component's meta-da
 
 ```js
 @Component({
-  selector: 'app-root',
+  selector: 'todo-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -73,11 +73,11 @@ The first property, `selector`, tells Angular what will be the name of the tag t
 
 ```html
 <body>
-  <app-root>Loading...</app-root>
+  <todo-root>Loading...</todo-root>
 </body>
 ```
 
-The element `app-root` is not an HTML element. It is the component that was created with the selector `app-root`. Try changing the selector. You'll see that if you change it in only one of the files, "Loading..." will be displayed. This is the content that we gave to the tag in `index.html`, and it is rendered as long as the element is not replaced with an Angular component. You can see in the browser's console an error message.
+The element `todo-root` is not an HTML element. It is the component that was created with the selector `todo-root`. Try changing the selector. You'll see that if you change it in only one of the files, "Loading..." will be displayed. This is the content that we gave to the tag in `index.html`, and it is rendered as long as the element is not replaced with an Angular component. You can see in the browser's console an error message.
 
 One last thing, the first line in the component file imports the code that defines the decorator `@Component`. It is needed to use the decorator, which is defined in the imported file \(or actually, in one of its own imports\). Try removing this line, and see the error.
 

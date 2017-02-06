@@ -1,12 +1,12 @@
 # Installation
 
-Every developer needs a set of tools and libraries before start working. In our case, we'll install all necessary tools together and once we have our Angular-CLI installed, it will take care of additional libraries we'll need for current and future projects.
+Every developer needs a set of tools and libraries to start working. In our case, we'll install all the necessary tools, and once we have our Angular-CLI installed it will take care of additional libraries we'll need the for current and future projects.
 
 ## Tools
 
 ### Browser
 
-Our first tool is the **browser**. We'll use it to see the result of our work and debug it. We recommend [Google Chrome](https://www.google.com/chrome/browser/desktop/) - it has great developer tools. [Firefox](https://www.mozilla.org/en-US/firefox/new/) is also awesome. If you don't already have one of those, just click the relevant link and follow the instructions to download and install the browser you choose.
+Our first tool is the **browser**. We'll use it to see the result of our work and debug it. We recommend [Google Chrome](https://www.google.com/chrome/browser/desktop/) - it has great developer tools. [Firefox](https://www.mozilla.org/en-US/firefox/new/) is also awesome. If you don't already have one of those, just click the relevant link and follow the instructions to download and install the browser of your choice.
 
 ### IDE
 
@@ -37,9 +37,9 @@ You can download it and follow the installation instructions [here](https://git-
 
 Another tool which most web developers are using is **NodeJS**. Once installed, it comes with another tool called **NPM** (Node Package Manager).
 
-NodeJS lets you run JavaScript code on your computer. It's used to run a local server which serves the project files to the browser and then simulates a real running website.
+NodeJS lets you run JavaScript code on your computer. It is used to run a local server which serves the project files to the browser and simulates a real running website.
 
-NPM allows you to easily download and install different libraries from the internet and also manage their versions.
+NPM allows you to easily download and install different libraries from the internet and  manage their versions.
 
 Download NodeJS [here](https://nodejs.org/en/).
 
@@ -59,14 +59,14 @@ npm -v
 
 ### Angular-CLI
 
-[Angular-CLI](https://github.com/angular/angular-cli) is a powerful tool that simplify a lot the development process. It also installs libraries you'll use in your current and future projects. Install it by running:
+[Angular-CLI](https://github.com/angular/angular-cli) is a powerful tool that simplifies a lot of the development process. It also installs libraries you'll use in your current and future projects. Install it by running:
 ```
 npm i -g angular-cli
 ```
 
 This command runs the NPM we recently installed here - it knows where to find the package (angular-cli) you're looking for by the name of the package you provide.
 the 'i' parameter, is a short form of 'install'.
-the '-g' parameter, stands for the word 'global' - we'd like to have this tool globaly installed on the computer, so that we could use it from any folder to any future projects.
+the '-g' parameter, stands for the word 'global' - we'd like to have this tool globally installed on the computer, so that we could use it from any folder to create any future projects.
 
 Read more about Angular-CLI in the following section.
 
@@ -79,9 +79,10 @@ cd the-path-to-your-folder/myProjects
 
 Now, create a new project, called _todo-list_ inside the projects folder, using Angular-CLI, by running the following command:
 ```
-ng new todo-list
+ng new todo-list --prefix todo
 ```
 This can take a while, since many packages are being downloaded and installed.
+The prefix will be used in every component we create. The default prefix is 'app'.
 
 
 Now enter the new folder that Angular-CLI created for this project
@@ -104,5 +105,5 @@ You have a running Angular application!
 To stop it from running, press `Ctrl+C` in the terminal.
 As long as it's running, any change you make in the project code will be reflected immediately in the web browser.
 
-Now we're ready to start with our project!
+Now we're ready to start developing!
 
