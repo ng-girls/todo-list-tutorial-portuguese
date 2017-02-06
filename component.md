@@ -29,7 +29,7 @@ Angular takes care of synchronizing the members of the component with the compon
 
 ```html
 <h1>
-  {{title}}
+  {{ title }}
 </h1>
 ```
 
@@ -42,7 +42,7 @@ In this component, the expression is simply the member of the component class, `
 * Remove the curly braces and keep just the content `title`
 * Put back the curly braces and replace the content with some mathematical expression, for example: `{% raw %}{{ 2 + 2 }}{% endraw %}`. \(The spaces are not mandatory, they just make the code more readable.\)
 * Write a mathematical expression combined with the `title` member. For example: `{% raw %}{{ title + 10 }}{% endraw %}`
-* Pass an undefined variable to the expression - a variable which was not declared in the component class. For example: `{{ x }}`
+* Pass an undefined variable to the expression - a variable which was not declared in the component class. For example: `{% raw %}{{ x }}{% endraw %}`
 * Try out anything you'd like. Don't worry - you can't do any harm to the browser or the computer! In the worst case, the browser will run out of memory and will get stuck. \(But you'll have to write something really complicated to make that happen!\)
 
 This is one way that you can bind members of the component's controller to its template. How does Angular know that this is the template of the App component?
@@ -106,7 +106,7 @@ Now copy the entire template from `app.component.html` and paste it between the 
 ```js
 template: `
   <h1>
-    {{title}}
+    {{ title }}
   </h1>  
 `,
 ```
