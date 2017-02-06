@@ -11,13 +11,13 @@ addItem(item) {
 } 
 ```
 
-This will allow us to call the same function from everywhere across the appliction thus making our app more easy to maintain.
+This will allow us to call the same function from everywhere across the application thus making our app more easy to maintain.
 
 And now we can change our code in `app/list-manager/list-manager.component.ts` to call the `addItem` function directly from the service like so: 
 
 ```javascript
 addItem(item) { 
-    this.todoListService.addItem({ item:title }); 
+    this.todoListService.addItem(item); 
 } 
 ```
 
