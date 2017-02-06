@@ -40,8 +40,8 @@ Interpolation is one of the strongest, most basic features in Angular. It exists
 In this component, the expression is simply the member of the component class, `title`. Let's try to change it. Try out the following and see the result in the browser. \(With every change you make in the file, the browser will refresh automatically!\)
 
 * Remove the curly braces and keep just the content `title`
-* Put back the curly braces and replace the content with some mathematical expression, for example: `{{ 2 + 2 }}`. \(The spaces are not mandatory, they just make the code more readable.\)
-* Write a mathematical expression combined with the `title` member. For example: `{{ title + 10 }}`
+* Put back the curly braces and replace the content with some mathematical expression, for example: `{% raw %}{{ 2 + 2 }}{% endraw %}`. \(The spaces are not mandatory, they just make the code more readable.\)
+* Write a mathematical expression combined with the `title` member. For example: `{% raw %}{{ title + 10 }}{% endraw %}`
 * Pass an undefined variable to the expression - a variable which was not declared in the component class. For example: `{{ x }}`
 * Try out anything you'd like. Don't worry - you can't do any harm to the browser or the computer! In the worst case, the browser will run out of memory and will get stuck. \(But you'll have to write something really complicated to make that happen!\)
 
@@ -121,7 +121,7 @@ Another best practice we are going to add is using TypeScript's ability to defin
 
 First, we'll define `title` to be a private member. It will prevent trying to access `title` from code outside this class. \(The template is a part of the class.\) Add `private` before `title`.
 
-Second, we'll define that `title should receive only values of type`string`. Add`:string`after`title\`\`\`. This way we'll get an error if we try to assing something else. Available types are string, boolean, number, any \(if you want to allow any type\) and custom types defined by classes and interfaces. For example, AppComponent is an available type.
+Second, we'll define that `title`should receive only values of type `string.` Add `:string`after `title`. This way we'll get an error if we try to assign something else. Available types are string, boolean, number, any \(if you want to allow any type\) and custom types defined by classes and interfaces. For example, AppComponent is an available type.
 
 We will not be able to use this best practice all along the tutorial, because in some cases we'd like to keep the tutorial simple.
 
