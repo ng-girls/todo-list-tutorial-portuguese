@@ -1,20 +1,20 @@
 # Introduction
 
-Angular is more than a framework. It's a whole platform for creating applications that can run not only on the browser, but actually anywhere. It gives you tools to easily create dynamic components, define routes, and connect your application to the internet.
+Angular is much more than a framework. It's a whole platform for creating applications that can run not only on a browser, but anywhere. It gives you tools to advanced capabilitues, such as easily creating dynamic components, routes definitions and much more.
 
-In this tutorial you'll learn how to develop a basic application with Angular. You will use the building blocks to have a working application: modules, components and services. Angular-CLI will help you in the process in so many ways, and will make the development process much easier.
+In this tutorial you'll learn how to develop a basic application using Angular. You will get to know the building blocks to have a working application: modules, components and services. Angular-CLI will help you in the process in many ways and will simplify the development process.
 
-By the end of this tutorial you will have a todo-list application, with which you'll be able to add and delete items, and, of course, see all the items in the list.  You will even be able to change the title of an item that's already on the list.
+By the end of this tutorial, you'll have a ready todo-list application, that shows a list of items and lets you add or delete items. You will even be able to change the title of an existing item.
 
-The list is saved in the browser's local storage. All the changes will remain even when you refresh the browser or even turn your computer off \(as long as you use the same browser on the same computer and not in private mode\).
+The list is saved in the browser's local storage. All the changes will remain even when you refresh the browser or even turn off your computer \(as long as you use the same browser on the same computer and not in private mode\).
 
-You will even publish the application on the Web, so that other can use it!
+You will even publish the application on the Web, so that other could use it!
 
-After completing this tutorial you are more than welcome to continue developing the application and adding your personal touch.
+After completing this tutorial, we encourage you to continue developing the application and adding your personal touch.
 
-This tutorial is meant for beginners. As such it tries to address good practices, but it's not always possible due to its simplicity.
+This tutorial is meant for beginners. As such it tries to address good practices, but due to its simplicity, it's not always possible.
 
-We hope this tutorial helps you in the first stages of Web development with Angular!
+We really hope this tutorial will help you in your first stages of Web development using Angular!
 
 Enjoy!
 
