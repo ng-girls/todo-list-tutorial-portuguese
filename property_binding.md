@@ -91,9 +91,8 @@ export class InputComponent implements OnInit {
   constructor() { }                     
 
   ngOnInit() {
-    let that = this;
     setTimeout(() => {
-      that.title = 'This is not the title you are looking for';  
+      this.title = 'This is not the title you are looking for';  
     }, 3000);
   }
 }
