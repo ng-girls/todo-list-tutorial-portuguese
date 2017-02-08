@@ -6,9 +6,9 @@ Helmut Petritsch defines in [Service-Oriented Architecture \(SOA\) vs. Component
 
 > A component is a software object, meant to interact with other components, encapsulating certain functionality or a set of functionalities. A component has a clearly defined interface and conforms to a prescribed behaviour common to all components within an architecture.
 
-In Web applications, a component controls a patch of screen called a view. It's a part of what you will eventually see on the screen. It has a template, which defines its visual structure. It also has logic which defines the behavior and the dynamic values. The logic part is JavaScript code and is called the controller.
+In Web applications, **a component controls a patch of screen called a view**. It's a part of what you will eventually see on the screen. It has a template, which defines its visual structure. It also has logic which defines the behavior and the dynamic values. The logic part is JavaScript code and is called the controller.
 
-Here's a diagram of a component in Angular.  
+Here's a diagram of a component in Angular, with the result below.  
 ![Angular 2 Component](Angular Component.001.jpeg)
 
 Directives, pipes and services are other building blocks in Angular, which we will discuss later in the tutorial.
@@ -19,11 +19,11 @@ Just like ngModules that we saw in the previous chapter, a component is also def
 
 ```js
 export class AppComponent {
-  title = 'app works!';
+  title = 'todo works!';
 }
 ```
 
-It has one member called "title". It is a variable to which you can assign a value. The value assigned to it here is the string "app works!".
+It has one member called "title". It is a variable to which you can assign a value. The value assigned to it here is the string "todo works!".
 
 Angular takes care of synchronizing the members of the component with the component template. So we can easily use the member `title` in the template. Take a look at the file `app.component.html` - this is the template attached to the component:
 
@@ -33,7 +33,7 @@ Angular takes care of synchronizing the members of the component with the compon
 </h1>
 ```
 
-The double curly braces and their content are called **Interpolation**. This is one way to bind data in Angular. As we mentioned before, the code in this file is not used as is when the browser renders the component. Angular compiles it to JavaScript code. In one of the compilation steps it looks for Interpolations inside the template. The content of the Interpolation is an expression, written in JavaScript. In run time the expression is evaluated, and then you see the result.
+The double curly braces and their content are called **Interpolation**. This is one form of ** data binding** in Angular. As we mentioned before, the code in this file is not used as is when the browser renders the component. Angular compiles it to JavaScript code. In one of the compilation steps it looks for Interpolations inside the template. **The content of the Interpolation is an expression, written in JavaScript.** In run time the expression is evaluated, and then you see the result.
 
 Interpolation is one of the strongest, most basic features in Angular. It exists from the very beginning of Angular - in the first version. It makes it really simple to insert dynamic data to the view.
 
