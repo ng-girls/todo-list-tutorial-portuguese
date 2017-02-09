@@ -28,6 +28,7 @@ Choose the IDE you'd like to work with and follow the installation instructions 
 Git is a tool that helps you manage versions of your code and work in collaboration with team members. There is a lot to know about it, but in this tutorial we will cover only basic usage.
 
 You can download it and follow the installation instructions [here](https://git-scm.com/) .
+When asked if you'd like to install **git bash**, say yes.
 
 ### Github
 
