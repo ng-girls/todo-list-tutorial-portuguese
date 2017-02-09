@@ -35,7 +35,7 @@ Angular takes care of synchronizing the members of the component with the compon
 
 The double curly braces and their content are called **Interpolation**. This is one form of ** data binding** in Angular. As we mentioned before, the code in this file is not used as is when the browser renders the component. Angular compiles it to JavaScript code. In one of the compilation steps it looks for Interpolations inside the template. **The content of the Interpolation is an expression, written in JavaScript.** In run time the expression is evaluated, and then you see the result.
 
-Interpolation is one of the strongest, most basic features in Angular. It exists from the very beginning of Angular - in the first version. It makes it really simple to insert dynamic data to the view.
+Interpolation is one of the strongest, most basic features in Angular. It exists from the very beginning of Angular - in the first version. It makes it really simple to insert dynamic data into the view.
 
 In this component, the expression is simply the member of the component class, `title`. **Let's try to change it**. Try out the following and see the result in the browser. \(With every change you make in the file, the browser will refresh automatically!\)
 
@@ -85,6 +85,7 @@ One last thing, the first line in the component file imports the code that defin
 
 Let's add some best practice to the component.
 
+#### Inline Template
 First, lets move the template to be **inline** in the component definition. Replace the line
 
 ```js
@@ -117,15 +118,14 @@ At this point you can delete the file `app.component.html`.
 
 The same way we use inline template, we can use also inline styles. But for now we will keep the styles in a separate file.
 
-Another best practice we are going to add is using TypeScript's ability to define the **type** of the class member `title`. It is best to define types anywhere possible, because it can help you avoid mistakes and bugs. It also allows the IDE to help you when using variables and functions. The IDE can tell you what type of value is expected, and suggest auto-completion.
+####Variable Types
+Another best practice we are going to add is using TypeScript's ability to define the **type** of the class member `title`. It is best to define types anywhere possible, because it can help you avoid mistakes and bugs. It also allows the IDE to help you when using variables and functions. The IDE can tell you what type of value is expected, and suggest completions.
 
 First, we'll define `title` to be a private member. It will prevent trying to access `title` from code outside this class. \(The template is a part of the class.\) Add `private` before `title`.
 
-Second, we'll define that `title`should receive only values of type `string.` Add `:string`after `title`. This way we'll get an error if we try to assign something else. Available types are string, boolean, number, any \(if you want to allow any type\) and custom types defined by classes and interfaces. For example, AppComponent is an available type.
+Second, we'll define that `title`should receive only values of type `string.` Add `: string`after `title`. This way we'll get an error if we try to assign something else. Available types are **string, boolean, number, any** \(if you want to allow any type\) and **custom types** defined by classes and interfaces. For example, `AppComponent` is an available type.
 
-We will not be able to use this best practice all along the tutorial, because in some cases we'd like to keep the tutorial simple.
-
-The line defining the title member should now look like this:
+The line defining the `title` member should now look like this:
 
 ```ts
 private title: string = 'app works!';
