@@ -62,7 +62,7 @@ npm -v
 
 [Angular-CLI](https://github.com/angular/angular-cli) is a powerful tool that simplifies a lot of the development process. It also installs libraries you'll use in your current and future projects. Install it by running:
 ```
-npm i -g angular-cli
+npm i -g @angular/cli
 ```
 
 This command runs the NPM we recently installed here - it knows where to find the package (angular-cli) you're looking for by the name of the package you provide.
