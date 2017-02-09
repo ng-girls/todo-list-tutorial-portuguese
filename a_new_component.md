@@ -16,7 +16,7 @@ ng generate component input --inline-template
 
 > You can avoid using `-it` each time you generate a components by setting inline templates as a default in the configuration file `angular-cli.json`.
 
-Don't worry about the component name `input`. It will not replace HTMLs `input` element. That's thanks to the prefix that Angular-CLI gives to our components. The default prefix is `app`, so the component selector would be `app-input`. If you've created the project stating the prefix of your choice, or changed it afterwards in the file `angular-cli.json`, this will be the prefix of the selector. When we created the project we set the prefix to "todo", so the selector should be `todo-input`.
+> Don't worry about the component name `input`. It will not replace HTMLs `input` element. That's thanks to the prefix that Angular-CLI gives to our components. The default prefix is `app`, so the component selector would be `app-input`. If you've created the project stating the prefix of your choice, or changed it afterwards in the file `angular-cli.json`, this will be the prefix of the selector. When we created the project we set the prefix to "todo", so the selector should be `todo-input`.
 
 Let's take a look of what Angular-CLI created for us.
 
@@ -44,7 +44,7 @@ selector: 'todo-input',
 
 We can use this component as is and see the result!
 
-Open the root component file, `app.component.ts` and add the todo-input tag to the template:
+Open the root component file, `app.component.ts` and add the todo-input tag anywhere inside the template:
 
 ```js
 template: `
@@ -66,21 +66,23 @@ export class InputComponent implements OnInit {
   ...
 ```
 
-It will not interfere with the `app-root` component's `title`, since each component's content is encapsulated within it.
+It will not interfere with the `todo-root` component's `title`, since each component's content is encapsulated within it.
 
-You can give an initial string to the title, like we did in the `app-root` component.
+You can give an initial string to the title, like we did in the `todo-root` component.
 
 Next, add an input element, a button, and a binding to the title, to the template:
 
 ```html
-<input>           
+<input>
+           
 <button>
   Save
 </button>
-{{ title }}
+
+<p>The title is: {{ title }}</p>
 ```
 
 Check out the result!
 
-In the next chapters we will learn about the component class, and then implement the component's logic.
+This component doesn't do much at this point. In the next chapters we will learn about the component class, and then implement the component's logic.
 
