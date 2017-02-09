@@ -19,7 +19,7 @@ Our next tool is the **IDE** -  integrated development environment. It's a softw
 
 JetBrains [Webstorm](https://www.jetbrains.com/webstorm/download/) is one of the strongest IDE's in the market. You get the first month for free, and a totally free license if you're a student.
 
-Microsoft [Visual Studio Code](https://www.visualstudio.com/vs/) is also a great choice that gains a lot of popularity lately. It is completely free for individuals.
+Microsoft [Visual Studio Code](https://code.visualstudio.com/) is also a great choice that gains a lot of popularity lately. It is completely free for individuals.
 
 Choose the IDE you'd like to work with and follow the installation instructions in its website.
 
