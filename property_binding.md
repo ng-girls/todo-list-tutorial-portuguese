@@ -83,9 +83,9 @@ generateTitle(): string {
 
 Replace one or both of the bindings of the title in the template with the method's call (don't forget the parenthesis!):
 ```html                    
-  <input [value]="titleGenerator()">
+  <input [value]="generateTitle()">
   
-  {{ titleGenerator() }}
+  {{ generateTitle() }}
 ```
 
 So for now, we have our input control show the title of our todo in it. We now want to make the input change the value of the title back by entering value in it and pressing enter. How to do that? Let's go to the next chapter and find out...
