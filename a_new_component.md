@@ -14,7 +14,9 @@ As we've seen before, `ng` is the command for using Angular-CLI. `g` is a shorth
 ng generate component input --inline-template
 ```
 
-Don't worry about the component name `input`. It will not replace HTMLs `input` element. That's thanks to the prefix that Angular-CLI gives to our components. The default prefix is `app`, so the component selector would be `app-input`. If you've created the project stating the prefix of your choice, or changed it afterwards in the file `angular-cli.json`, this will be the prefix of the selector. In the chapter "Generating a new project" we changed the prefix to "todo", so the selector should be `todo-input`.
+> You can avoid using `-it` each time you generate a components by setting inline templates as a default in the configuration file `angular-cli.json`.
+
+Don't worry about the component name `input`. It will not replace HTMLs `input` element. That's thanks to the prefix that Angular-CLI gives to our components. The default prefix is `app`, so the component selector would be `app-input`. If you've created the project stating the prefix of your choice, or changed it afterwards in the file `angular-cli.json`, this will be the prefix of the selector. When we created the project we set the prefix to "todo", so the selector should be `todo-input`.
 
 Let's take a look of what Angular-CLI created for us.
 
