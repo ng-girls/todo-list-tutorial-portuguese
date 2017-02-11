@@ -1,15 +1,19 @@
 # Add items
 
-We want to add items to our list. With Angular we can do this easily and see the item added immediately. We will do this from within the `todo-input` we created before. When hitting the Enter key or clicking the submit button, the value of the input box will become the title of the new item. And the new item will be added to the list.
+We want to add items to our list. With Angular we can do this easily and see the item added immediately. We will do this from within the `inputComponent` we created before. We'll change it so when hitting the Enter key or clicking the submit button, the value of the input box will become the title of the new item. And the new item will be added to the list.
 
-But we don't want the todo-input component to be responsible for adding a new item for the list. We want it to have minimal responsibility, and delegate the action to its parent component. One of the advantages of this approach is that this component will be reusable, and can be attached to a different action in different situations. For example, we'll be able to use the todo-input inside the todo-item component. Then we'll have an input box for each item and we'll be able to edit the item's title. In this case, pressing the Enter key or the save button will have a different effect.
+But we don't want the todo-input component to be responsible for adding a new item for the list. We want it to have minimal responsibility, and **delegate the action to its parent component**. One of the advantages of this approach is that this component will be reusable, and can be attached to a different action in different situations. 
 
-So what we actually want to do is to emit an event from the todo-input component whenever the title is changed. With Angular we can easily define and emit events from our components!
+For example, in our case, we'll be able to use the `inputComponent` inside the `itemComponent`. Then we'll have an input box for each item and we'll be able to edit the item's title. In this case, pressing the Enter key or the save button will have a different effect.
 
-In the todo-input component class add the following line, which defines an output for the component.
+So what we actually want to do is to **emit an event** from the todo-input component whenever the title is changed. With Angular we can easily define and emit events from our components!
+
+## @Output()
+
+Inside the `inputComponent` class add the following line, which defines an output for the component.
 
 ```ts
-@Output() submit:EventEmitter<string> = new EventEmitter();
+@Output() submit: EventEmitter<string> = new EventEmitter();
 ```
 
 The output property is called `submit`. Make sure that Output and EventEmitter are added to the import declaration in the first line of the file: 
