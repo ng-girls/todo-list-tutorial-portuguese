@@ -13,11 +13,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'todo-input',
   template: `                           
     <input>
-               
-    <button>
-      Save
-    </button>
-    
+    <button>Save</button>
     <p>The title is: {{ title }}</p>    
   `,  
   styleUrls: ['./input.component.css']  

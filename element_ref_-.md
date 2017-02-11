@@ -1,6 +1,6 @@
 # Element ref
 
-In the last chapter, we ended with our beautiful input component that can reflect and change the value of title of our todo item.
+In the last chapter, we ended with our input component that can reflect and change the value of title of our todo item. `input.component.ts` should look like this:
 
 ```javascript
 import { Component, OnInit } from '@angular/core';
@@ -10,8 +10,10 @@ import { Component, OnInit } from '@angular/core';
   template: `                           
     <input [value]="title"              
            (keyup.enter)="changeTitle($event.target.value)">
-
-    {{ title }}
+    <button (click)="changeTitle('Button Clicked!')">
+      Save
+    </button>
+    <p>The title is: {{ title }}</p>
   `,  
   styleUrls: ['./input.component.css']  
 })    
@@ -26,51 +28,21 @@ export class InputComponent implements OnInit {
   changeTitle(newTitle: string): void {
     this.title = newTitle;              
   }
-
 }
 ```
 
-Now, we want to take the value of the input and change the title when we press the button.
+Now, we want to take the value of the input (that the user typed) and change the title when we press the Save button.
 
-How do we do that?
+We already know how to create a button and react to click on it. We now need to pass to the method some data from a different element. We want to use the input's value from inside the button element.
 
-We already know how to create a button and react to click on it.
-
-```html
-<input [value]="title"              
-       (keyup.enter)="changeTitle($event.target.value)">
-
-<button (click)="changeTitle()">
-  Save
-</button>
-
-{{ title }}
-```
-
-```javascript
-changeTitle(newTitle: string): void {
-    this.title = newTitle;              
-}
-```
-
-But wait, the change method expects that we pass it the value of the new title. How do we pass the input value to the function from the template?
-
-Let's go back a little and see how we do that in the function itself in pure JavaScript without Angular's help.
-
-```javascript
-changeTitle(newTitle: string): void { 
-  this.title = newTitle;              
-}
-```
-
-Angular, in the Template world, helps us do exactly that and access and get the element we want into a variable like `inputElement` by a simple syntax. Add `#myInput` to the `input` element, and use it this way:
+Angular helps us do exactly that. We can get a reference to the element we want into a variable with the name we choose, for example `inputElement`, using a simple syntax. Add `#inputElement` to the `input` element, and use it this way:
 
 ```html
 <input [value]="title"              
        (keyup.enter)="changeTitle($event.target.value)"
-       #myInput>
+       #inputElement>
 
-<button (click)="changeTitle(myInput.value)">
+<button (click)="changeTitle(inputElement.value)">
   Save
 </button>
 ```

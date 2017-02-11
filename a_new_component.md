@@ -74,11 +74,7 @@ Next, add an input element, a button, and a binding to the title, to the templat
 
 ```html
 <input>
-           
-<button>
-  Save
-</button>
-
+<button>Save</button>
 <p>The title is: {{ title }}</p>
 ```
 
