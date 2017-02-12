@@ -61,7 +61,13 @@ Next on, we'll build the list of todo items.
 Just like we did in the previous chapter, when we logged $event, you can do the same with `#inputElement`. Change the method `changeTitle` so it will receive the whole element reference and log it to the console:
 
 ```html
+<input [value]="title"              
+       (keyup.enter)="changeTitle(inputElement)"
+       #inputElement>
+
 <button (click)="changeTitle(inputElement)">
+  Save
+</button>
 ```
 ```ts
 changeTitle(inputElementReference): void {
