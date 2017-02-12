@@ -1,7 +1,7 @@
 # Generating a new project
 
 In every project there are different ways to start, most of them concern scaffolding tools like Yeoman or Slush. These tools generate a starter project, help you generate needed files, and take care of building and running the project.  
-Others ways to start are using starter kits, are also called seed projects, which contain all you need to start the project.  
+Other ways to start are using starter kits, are also called seed projects, which contain all you need to start the project.  
 Unlike scaffolding tools, starter kits are relevant only for the initial project. After installation you probably won't use that kit again \(if it's a good starter kit maybe you'll go back to read the documentation\).
 
 Regarding Angular, the most easy way to start is the Angular-CLI which is a scaffolding tool.  we will cover its use in this tutorial.

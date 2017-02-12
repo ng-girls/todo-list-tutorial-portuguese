@@ -56,6 +56,16 @@ export class TodoListStorageService {
 
 * If something looks unfamiliar/odd to you, please refer to the [Service tutorial](https://shmool.gitbooks.io/todo-list-tutorial/content/service.html) for more detailed information about services.
 
+We need to provide the service in our ngModule. Open `app.module.ts` and in the `providers` list add the new class:
+```ts
+providers: [TodoListService, TodoListStorageService],
+```
+Make sure the class is also imported into the file:
+```ts
+
+import { TodoListStorageService } from './todo-list-storage.service';
+```
+
 Lets start by adding a private property to our service `todoList` which will hold the list items.
 
 `private todoList;`
@@ -65,10 +75,11 @@ In addition, let's add a constant that will store the name of the key we want to
 `const storageName = 'aah_todo_list';`
 
 Now we want to initiliaze this property with data, by retriving it from localStorage, so within the constructor, add:
-
-constructor\(\) {  
-    this.todoList = JSON.parse\(localStorage.getItem\(storageName\)\);  
+```ts
+constructor() {  
+    this.todoList = JSON.parse(localStorage.getItem(storageName));  
 }
+```
 
 Wait! Wait! why `JSON.parse`? the answer is simple.  
 As described earlier in this tutorial, local storage stores data in a form of key-value, that means that the values are stored as **strings**.  
