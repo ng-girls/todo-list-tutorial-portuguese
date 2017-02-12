@@ -177,7 +177,14 @@ Add the following style to `todo-item.component.css`:
 }
 
 ```
-
+Note: Don't forget to put the CSS-classes to the templace-code of your specified component like this:
+```ts
+ @Component({
+    ...
+    template: `
+          <button class="btn btnRed" (click)="removeItem()">
+          `,
+```
 You can change the style as you wish - the size of elements, the colors - however you'd like!
 
 Note: You can use SCSS files in the project, which is a nicer way to write style. It has great features that help the developer. SCSS files are compiled to css when the project is built. 
