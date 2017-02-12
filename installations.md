@@ -36,6 +36,8 @@ When asked if you'd like to install **git bash**, say yes.
 
 ### NodeJS and NPM
 
+**Please check the [Angular-CLI docs](https://github.com/angular/angular-cli#prerequisites) for the up-to-date prerequisites! **
+
 Another tool which most web developers are using is **NodeJS**. Once installed, it comes with another tool called **NPM** (Node Package Manager).
 
 NodeJS lets you run JavaScript code on your computer. It is used to run a local server which serves the project files to the browser and simulates a real running website.
@@ -44,13 +46,13 @@ NPM allows you to easily download and install different libraries from the inter
 
 Download NodeJS [here](https://nodejs.org/en/).
 
-If you already have NodeJS installed, make sure you check that the version is greater than 4.0 by running this in your command line / terminal:   
+If you already have NodeJS installed, make sure you check that the version is 6.9.0 or above by running this in your command line / terminal:   
 ```
 node -v
 ```
 \('-v' stands for 'version'.\)  
 
-If it's lower than 4.0, download the new version from the website and install it.
+If it's lower than required, download the new version from the website and install it.
 
 Once installed, you should also have NPM installed. Check its version by running:  
 ```
