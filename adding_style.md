@@ -147,7 +147,7 @@ Add the following style to `input.component.css`:
 }
 ```
 
-Add the following style to `todo-item.component.css`:
+Add the following style to `item.component.css`:
 ```css
 .todo-item {
   padding: 10px 0;
