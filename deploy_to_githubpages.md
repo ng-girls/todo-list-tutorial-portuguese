@@ -1,5 +1,6 @@
 # Deploy to GithubPages
 
+#### Warning: Angular-CLI command for deploying to Github Pages has been removed. [See discussion here](https://github.com/angular/angular-cli/pull/4385)
 By deploying to Github pages your app will have a host and will live and run on the Web. Everyone will be able to see and use it. 
 
 Angular-CLI makes it really easy for us to deploy to Github Pages - you can do so with a single command. But you have to prepare a few things first:
