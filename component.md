@@ -25,7 +25,7 @@ export class AppComponent {
 
 It has one member called "title". It is a variable to which you can assign a value. The value assigned to it here is the string "todo works!".
 
-Angular takes care of synchronizing the members of the component with the component template. So we can easily use the member `title` in the template. Take a look at the file `app.component.html` - this is the template attached to the component:
+Angular takes care of synchronizing the members of the component with the component template. So we can easily use the member `title` in the template. Take a look at the  template attached to the component in the :
 
 ```html
 <h1>
@@ -115,6 +115,7 @@ template: `
 It is easier to manage the template when you see its controller at the same time. This is true as long as the template doesn't get too long and the controller doesn't get too complicated. If they do, it's a sign you should refactor your code by breaking it down to child components.
 
 At this point you can delete the file `app.component.html`.
+>When generating a new project, you can state that you'd like an inline template for the root component by adding the flag `-it` (or `--inline-template`). Keep this in mind on your next project!
 
 The same way we use inline template, we can use also inline styles. But for now we will keep the styles in a separate file.
 
