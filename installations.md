@@ -98,7 +98,7 @@ ng serve
 ```
 Now open your web browser and enter the URL - `localhost:4200`
 
-You should see the title **App works!**
+You should see the title **Todo works!**
 
 
 
