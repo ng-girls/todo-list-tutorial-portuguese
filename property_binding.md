@@ -47,6 +47,7 @@ Angular 2 lets us bind properties to the template easily and conveniently. We sa
 ```html
 <input [value]="title">
 ```
+You can go on to the next chapter, but if you'd like to learn more about change detection - keep on reading.
 
 ## Change Detection
 
