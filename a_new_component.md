@@ -8,7 +8,9 @@ We'll use Angular-CLI to generate all the needed files and boilerplate for us. I
 ng g c input -it
 ```
 
-As we've seen before, `ng` is the command for using Angular-CLI. `g` is a shorthand for `generate`. `c` is a shorthand for `component`. `input` is the name we give to the component. `-it` is shorthand for `--inline-template`. So the long version of the command is:
+As we've seen before, `ng` is the command for using Angular-CLI. `g` is a shorthand for `generate`. `c` is a shorthand for `component`. `input` is the name we give to the component. `-it` is shorthand for `--inline-template`.
+
+So the long version of the command is:
 
 ```
 ng generate component input --inline-template
