@@ -106,4 +106,5 @@ constructor() {
 }
 ```
 
+The browser's console is a part of its Dev Tools. See here different ways to open your browser's console: [https://webmasters.stackexchange.com/questions/8525/how-do-i-open-the-javascript-console-in-different-browsers](https://webmasters.stackexchange.com/questions/8525/how-do-i-open-the-javascript-console-in-different-browsers)
 
