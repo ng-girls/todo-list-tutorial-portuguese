@@ -18,7 +18,7 @@ Now, to start using the service, we first need to provide it in the @NgModule co
 In /src/app/app.module.ts , add an import code:
 ```javascript
 import { TodoListService } from './todo-list.service';
-````
+```
 And now add the service to the "providers" array, that the ngModule component will look like this:
 ```javascript
 @NgModule({
