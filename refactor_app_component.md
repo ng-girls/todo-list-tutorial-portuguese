@@ -8,7 +8,11 @@ We're going to perform a small refactoring. The app-root shouldn’t have such l
 * Move all the code from `appComponent` to `listManager`
 * Call the new component from the `appComponent` template:
 
-```<todo-list-manager></todo-list-manager>```
+```
+`
+  <todo-list-manager></todo-list-manager>
+`
+```
 
 That's it! Now we can go on.
 
