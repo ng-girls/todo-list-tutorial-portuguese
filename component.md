@@ -81,12 +81,9 @@ The element `todo-root` is not an HTML element. It is the component that was cre
 
 One last thing, the first line in the component file imports the code that defines the decorator `@Component`. It is needed to use the decorator, which is defined in the imported file \(or actually, in one of its own imports\). Try removing this line, and see the error.
 
-### Best Practice
-
-Let's add some best practice to the component.
-
 #### Inline Template
-First, lets move the template to be **inline** in the component definition. Replace the line
+Let's move the template to be **inline** in the component definition. This will help us manage the template while looking at its functionality.
+In the file `app.component.ts`  replace the line
 
 ```js
 templateUrl: './app.component.html',
@@ -112,27 +109,13 @@ template: `
 `,
 ```
 
-It is easier to manage the template when you see its controller at the same time. This is true as long as the template doesn't get too long and the controller doesn't get too complicated. If they do, it's a sign you should refactor your code by breaking it down to child components.
+It is easier to manage the template when you see its controller at the same time. This is true as long as the template doesn't get too big and the controller doesn't get too complicated. If they do, it's a sign you should refactor your code by breaking it down to child components.
 
 At this point you can delete the file `app.component.html`.
->When generating a new project, you can state that you'd like an inline template for the root component by adding the flag `-it` (or `--inline-template`). Keep this in mind on your next project!
+>When generating a new project, you can state that you'd like an inline template for the root component by adding the flag `-it` (or `--inline-template`). Keep this in mind for your next project!
 
 The same way we use inline template, we can use also inline styles. But for now we will keep the styles in a separate file.
 
-####Variable Types
-Another best practice we are going to add is using TypeScript's ability to define the **type** of the class member `title`. It is best to define types anywhere possible, because it can help you avoid mistakes and bugs. It also allows the IDE to help you when using variables and functions. The IDE can tell you what type of value is expected, and suggest completions.
-
-First, we'll define `title` to be a private member. It will prevent trying to access `title` from code outside this class. \(The template is a part of the class.\) Add `private` before `title`.
-
-Second, we'll define that `title`should receive only values of type `string.` Add `: string`after `title`. This way we'll get an error if we try to assign something else. Available types are **string, boolean, number, any** \(if you want to allow any type\) and **custom types** defined by classes and interfaces. For example, `AppComponent` is an available type.
-
-The line defining the `title` member should now look like this:
-
-```ts
-private title: string = 'app works!';
-```
-
-You can try assigning something else to the title now, for example a number. See how the IDE tells you that something is wrong.
-
+### Summary
 We have explored the root component that was generated for us by Angular-CLI, and even refactored it. In the next chapter we will create a new component. We will start building the tree of components, which defines the structure of the application.
 
