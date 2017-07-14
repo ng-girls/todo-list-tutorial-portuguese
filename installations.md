@@ -85,7 +85,7 @@ Now, create a new project, called _todo-list_ inside the projects folder, using 
 ng new todo-list --prefix=todo
 ```
 This can take a while, since many packages are being downloaded and installed.
-The prefix 'todo' will be used in every component we create. The default prefix is 'app'.
+The prefix 'todo' will be used in every component we create. The default prefix (if you don't use the flag `--prefix`) is 'app'.
 
 
 Now enter the new folder that Angular-CLI created for this project
@@ -94,9 +94,9 @@ cd todo-list
 ```
 Once inside the folder of the application, run the application by using the following command:
 ```
-ng serve
+ng serve -o
 ```
-Now open your web browser and enter the URL - `localhost:4200`
+The flag `-o` is a short for `--open`, which will open your browser in the right URL: `localhost:4200`
 
 You should see the title **Todo works!**
 
@@ -104,9 +104,10 @@ You should see the title **Todo works!**
 
 ### Congratulations!
 
-You have a running Angular application!  
-To stop it from running, press `Ctrl+C` in the terminal.
-As long as it's running, any change you make in the project code will be reflected immediately in the web browser.
+You have a running Angular application! **As long as you're working on the application you should keep the terminal where you run it open.** Any change you make in the project code will be reflected immediately in the web browser. 
+You can open another terminal to perform tasks in parallel.
+
+To stop the app from running, press `Ctrl+C` in the terminal, or close the terminal.
 
 Now we're ready to start developing!
 
