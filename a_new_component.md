@@ -64,7 +64,7 @@ We will add some content to our new component. First, add a `title` member which
 
 ```ts
 export class InputComponent implements OnInit {
-  private title: string = '';
+  title: string = '';
   ...
 ```
 

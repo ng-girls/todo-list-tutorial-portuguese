@@ -19,7 +19,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input.component.css']  
 })    
 export class InputComponent implements OnInit {
-  private title: string = 'My First Todo Title !!!';           
+  title: string = 'My First Todo Title !!!';           
 
   constructor() { }                     
 
