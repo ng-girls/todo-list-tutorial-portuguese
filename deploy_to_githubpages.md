@@ -1,5 +1,5 @@
  # Deploy your App to Github Pages
-To deploy our changes to Github pages we will use the angular-cli-ghpages packagea
+To deploy our changes to Github pages we will use the angular-cli-ghpages package
 https://github.com/angular-buch/angular-cli-ghpages 
 
 * You need to have a Github user
