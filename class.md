@@ -50,14 +50,14 @@ In TypeScript we must declare members of the class either in the class body outs
 
 You can declare the property without initializing it:
 ```ts
-private title: string;
+title: string;
 ```
 Then you can assign a value at a later stage, for example in the constructor or in the ngOnInit method. When referencing a member of the class from within a class method you must prefix it with `this`. It's a special property that points at the current instance. 
 
 Try setting a different value for `title` from inside the constructor. See the result in the browser:
 
 ```ts
-private title: string = 'my title';
+title: string = 'my title';
 
 constructor() { 
   this.title = 'Hello World';
