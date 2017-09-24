@@ -23,6 +23,15 @@ Microsoft [Visual Studio Code](https://code.visualstudio.com/) is also a great c
 
 Choose the IDE you'd like to work with and follow the installation instructions in its website.
 
+**Visual Studio Code**
+
+If you choose to use VSCode, we recommend to install following Plugins for Angular:
+
+- [Angular.ng-template](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
+- [natewallace.angular2-inline](https://marketplace.visualstudio.com/items?itemName=natewallace.angular2-inline)
+
+![image](https://user-images.githubusercontent.com/1223799/30781828-88bf447c-a126-11e7-9128-4c1cdec4002c.png)
+
 ### Git
 
 Git is a tool that helps you manage versions of your code and work in collaboration with team members. There is a lot to know about it, but in this tutorial we will cover only basic usage.
