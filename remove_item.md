@@ -24,7 +24,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 (c) Add a function to the ItemComponent class that will actually emit the event. This function will be called when the user clicks the **remove** button:
 ```
 removeItem() {
-  this.remove.emit(this.item);
+  this.remove.emit(this.todoItem);
 }
 ```
 
