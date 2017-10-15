@@ -105,7 +105,7 @@ Once inside the folder of the application, run the application by using the foll
 ```
 ng serve -o
 ```
-The flag `-o` is a short for `--open`, which will open your browser in the right URL: `localhost:4200`
+The flag `-o` is a short for `--open`, which will open your browser in the right URL: [`localhost:4200`](http://localhost:4200)
 
 You should see the page like this:
 
