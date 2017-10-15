@@ -107,16 +107,17 @@ ng serve -o
 ```
 The flag `-o` is a short for `--open`, which will open your browser in the right URL: `localhost:4200`
 
-You should see the title **Todo works!**
+You should see the page like this:
+
+![image](https://github.com/bluebirrrrd/todo-list-tutorial/blob/master/assets/installation-result.png)
 
 
 
 ### Congratulations!
 
-You have a running Angular application! **As long as you're working on the application you should keep the terminal where you run it open.** Any change you make in the project code will be reflected immediately in the web browser. 
+You have a running Angular application! **As long as you're working on the application you should keep the terminal where you run it open.** Any change you make in the project code will be reflected immediately in the web browser.
 You can open another terminal to perform tasks in parallel.
 
 To stop the app from running, press `Ctrl+C` in the terminal, or close the terminal.
 
 Now we're ready to start developing!
-
