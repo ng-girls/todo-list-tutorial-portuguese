@@ -3,7 +3,7 @@
 Now, you are going to add the todo-list itself to the component `app-root`. Open the file `src/app/app.component.ts`. Add the list of items inside the `AppComponent` class as an array of objects for each item. At this stage each item will contains only a title:
 
 ```js
-private todoList = [
+todoList = [
   {title: 'install NodeJS'},
   {title: 'install Angular CLI'},
   {title: 'create new app'},
