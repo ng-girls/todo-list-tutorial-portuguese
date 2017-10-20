@@ -38,7 +38,7 @@ In the following section we will build a local storage service that later on wil
 As described in earlier tutorials, we will generate the service using `angular-cli`:
 
 ```
-$ ng g s todo-list-storage
+ng g s todo-list-storage
 ```
 
 The new file `todo-list-storage.service.ts`, should be created with the following code:
