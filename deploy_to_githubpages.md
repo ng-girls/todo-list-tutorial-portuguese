@@ -13,7 +13,7 @@ To Create a Github user go to Github: https://github.com/
 Fill the regetration form and make sure to validate your email address.
 
 ## Create your App repository
-After loggin in to Github.
+After logging in to Github.
 Click on the `Start a project` button, and name the repository `ng-girls-todo` or any other name you like.
 
 ## Connecting your repository
