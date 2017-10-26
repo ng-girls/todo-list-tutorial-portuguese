@@ -22,7 +22,7 @@ Now, in order for the checkbox to do anything we need to add a click event which
 When we click on the checkbox it will run the completeItem() function. Let's talk about what this function needs to accomplish. We want to be able to toggle some CSS styling on the todo title so that when the checkbox is checked it will have a line-strike through it, and no line-strike when unchecked. In order to achieve this we will toggle a variable to be either true or false to represent checked or unchecked states. Add the following code to the ItemComponent class:
 
 ```js
-private isComplete: boolean = false;
+isComplete: boolean = false;
 
 completeItem() {
   this.isComplete = !this.isComplete;
