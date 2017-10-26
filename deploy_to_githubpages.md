@@ -32,16 +32,17 @@ git push -u origin master
 
 ## Deploying to Github Pages
 First install angular-cli-ghpages.
+
 ```
 npm i -g angular-cli-ghpages
 ```
-Then Simply Run:
+
+Then simply run:
+
 ```
-ng build --prod
+ng build --prod --base-href="/[your-repo-name]/"
 angular-cli-ghpages
 ```
-
-**Note:** If you have multifactor authentication enabled for your GitHub account, you must disable it to publish through the CLI. 
 
 Your app will be available at https://[your-GH-username].github.io/[repo-name]
 
