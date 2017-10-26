@@ -46,6 +46,7 @@ Let's add this NgClass directive to our todo title now:
 ```
 
 And finally, add the css to our item.component.css file
+
 ```css
   .todo-complete {
     text-decoration: line-through;

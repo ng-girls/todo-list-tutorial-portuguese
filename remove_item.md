@@ -33,13 +33,11 @@ removeItem() {
 Now that each todo item can emit its own removal, let's make sure that the list manager actually removes that same item from the list. For that, we'll work on the file *list-manager.component.ts*.
 
 (a) We need to respond to **remove** event - let's add it to the template, inside the `<todo-item>` tag:
-
 ```
 (remove)="removeItem($event)"
 ```
 
 (b) Now we just need to add the function *removeItem()* to the ListManagerComponent class:
-
 ```
 removeItem(item) {
   this.todoList = this.todoListService.removeItem(item);
