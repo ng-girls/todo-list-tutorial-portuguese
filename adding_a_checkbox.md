@@ -3,12 +3,13 @@
 We are now able to interact with our todo list by removing items. But what if we want to complete items and still be able to see them on our list, for example, have a line-strike through the todo title? Enter the checkbox!
 
 We will look at:
+
 * Adding a checkbox
 * Adding functionality when you click the checkbox so that a CSS class, which adds a strike-through style, is added to our todo items
 * Edit the todo title so that it will respond to the checkbox
 * Adding a new CSS Class
 
-Let's go ahead and add a checkbox into our item.component.ts file. Place the following code right before the <p> tag containing {{ todoItem.title}}:
+Let's go ahead and add a checkbox into our item.component.ts file. Place the following code right before the `<p>` tag containing `{{ todoItem.title}}`:
 
 ```html
   <input type="checkbox"/>
