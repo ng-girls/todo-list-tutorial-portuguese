@@ -40,4 +40,9 @@ Then Simply Run:
 ng build --prod
 angular-cli-ghpages
 ```
+
+**Note:** If you have multifactor authentication enabled for your GitHub account, you must disable it to publish through the CLI. 
+
+Your app will be available at https://[your-GH-username].github.io/[repo-name]
+
 For more information see https://github.com/angular-buch/angular-cli-ghpages.
