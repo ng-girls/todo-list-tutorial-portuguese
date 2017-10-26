@@ -19,7 +19,7 @@
 * [Add more abilities to service](add_more_abilities_to_service.md)
 * [Local storage](local_storage.md)
 * [Remove item](remove_item.md)
-* [Add a checkbox](add_a_checkbox.md)
+* [Adding a checkbox](adding_a_checkbox.md)
 * [Deploy to GithubPages](deploy_to_githubpages.md)
 * [Enrich the todo-item component](enrich_the_todo-item_component.md)
 * [Appendix 1: Generating a new project](generating_a_new_project.md)
