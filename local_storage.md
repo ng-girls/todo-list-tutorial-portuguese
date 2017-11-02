@@ -81,7 +81,7 @@ constructor() {
 }
 ```
 
-Wait! Wait! why `JSON.parse`? the answer is simple.  
+Wait! Wait! why `JSON.parse`? The answer is simple:
 As described earlier in this tutorial, local storage stores data in a form of key-value, that means that the values are stored as **strings**.  
 So, if we want to have a real object to deal with, we must parse the strign into a valid object.
 
