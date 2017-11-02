@@ -194,7 +194,7 @@ Before that, let's add another helper private method `findItemIndex`, which will
 
 ```
 /**
-   * find the index of an item in the aray
+   * find the index of an item in the array
    * @param item
    * @returns {number}
    */
