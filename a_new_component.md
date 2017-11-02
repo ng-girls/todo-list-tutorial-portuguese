@@ -17,7 +17,7 @@ ng generate component input --inline-template
 ```
 
 > You can avoid using `-it` each time you generate a components by setting inline templates as a default in the configuration file `angular-cli.json`.
-
+>
 > Don't worry about the component name `input`. It will not replace HTMLs `input` element. That's thanks to the prefix that Angular-CLI gives to our components. The default prefix is `app`, so the component selector would be `app-input`. If you've created the project stating the prefix of your choice, or changed it afterwards in the file `angular-cli.json`, this will be the prefix of the selector. When we created the project we set the prefix to "todo", so the selector should be `todo-input`.
 
 Let's take a look of what Angular-CLI created for us.
@@ -60,7 +60,7 @@ template: `
 
 Check what's new in the browser!
 
-We will add some content to our new component. First, add a `title` member which we will use as the todo item title:
+Get back to our `input.component.ts` and add some content. First, add a `title` member which we will use as the todo item title:
 
 ```ts
 export class InputComponent implements OnInit {
