@@ -45,7 +45,7 @@ When asked if you'd like to install **git bash**, say yes.
 
 ### NodeJS and NPM
 
-**Please check the [Angular-CLI docs](https://github.com/angular/angular-cli#prerequisites) for the up-to-date prerequisites! **
+**Please check the [Angular-CLI docs](https://github.com/angular/angular-cli#prerequisites) for the up-to-date prerequisites!**
 
 Another tool which most web developers are using is **NodeJS**. Once installed, it comes with another tool called **NPM** (Node Package Manager).
 
