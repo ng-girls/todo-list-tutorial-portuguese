@@ -323,7 +323,7 @@ Now we have one last modification to make. Open up `list-manager.component.ts`, 
 
 ```
 addItem(title:string) {
-    this.todoList = this.todoListService.addItem({ title });
+    this.todoList = this.todoListService.addItem({ item:title });
 }
 ```
 
