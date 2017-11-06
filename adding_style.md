@@ -182,7 +182,7 @@ Note: Don't forget to put the CSS-classes to the templace-code of your specified
  @Component({
     ...
     template: `
-          <button class="btn btnRed" (click)="removeItem()">
+          <button class="btn btn-red" (click)="removeItem()">
           `,
 ```
 You can change the style as you wish - the size of elements, the colors - however you'd like!
