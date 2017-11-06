@@ -54,7 +54,7 @@ export class TodoListStorageService {
 }
 ```
 
-* If something looks unfamiliar/odd to you, please refer to the [Service tutorial](https://shmool.gitbooks.io/todo-list-tutorial/content/service.html) for more detailed information about services.
+**If something looks unfamiliar/odd to you, please refer to the [Service tutorial](https://shmool.gitbooks.io/todo-list-tutorial/content/service.html) for more detailed information about services.**
 
 We need to provide the service in our ngModule. Open `app.module.ts` and in the `providers` list add the new class:
 ```ts
@@ -81,7 +81,7 @@ constructor() {
 }
 ```
 
-Wait! Wait! why `JSON.parse`? the answer is simple.  
+Wait! Wait! why `JSON.parse`? The answer is simple:
 As described earlier in this tutorial, local storage stores data in a form of key-value, that means that the values are stored as **strings**.  
 So, if we want to have a real object to deal with, we must parse the strign into a valid object.
 
@@ -194,7 +194,7 @@ Before that, let's add another helper private method `findItemIndex`, which will
 
 ```
 /**
-   * find the index of an item in the aray
+   * find the index of an item in the array
    * @param item
    * @returns {number}
    */

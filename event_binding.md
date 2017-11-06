@@ -77,7 +77,7 @@ You can limit the change to only a special key stroke, in our case it's the Ente
 Now the title will change only when the user hits the Enter key while typing in the input.
 
 ### Tip - explore the $event
-You can change the changeTitle method to log the $event object in the console. This way you can explore it and see what properties it has. 
+You can change the changeTitle method to log the `$event` object in the console. This way you can explore it and see what properties it has. 
 
 Change the method `changeTitle`:
 ```ts

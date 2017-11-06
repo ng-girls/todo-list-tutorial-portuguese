@@ -1,4 +1,4 @@
-#Adding A Checkbox
+# Adding A Checkbox
 
 We are now able to interact with our todo list by removing items. But what if we want to complete items and still be able to see them on our list, for example, have a line-strike through the todo title? Enter the checkbox!
 
