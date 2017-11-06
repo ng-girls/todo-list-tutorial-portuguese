@@ -29,9 +29,7 @@ And now add the service to the "providers" array, that the ngModule component wi
     ListManagerComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
+    BrowserModule
   ],
   providers: [TodoListService],
   bootstrap: [AppComponent]
