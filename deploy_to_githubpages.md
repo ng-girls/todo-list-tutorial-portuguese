@@ -13,7 +13,7 @@ To Create a Github user go to Github: https://github.com/
 Fill the regetration form and make sure to validate your email address.
 
 ## Create your App repository
-After loggin in to Github.
+After logging in to Github.
 Click on the `Start a project` button, and name the repository `ng-girls-todo` or any other name you like.
 
 ## Connecting your repository
@@ -32,12 +32,18 @@ git push -u origin master
 
 ## Deploying to Github Pages
 First install angular-cli-ghpages.
+
 ```
 npm i -g angular-cli-ghpages
 ```
-Then Simply Run:
+
+Then simply run:
+
 ```
-ng build --prod
+ng build --prod --base-href="/[your-repo-name]/"
 angular-cli-ghpages
 ```
+
+Your app will be available at https://[your-GH-username].github.io/[repo-name]
+
 For more information see https://github.com/angular-buch/angular-cli-ghpages.

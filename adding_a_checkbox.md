@@ -3,12 +3,13 @@
 We are now able to interact with our todo list by removing items. But what if we want to complete items and still be able to see them on our list, for example, have a line-strike through the todo title? Enter the checkbox!
 
 We will look at:
+
 * Adding a checkbox
 * Adding functionality when you click the checkbox so that a CSS class, which adds a strike-through style, is added to our todo items
 * Edit the todo title so that it will respond to the checkbox
 * Adding a new CSS Class
 
-Let's go ahead and add a checkbox into our item.component.ts file. Place the following code right before the <p> tag containing {{ todoItem.title}}:
+Let's go ahead and add a checkbox into our item.component.ts file. Place the following code right before the `<p>` tag containing `{{ todoItem.title}}`:
 
 ```html
   <input type="checkbox"/>
@@ -21,7 +22,7 @@ Now, in order for the checkbox to do anything we need to add a click event which
 When we click on the checkbox it will run the completeItem() function. Let's talk about what this function needs to accomplish. We want to be able to toggle some CSS styling on the todo title so that when the checkbox is checked it will have a line-strike through it, and no line-strike when unchecked. In order to achieve this we will toggle a variable to be either true or false to represent checked or unchecked states. Add the following code to the ItemComponent class:
 
 ```js
-private isComplete: boolean = false;
+isComplete: boolean = false;
 
 completeItem() {
   this.isComplete = !this.isComplete;
@@ -45,6 +46,7 @@ Let's add this NgClass directive to our todo title now:
 ```
 
 And finally, add the css to our item.component.css file
+
 ```css
   .todo-complete {
     text-decoration: line-through;
