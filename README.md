@@ -1,16 +1,18 @@
-# Angular Tutorial for Beginners - 
+# Tutorial Angular para iniciantes 
 
-# Creating a Todo-List App
+# Criando uma lista de tarefas (todo list) 
 
-This tutorial will take you step by step on how to create your own todo list application using Angular \(version 2 and above\). Through the tutorial, we'll be using the Angular-CLI, save data in the local storage and deploy the code to Github Pages.
+Este tutorial passo-a-passo irá ensiná-la sobre como criar seu primeiro aplicativo em Angular (v2+). Através dele usaremos o Angular CLI para economizar dados no armazenamento local e depois implementar o código no Github Pages. 
 
-This tutorial is open source and is written by the community. Please feel free to send any suggestions and pull requests. Special thanks to the members of** Angular AfterHours meetup group **for kickstarting this tutorial during a [special meetup event](http://www.meetup.com/Angular-AfterHours/events/235151422/)!
+Este tutorial é código aberto (open source) e foi escrito pela comunidade Angular. Sinta-se à vontade caso queira enviar sugestões e pull-requests. Agradecimentos especiais aos membros do grupo [Meetup Angular AfterHours](http://www.meetup.com/Angular-AfterHours/events/235151422/) por ter inicializado este tutorial! 
 
-The tutorial is used in the [ngGirls](http://ng-girls.org) workshops. You are welcome to use it in your own workshop and we'd love to hear about it! - write us to: [info@ng-girls.org](/mailto:info@ng-girls.org).
+Este tutorial é usado nas oficinas do [ngGirls](http://ng-girls.org) do Brasil e do mundo. Caso tenha interesse em trazer o evento ngGirls para a sua cidade ou caso tenha alguma sugestão para fazer, entre em contato com a gente através do e-mail [info@ng-girls.org](/mailto:info@ng-girls.org).
 
 ![](/assets/ngGirls banner transparent.png)
 
 ![](/assets/slogen.png)
 
-**About the lead author:** Shmuela Jacobs is a senior front-end developer and consultant mastering Angular. During her academic studies \(M.Sc. in Information Management Engineering and B.Sc. in Physics\) she has combined her passions of coding and teaching as a software developer, teaching assistant, science museum guide, and researcher. Today she continues to enjoy these activities as a full-time front end developer, sharing her knowledge and experience in meetups and conferences. Shmuela is the founder of ngGirls and the organizer of Angular AfterHours meetup group.
-
+**Sobre a autora:** Shmuela Jacobs é desenvolvedora front-end e consultora sênior de Angular. 
+Durante os seus estudos acadêmicos \(Master of Science em Engenharia de Gerenciamento da Informação e Bacharel em Física\) e lá combinou suas paixões por códigos e ensino como desenvolvedora de software, assistente, guia de museu ciências e 
+pesquisadora. Hoje ela continua nessas atividades como desenvolvedora nos finais de semana em tempo integral, compartilhando seus conhecimentos e experiência em encontros e conferências. 
+Shmuela é fundadora do ngGirls e organizadora do grupo Meetup Angular AfterHours.
