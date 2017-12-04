@@ -1,8 +1,8 @@
-# Add items
+# Adicionando itens
 
-We want to add items to our list. With Angular we can do this easily and see the item added immediately. We will do this from within the `inputComponent` we created before. We'll change it so when hitting the Enter key or clicking the submit button, the value of the input box will become the title of the new item. And the new item will be added to the list.
+Queremos adicionar itens à nossa lista. Com Angular podemos fazer isso facilmente e ver o item adicionado imediatamente. Vamos fazer isso dentro do `inputComponent` que criamos antes. Vamos mudá-lo assim, ao pressionar a tecla Enter ou clicar no botão enviar, o valor da caixa de entrada se tornará o título do novo item. E o novo item será adicionado à lista.
 
-But we don't want the todo-input component to be responsible for adding a new item for the list. We want it to have minimal responsibility, and **delegate the action to its parent component**. One of the advantages of this approach is that this component will be reusable, and can be attached to a different action in different situations. 
+Mas não queremos que o componente todo-input seja responsável por adicionar um novo item para a lista. We want it to have minimal responsibility, and **delegate the action to its parent component**. One of the advantages of this approach is that this component will be reusable, and can be attached to a different action in different situations. 
 
 For example, in our case, we'll be able to use the `inputComponent` inside the `itemComponent`. Then we'll have an input box for each item and we'll be able to edit the item's title. In this case, pressing the Enter key or the save button will have a different effect.
 
@@ -50,5 +50,4 @@ addItem(title: string): void {
 }
 ```
 
-Try it out!
-
+Teste!
