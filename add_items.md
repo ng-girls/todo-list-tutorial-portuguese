@@ -2,27 +2,27 @@
 
 Queremos adicionar itens à nossa lista. Com Angular podemos fazer isso facilmente e ver o item adicionado imediatamente. Vamos fazer isso dentro do `inputComponent` que criamos antes. Vamos mudá-lo assim, ao pressionar a tecla Enter ou clicar no botão enviar, o valor da caixa de entrada se tornará o título do novo item. E o novo item será adicionado à lista.
 
-Mas não queremos que o componente todo-input seja responsável por adicionar um novo item para a lista. We want it to have minimal responsibility, and **delegate the action to its parent component**. One of the advantages of this approach is that this component will be reusable, and can be attached to a different action in different situations. 
+Mas não queremos que o componente todo-input seja responsável por adicionar um novo item para a lista. Queremos que ele tenha uma responsabilidade mínima, e **delegue a ação em seu componente pai**. Uma das vantagens desta abordagem é que este componente será reutilizável e pode ser anexado a uma ação diferente em diferentes situações.
 
-For example, in our case, we'll be able to use the `inputComponent` inside the `itemComponent`. Then we'll have an input box for each item and we'll be able to edit the item's title. In this case, pressing the Enter key or the save button will have a different effect.
+Por exemplo, no seu caso, poderemos usar o `inputComponent` dentro de `itemComponent`. Então, teremos uma caixa de entrada para cada item e poderemos editar o título do item. Neste caso, pressionar a tecla Enter ou o botão Salvar terá um efeito diferente.
 
-So what we actually want to do is to **emit an event** from the todo-input component whenever the title is changed. With Angular we can easily define and emit events from our components!
+Então, o que realmente queremos fazer é **emitir um evento** do componente todo-input sempre que o título for alterado. Com o Angular, podemos facilmente definir e emitir eventos de nossos componentes!
 
 ## @Output()
 
-Inside the `inputComponent` class add the following line, which defines an output for the component.
+Dentro da classe `inputComponent` adicione a linha de código a seguir, que define uma saída para o componente.
 
 ```ts
 @Output() submit: EventEmitter<string> = new EventEmitter();
 ```
 
-The output property is called `submit`. Make sure that Output and EventEmitter are added to the import declaration in the first line of the file: 
+A saída de propriedade será chamada de `submit`. Certifique-se de que Output e o EventEmitter foram adicionados à declaração de importação na primeira linha do arquivo:
 
 ```ts
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 ```
 
-Now, whenever we call `this.submit.emit()` an event will be emitted to the parent component. Let's call it in the changeTitle method:
+Agora, sempre que chamamos `this.submit.emit()` um evento será emitido para o componente pai. Vamos chamá-lo no método changeTitle:
 
 ```ts
 changeTitle(newTitle: string): void {
