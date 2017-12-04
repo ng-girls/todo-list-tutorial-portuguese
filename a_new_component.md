@@ -1,20 +1,20 @@
-# A new component
+# Um novo componente
 
-In this chapter we will write a whole new component. It will allow us adding an item to the todo list. It will be composed of the HTML elements `input` and `button`.
+Neste capítulo, escreveremos um novo componente. Isso nos permitirá adicionar um item à lista de tarefas. Será composto pelos elementos HTML `input` e `button`.
 
-We'll use Angular-CLI to generate all the needed files and boilerplate for us. In the terminal run:
+Utilizaremos o Angular-CLI para gerar todos os arquivos e boilerplate para nosso app. No seu terminal, execute o seguinte comando:
 
 ```cmd
 ng g c input -it
 ```
 
-> Note that you need to open a new terminal (window or tab) in order to execute
-> a new command. Inserting the command above to the shell where `ng serve` runs
-> won't have any effect.
+> Observe que você precisa abrir um novo terminal (janela ou guia) para executar
+> o novo comando. Inserindo o comando acima para o shell onde `ng serve` roda
+> não terá nenhum efeito.
 
-As we've seen before, `ng` is the command for using Angular-CLI. `g` is a shorthand for `generate`. `c` is a shorthand for `component`. `input` is the name we give to the component. `-it` is shorthand for `--inline-template`.
+Como vimos anteriormente, `ng` é o comando para ser usar o Angular-CLI. `g` é um atalho para `generate`. `c` é um atalho para  `component`. `input` é o nome que daremos ao componente. `-it` é um atalho para `--inline-template`.
 
-So the long version of the command is:
+Então, a versão longa do comando é:
 
 ```
 ng generate component input --inline-template
