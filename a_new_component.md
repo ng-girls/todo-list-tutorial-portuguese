@@ -20,19 +20,19 @@ Então, a versão longa do comando é:
 ng generate component input --inline-template
 ```
 
-> You can avoid using `-it` each time you generate a components by setting inline templates as a default in the configuration file `angular-cli.json`.
+> Você pode evitar usar `-it` cada vez que você gera um componente configurando modelos inline como padrão no arquivo de configuração `angular-cli.json`.
 >
-> Don't worry about the component name `input`. It will not replace HTMLs `input` element. That's thanks to the prefix that Angular-CLI gives to our components. The default prefix is `app`, so the component selector would be `app-input`. If you've created the project stating the prefix of your choice, or changed it afterwards in the file `angular-cli.json`, this will be the prefix of the selector. When we created the project we set the prefix to "todo", so the selector should be `todo-input`.
+> Não se preocupe com o nome do componente `input`. Ele não irá substituir os elementos HTML `input`. Isso é graças ao prefixo que a Angular-CLI dá aos nossos componentes. O prefixo padrão é `app`, então o seletor de componentes seria `app-input`. Se você criou o projeto indicando o prefixo de sua escolha, ou alterou-o posteriormente no arquivo `angular-cli.json`, este será o prefixo do seletor. Quando criamos o projeto, definimos o prefixo para "todo", então o seletor será `todo-input`.
 
-Let's take a look of what Angular-CLI created for us.
+Vejamos o que a Angular-CLI criou para nós.
 
-It created a new folder called `src/app/input`. There are three files there:
+Ele criou uma nova pasta chamada `src/app/input`. Existem três arquivos lá:
 
-* `input.component.css` - this is where the style that's specific to the component will be placed.
-* `input.component.spec.ts` - this is a file for testing the component. We will not deal with it on this tutorial.
-* `input.component.ts` - this is the component file where we will define its template and logic.
+* `input.component.css` - este é o arquivo em que o estilo específico do componente será colocado.
+* `input.component.spec.ts` - este é um arquivo para testar o componente. Não vamos lidar com isso neste tutorial.
+* `input.component.ts` - este é o arquivo componente onde vamos definir o modelo e a lógica.
 
-Open the file `input.component.ts`. You can see that Angular-CLI has generated a default template for us:
+Abra o arquivo `input.component.ts`. Você pode ver que o Angular-CLI gerou um template padrão:
 
 ```js
 template: `
@@ -42,15 +42,15 @@ template: `
   `,
 ```
 
-It has also added the selector according to the name we gave to the component, with the prefix we configured:
+Ele também adicionou um seletor de acordo com o nome que do componente, com o prefixo que configuramos:
 
 ```js
 selector: 'todo-input',
 ```
 
-We can use this component as is and see the result!
+Nós podemos usar este componente como está e ver o resultado!
 
-Open the root component file, `app.component.ts` and add the todo-input tag anywhere inside the template:
+Abra o arquivo root do componente, `app.component.ts` e adicione a tag do todo-input em qualquer lugar do template:
 
 ```js
 template: `
@@ -62,9 +62,9 @@ template: `
 `,
 ```
 
-Check what's new in the browser!
+Veja as atualizações no browser!
 
-Get back to our `input.component.ts` and add some content. First, add a `title` member which we will use as the todo item title:
+Retorne ao arquivo `input.component.ts` e adicione algum conteúdo. Primeiro, adicione um membro do `title` que usaremos como título do item todo:
 
 ```ts
 export class InputComponent implements OnInit {
@@ -72,11 +72,12 @@ export class InputComponent implements OnInit {
   ...
 ```
 
-It will not interfere with the `todo-root` component's `title`, since each component's content is encapsulated within it.
 
-You can give an initial string to the title, like we did in the `todo-root` component.
+Isso não irá interferir com o `title` do componente `todo-root`, uma vez que o conteúdo de cada componente encapsulado dentro dele.
 
-Next, add an input element, a button, and a binding to the title, to the template:
+Você pode adicionar uma string inicial ao título, como fizemos no componente `todo-root`.
+
+Em seguida, adicione um elemento de entrada, um botão e um binding ao título, dentro modelo:
 
 ```html
 <input>
@@ -84,7 +85,6 @@ Next, add an input element, a button, and a binding to the title, to the templat
 <p>The title is: {{ title }}</p>
 ```
 
-Check out the result!
+Veja os resultados!
 
-This component doesn't do much at this point. In the next chapters we will learn about the component class, and then implement the component's logic.
-
+Este componente não faz muito neste momento. Nos próximos capítulos, aprenderemos sobre a classe de componentes e, em seguida, implementaremos a lógica do componente.
