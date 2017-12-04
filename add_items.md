@@ -30,19 +30,19 @@ changeTitle(newTitle: string): void {
 }
 ```
 
-We delegate everything to the parent component - even actually changing the title of the item if needed. \(The method name may seem irrelevant right now. If you'd like you can change it to something more appropriate, such as `submitValue`. Remember to change it in the template as well.\)
+Delegamos tudo ao componente pai - mesmo que altere o título do item, se necessário. \(O nome do método pode parecer irrelevante agora. Se você quiser, pode mudá-lo para algo mais apropriado, como `submitValue`. Lembre de mudar isso no template também.\)
 
-We pass `newTitle` when we emit the event. Whatever we pass in `emit()` will be available for the parent as `$event`.
+Passamos `newTitle` quando emitimos o evento. O que quer que possamos passar em `emit ()` estará disponível para o pai como `$ event`.
 
-Nothing else is changed in the todo-input component. The events emitted from `keyup.enter` and `click` still call the same method, but the method itself has changed.
+Nada mais é alterado no componente todo-input. Os eventos emitidos por `keyup.enter` e` click` ainda chamam o mesmo método, mas o próprio método mudou.
 
-Now all we need to do is catch the event in the parent component and attach logic to it. Go to the app-root component and bind to the `submit` event in the `<todo-input>` component:
+Agora, tudo o que precisamos fazer é pegar o evento no componente principal e anexar lógica a ele. Vá para o componente app-root e vincule ao evento `submit` no componente` <todo-input>`:
 
 ```html
 <todo-input (submit)="addItem($event)"></todo-input>
 ```
 
-Now all is left is to implement the `addItem` method, which receives a string and adds it to the list:
+Agora tudo é deixado para implementar o método `addItem`, que recebe uma string e adiciona-a à lista:
 
 ```ts
 addItem(title: string): void {    
