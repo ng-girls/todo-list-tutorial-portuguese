@@ -1,11 +1,12 @@
-# Remove item
+# Remover item
 
-The user should be able to remove any item, whether it's still active or completed. Revoving an item will be done by clicking a button, aptly named "remove". In this tutorial, we'll learn how to add this functionality to our project.
+O usurio deve ser capaz de remover qualquer item. Independente se o item ainda est ativo ou se já foi completado.
+A remoção de um item será feita a partir de um click em um botão, apropriadamente chamado de 'Remover'. Neste tutorial, iremos aprender como adicionar essa funcionalidade ao nosso projeto.
 
-### File: item.component.ts
-First, we need to add the button to the item, so we'll work on the file *item.component.ts*.
+### Arquivo: item.component.ts
+Primeiramente, precisamos adicionar o botão ao item, então iremos trabalhar no arquivo *item.component.ts*.
 
-(a) Add a **(click)** event to the **remove** button in the item template:
+(a) Adicione um evento de **(click)** ao botão **remover** no template do item.
 ```
 <button (click)="removeItem()">
   remove
