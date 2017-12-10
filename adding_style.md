@@ -1,12 +1,12 @@
-# Adding Style
+# Adicionando estilo
 
-With Angular we can give style to components, in a way that will not affect the rest of the application. It's a good practice to encapsulate the component-related style this way.
+Com o Angular, podemos dar estilo aos componentes, de uma forma que não afetará o resto da aplicação. É uma boa prática encapsular o estilo relacionado aos componentes desta forma.
 
-We can also state general style rules to be used across the application. This is good for creating the same look-and-feel for all our components. For example, we can decide what color palette will be used as the theme of our app. Then, if we'd like to change the colors or offer different themes, we can change it in just one place, instead of in each component.
+Também podemos indicar regras de estilo geral para serem usadas em toda a aplicação. Isso é bom para criar o mesmo look-and-feel para todos os nossos componentes. Por exemplo, podemos decidir qual paleta de cores será usada como o tema do nosso aplicativo. Então, se quisermos mudar as cores ou oferecer diferentes temas, podemos mudá-lo em um só lugar, em vez de em cada componente.
 
-Angular gives us different style encapsulation methods, but we'll stick to the default.
+Angular nos dá diferentes métodos de encapsulamento de estilo, mas nos seguiremos com o padrão.
 
-Angular-CLI has generated a general stylesheet for us at `src/style.css`. Paste the following code into this file: 
+Angular-CLI gerou um estilo geral no `src/style.css`. Cole o código a seguir no arquivo de estilo: 
 
 ```css
 html, body, div, span,
@@ -50,8 +50,8 @@ ol, ul {
 }
 
 ```
+>Como o projeto irá acessar este arquivo? No arquivo de configuração Angular-CLI `.angular-cli.json` em `apps[0].styles` você pode indicar os arquivos para a ferramenta de compilação para levar e adicionar ao projeto. Você pode abrir as ferramentas de desenvolvimento do navegador e ver o estilo dentro do elemento:
 
->How does the project know to look at this file? In Angular-CLI configuration file `.angular-cli.json` under `apps[0].styles` you can state the files for the build tool to take and add to the project. You can open the browser's dev tools and see the style inside the element: 
 ```html
 <html>
   ...
@@ -67,9 +67,10 @@ ol, ul {
 ```
 
 
-Now lets add style specifically to the list-manager component. 
+Agora, vamos adicionar um estilo específico para o componente list-manager.
 
-Open the file `list-manager.component.css` and paste the following style inside:
+Abra o arquivo `list-manager.component.css` e cole o estilo abaixo:
+
 ```css
 .todo-app {
   position: relative;
@@ -125,10 +126,10 @@ Open the file `list-manager.component.css` and paste the following style inside:
 }
 ```
 
-How does this stylesheet gets attached to the `list-manager` component? 
-Look at the file `list-manager.component.ts`. One of the properties in the object passed to the `@Component` decorator is `styleUrls`. It's a list of stylesheets to be used by Angular, which encapsulates the style within the component. 
+Como essa folha de estilo é anexada ao componente `list-manager`?
+Olhe o arquivo `list-manager.component.ts`. Uma das propriedades no objeto passado para o decorator `@Component` é `styleUrls`. É uma lista de folhas de estilo a serem usadas pelo Angular, que encapsula o estilo dentro do componente.
 
-Add the following style to `input.component.css`:
+Adicione o seguinte estilo a `input.component.css`:
 ```css
 .todo-input {
   padding: 4px 10px 4px;
@@ -147,7 +148,7 @@ Add the following style to `input.component.css`:
 }
 ```
 
-Add the following style to `item.component.css`:
+Adicione o seguinte estilo a `item.component.css`:
 ```css
 .todo-item {
   padding: 10px 0;
@@ -177,7 +178,7 @@ Add the following style to `item.component.css`:
 }
 
 ```
-Note: Don't forget to put the CSS-classes to the templace-code of your specified component like this:
+Observe: Não se esqueça de colocar as classes CSS no template de código do seu componente, como o exemplo abaixo:
 ```ts
  @Component({
     ...
@@ -185,6 +186,6 @@ Note: Don't forget to put the CSS-classes to the templace-code of your specified
           <button class="btn btn-red" (click)="removeItem()">
           `,
 ```
-You can change the style as you wish - the size of elements, the colors - however you'd like!
+Você pode mudar o estilo como você quiser - o tamanho dos elementos, as cores - tudo o que você quiser!
 
-Note: You can use SCSS files in the project, which is a nicer way to write style. It has great features that help the developer. SCSS files are compiled to css when the project is built. 
+Observe: você pode usar arquivos SCSS no projeto, que é uma maneira mais agradável de escrever estilo e possui excelentes recursos que ajudam o desenvolvedor. Os arquivos SCSS são compilados para o css quando o projeto é criado.
