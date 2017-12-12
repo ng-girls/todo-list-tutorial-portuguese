@@ -1,5 +1,6 @@
-# Adding A Checkbox
+# Adicionando uma CheckBox
 
+Agora nós somos capazes de interagir com nossa lista removendo itens. Mas e se quisermos completar itens e ainda poder vê-los em nossa lista, por exemplo, ter uma 
 We are now able to interact with our todo list by removing items. But what if we want to complete items and still be able to see them on our list, for example, have a line-strike through the todo title? Enter the checkbox!
 
 We will look at:
