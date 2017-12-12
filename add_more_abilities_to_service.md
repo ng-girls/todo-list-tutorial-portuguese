@@ -1,19 +1,19 @@
-# Add more abilities to service
+# Adicionando mais habilidades ao serviço
 
-# In this chapter we would improve our service by adding more abilities.
+# Neste capítulo nós iremos melhorar nosso serviço adicionando novas habilidades.
 
-First, lets open our app's service file which is available at - `app/todo-list.service.ts`
+Primeiro, vamos abrir o arquivo de serviço do nosso app que está disponível em `app/todo-list.service.ts`
 
-There we'll add a new function to the service, called `addItem`, like so:
+Lá, iremos adicionar uma nova função ao serviço, chamada addItem, como demonstrado abaixo:
 ```javascript
 addItem(item): void { 
     this.todoList.push(item); 
 } 
 ```
 
-This will allow us to call the same function from everywhere across the application thus making our app more easy to maintain.
+Isso irá permitir que o aplicativo chame a mesma função em qualquer lugar da aplicação deixando nosso app mais fácil de manter.
 
-And now we can change our code in `app/list-manager/list-manager.component.ts` to call the `addItem` function directly from the service like so: 
+Agora nós podemos mudar nosso código em `app/list-manager/list-manager.component.ts` para chamar a função `addItem` diretamente do serviço, como: 
 
 ```javascript
 addItem(item): void { 
@@ -21,6 +21,7 @@ addItem(item): void {
 } 
 ```
 
-- There may be additional logic when calling these methods, i.e. saving the changes in the DB (we will implement it later on)
-- A better way to handle data is using immutable objects, then there will be no binding - the references will change (but we won’t implement redux in this tutorial at the moment)
+- Pode ser necessário utilizar lógica adicional quando esses métodos forem chamados no DB (nós iremos implementar isso mais tarde)
+- É considerado um jeito melhor de lidar com dados se os objetos forem imutáveis, assim não haverão ligações - as referências irão mudar (porém nós não iremos implementar redux nesse tutorial agora).
+
 
