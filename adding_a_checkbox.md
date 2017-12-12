@@ -35,10 +35,9 @@ Mas espere! Como esse código irá afetar a lista quando estamos apenas tocando 
 <some-element [ngClass]="{'first': true, 'second': true, 'third': false}">...</some-element>
 ```
 
+No exemplo acima, a classe 'first' e a 'second' vão aparecer no elemento porque tem valor verdadeiro, já a 'third' não irá ser aplicada pois o valor é falso. E é aqui que nosso código anterior começa a fazer sentido. Nossa função completeItem() irá mudar entre valores verdadeiros e falsos, ditando quando uma classe será aplicada ou removida.
 
-The 'first' and 'second' class will be applied to the element because they are given a true value, whereas, the 'third' class will not be applied because it is given a false value. So this is where our earlier code comes into play. Our completeItem() function will toggle between true and false values, thus dictating whether a class should be applied or removed.
-
-Let's add this NgClass directive to our todo title now:
+Vamos adicionar nossa NgClass no título da nossa lista agora:
 
 ```html
 <p class="todo-title" [ngClass]="{'todo-complete': isComplete}">
@@ -46,7 +45,7 @@ Let's add this NgClass directive to our todo title now:
 </p>
 ```
 
-And finally, add the css to our item.component.css file
+E finalmente, adicione o css em nosso arquivo item.component.css
 
 ```css
   .todo-complete {
@@ -54,4 +53,4 @@ And finally, add the css to our item.component.css file
   }
 ```
 
-Voila! Checking the checkbox should apply a line through the todo title, and unchecking the checkbox should remove the line.
+Voila! Quando você clica na checkbox, o css adiciona uma linha no título da lista, e se clicar novamente a checkbox irá remover a linha.
