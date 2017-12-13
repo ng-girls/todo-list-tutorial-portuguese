@@ -3,7 +3,7 @@
 
 ## Definição de classes
 
-A Classe é uma estrutura programática especial. Ela é definida com **membros** que podem ser **propriedades** (variáveis) e **métodos** (funções). As instâncias da uma classe são geralmente criadas chamando-se o operador ```new```: ```let minhaInstancia = new minhaClasse();```. A instância criada é um objeto no qual você poderá chamar os métodos da classe, obter e definir os valores de suas propriedades. É possível criar múltiplas cópias a partir de uma mesma classe.
+A Classe é uma estrutura programática especial. Ela é definida com **membros** que podem ser **propriedades** (variáveis) e **métodos** (funções). As instâncias da uma classe são geralmente criadas chamando-se o operador ```new```: ```let myInstance = new myClass();```. A instância criada é um objeto no qual você poderá chamar os métodos da classe, obter e definir os valores de suas propriedades. É possível criar múltiplas cópias a partir de uma mesma classe.
 
 ### No Angular...
 
@@ -50,43 +50,43 @@ Outro método que não vimos no componente `todo-root` é o construtor. Este é 
 
 ### Propriedades
 
-A propriedade `titulo` que adicionamos é utilizada para armazenar um valor, no nosso caso, uma string. Cada instância da classe terá sua própria variável `titulo`, o que significa que você pode alterar o valor do `titulo` em uma instância, mas o valor permanecerá o mesmo para as outras instâncias.
+A propriedade `title` que adicionamos é utilizada para armazenar um valor, no nosso caso, uma string. Cada instância da classe terá sua própria variável `title`, o que significa que você pode alterar o valor do `title` em uma instância, mas o valor permanecerá o mesmo para as outras instâncias.
 
 Você pode declarar uma propriedade sem inicializá-la:
 ```ts
-titulo: string;
+title: string;
 ```
 
 Em seguida, você pode atribuir um valor em um estágio posterior, por exemplo, no construtor ou no método ngOnInit. Ao referenciar um membro da classe de dentro de um método desta classe, você deve prefixá-lo com `this`. Esta é uma propriedade especial que aponta para a instância atual.
 
-Tente definir um valor diferente para o `título` dentro do construtor. Veja o resultado no navegador:
+Tente definir um valor diferente para o `title` dentro do construtor. Veja o resultado no navegador:
 
 ```ts
-titulo: string = 'meu título';
+title: string = 'meu título';
 
 constructor() {
-  this.titulo = 'Olá mundo';
+  this.title = 'Olá mundo';
 }
 ```
 
-Tente alterar o valor de `titulo` dentro do método `ngOnInit`. Qual valor será exibido na tela?
+Tente alterar o valor de `title` dentro do método `ngOnInit`. Qual valor será exibido na tela?
 
 ### Métodos
 
-Vamos adicionar um método que altera o valor de `titulo` de acordo com o argumento que passarmos. O método terá um parâmetro do tipo `string`. Adicione-o dentro do corpo da classe (mas não dentro de outro método):
+Vamos adicionar um método que altera o valor de `title` de acordo com o argumento que passarmos. O método terá um parâmetro do tipo `string`. Adicione-o dentro do corpo da classe (mas não dentro de outro método):
 
 ```ts
-mudaTitulo(novoTitulo: string): void {
-  this.titulo = novoTitulo;
+changeTitle(newTitle: string): void {
+  this.title = newTitle;
 }
 ```
 
-O método é chamado `mudaTitulo`. Ele não tem uma declaração de retorno, então observamos que ela "retorna void" (vazio). Podemos mudar isso se retornarmos um valor real. Por exemplo:
+O método é chamado `changeTitle`. Ele não tem uma declaração de retorno, então observamos que ela retorna "void" (vazio). Podemos mudar isso se retornarmos um valor real. Por exemplo:
 
 ```ts
-mudaTitulo(novoTitulo: string): string {
-  this.titulo = novoTitulo;
-  return this.titulo;
+changeTitle(newTitle: string): string {
+  this.title = newTitle;
+  return this.title;
 }
 ```
 
@@ -94,11 +94,11 @@ Este método não é usado em nenhum lugar. Podemos chamá-lo dentro de outro m�
 
 ```ts
 constructor() {
-  this.mudaTitulo('Eu amo Angular');
+  this.changeTitle('Eu amo Angular');
 }
 ```
 
-Você pode tentar chamar o método com argumentos diferentes (a string passada dentro dos parênteses) no ngOnInit. Tente chamá-lo antes ou depois de atribuir um valor diretamente ao `titulo`. Tente chamá-lo algumas vezes dentro do mesmo método. Veja o resultado no navegador.
+Você pode tentar chamar o método com argumentos diferentes (a string passada dentro dos parênteses) no ngOnInit. Tente chamá-lo antes ou depois de atribuir um valor diretamente ao `title`. Tente chamá-lo algumas vezes dentro do mesmo método. Veja o resultado no navegador.
 
 
 ### Dicas de depuração (debug)
@@ -108,8 +108,8 @@ Você sempre pode usar o `console.log(algumValor)` dentro de métodos da classe.
 ```ts
 constructor() {
   console.log('dentro do construtor');
-  this.mudaTitulo('Eu amo Angular');
-  console.log(this.titulo);
+  this.changeTitle('Eu amo Angular');
+  console.log(this.title);
 }
 ```
 
