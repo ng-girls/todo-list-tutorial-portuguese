@@ -1,41 +1,38 @@
 # Component
 
-One approach in Web development \(and software development generally\) is component-based architecture. In the past years it gains a lot of popularity. What is a component?
+Uma abordagem em desenvolvimento Web \(e desenvolvimento de software em geral\) é a arquitetura baseada em componentes (component-based architecture). No passar dos anos isso ganhou muita popularidade. O que é um componente? 
 
-Helmut Petritsch defines in [Service-Oriented Architecture \(SOA\) vs. Component Based Architecture](http://petritsch.co.at/download/SOA_vs_component_based.pdf):
+Helmut Petritsch define em [Service-Oriented Architecture \(SOA\) vs. Component Based Architecture](http://petritsch.co.at/download/SOA_vs_component_based.pdf):
 
-> A component is a software object, meant to interact with other components, encapsulating certain functionality or a set of functionalities. A component has a clearly defined interface and conforms to a prescribed behaviour common to all components within an architecture.
+> Um componente é um objeto de software, feito para interagir com outros componentes, encapsulando certas funcionalidades ou um conjunto de funcionalidades. Um componente possui uma interface claramente definida e está em conformidade com um comportamento prescrito comum a todos os componentes dentro de uma arquitetura.
 
-In Web applications, **a component controls a patch of screen called a view**. It's a part of what you will eventually see on the screen. It has a template, which defines its visual structure. It also has logic which defines the behavior and the dynamic values. The logic part is JavaScript code and is called the controller.
+Em aplicações Web, **um componente controla um fragmento de tela chamado de View (visualização)**. É uma parte do que você vai eventualmente ver na tela. Tem um template, no qual define sua estrutura visual. Também tem uma lógica no qual define o comportamento e os valores dinamicos. A parte lógica é código Javascript e é chamado de controlador. 
 
-Here's a diagram of a component in Angular, with the result below.  
+Aqui está o diagrama de um componente em Angular, com o resultado abaixo. 
 ![Angular 2 Component](Angular Component.001.jpeg)
 
-Directives, pipes and services are other building blocks in Angular, which we will discuss later in the tutorial.
+Diretivas, pipes e serviços são outros blocos de construção em Angular, no qual vamos discutir mais tarde neste tutorial. 
 
-Let's take a look at the component that was created by Angular-CLI. All the relevant files exist in the folder `src/app`. Open the file `app.component.ts`.
+Vamos dar uma olhada no componente que foi criado em Angular-CLI. Todos os arquivos relevantes estão na pasta `src/app`. Abra o arquivo `app.components.ts`.
 
-Just like ngModules that we saw in the previous chapter, a component is also defined by a class with a decorator. This is the class definition:
-
+Igual ao ngModules que nós vimos no capitulo anterior, um componente é também definido por uma classe com um decorador. Está é a definição da classe:
 ```js
 export class AppComponent {
-  title = 'todo works!';
+  title = 'todo funciona!';
 }
 ```
+Tem um membro chamado "titulo". É uma variavel no qual você pode atribuir um valor. O valor atribuido aqui é a string "todo funciona!".
 
-It has one member called "title". It is a variable to which you can assign a value. The value assigned to it here is the string "todo works!".
-
-Angular takes care of synchronizing the members of the component with the component template. So we can easily use the member `title` in the template. Take a look at the  template attached to the component in the :
+O Angular cuida da sincronização dos membros do componente com o componente template. Então podemos usar facilmente o membro `title` no template. Dê uma olhada no template anexado ao componente em:
 
 ```html
 <h1>
   {{ title }}
 </h1>
 ```
+As chaves duplas e seu conteúdo são chamados de **Interpolação**. Isso é uma das formas de ** data binding ** em Angular. Como nós mencionamos anteriormente, o código neste arquivo não é usado como quando o navegador renderiza o componente. Angular compila isso para o código Javascript. Em um dos passos de compilação ele procura pela Interpolações dentro do template. **O conteúdo da interpolação é uma expressão, escrita em Javascript.** Em tempo de execução a expressão é avaliada, e aí você vê o resultado. 
 
-The double curly braces and their content are called **Interpolation**. This is one form of ** data binding** in Angular. As we mentioned before, the code in this file is not used as is when the browser renders the component. Angular compiles it to JavaScript code. In one of the compilation steps it looks for Interpolations inside the template. **The content of the Interpolation is an expression, written in JavaScript.** In run time the expression is evaluated, and then you see the result.
-
-Interpolation is one of the strongest, most basic features in Angular. It exists from the very beginning of Angular - in the first version. It makes it really simple to insert dynamic data into the view.
+Interpolação é um dass mais fortes e mais básicas caracteristicas em Angular. Existe desde o inicio do Angular - na primeira versão. Isso torna realmente simples a inserção de dados dinâmicos no View.  
 
 In this component, the expression is simply the member of the component class, `title`. **Let's try to change it**. Try out the following and see the result in the browser. \(With every change you make in the file, the browser will refresh automatically!\)
 
