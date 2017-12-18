@@ -1,26 +1,25 @@
 # Adicionando uma CheckBox
 
-Agora nós somos capazes de interagir com nossa lista removendo itens. Mas e se quisermos completar itens e ainda poder vê-los em nossa lista, por exemplo, ter uma 
-We are now able to interact with our todo list by removing items. But what if we want to complete items and still be able to see them on our list, for example, have a line-strike through the todo title? Enter the checkbox!
+Agora nós somos capazes de interagir com nossa lista removendo itens. Mas e se quisermos completar itens e ainda poder vê-los em nossa lista, por exemplo, ter uma marcação no título da nossa lista? Aí entra o Checkbox!
 
-We will look at:
+Nós iremos ver como:
 
-* Adding a checkbox
-* Adding functionality when you click the checkbox so that a CSS class, which adds a strike-through style, is added to our todo items
-* Edit the todo title so that it will respond to the checkbox
-* Adding a new CSS Class
+* Adicionar uma checkbox
+* Adicionar uma funcionalidade que quando você clica na checkbox adiciona uma classe CSS, que adiciona um estilo strike-through é adicionada aos nossos itens da lista
+* Editar a lista para responder ao checkbox
+* Adicionar uma nova classe CSS
 
-Let's go ahead and add a checkbox into our item.component.ts file. Place the following code right before the `<p>` tag containing `{{ todoItem.title}}`:
+Agora vamos avançar e adicionar uma checkbox em nosso arquivo item.component.ts. Coloque o código abaixo antes da tag `<p>` contendo `{{ todoItem.title}}`:
 
 ```html
   <input type="checkbox"/>
 ```
-Now, in order for the checkbox to do anything we need to add a click event which we will call completeItem(). Let's do that now:
+Agora, para que o checkbox faça alguma coisa, precisamos adicionar um evento de clique que chamaremos de completeItem(). Vamos fazer isso agora:
 
 ```html
   <input type="checkbox" (click)="completeItem()"/>
 ```
-When we click on the checkbox it will run the completeItem() function. Let's talk about what this function needs to accomplish. We want to be able to toggle some CSS styling on the todo title so that when the checkbox is checked it will have a line-strike through it, and no line-strike when unchecked. In order to achieve this we will toggle a variable to be either true or false to represent checked or unchecked states. Add the following code to the ItemComponent class:
+Quando clicamos no checkbox o programa irá rodar a função completeItem(). Vamos falar sobre o que essa função precisa fazer. Nós queremos adicionar estilos com CSS em nosso título, assim, quando a checkbox está clicada teremos uma linha riscando ela, e nenhuma linha quando não está clicada. Para fazer isso, nós vamos colocar uma variável que será positiva ou negativa para representar os dois estados da nossa checkbox. Adicione o código abaixo na classe ItemComponent:
 
 ```js
 isComplete: boolean = false;
@@ -30,15 +29,15 @@ completeItem() {
 }
 ```
 
-But wait! How is any of this going to affect the todo title when we're only touching the checkbox??? Well, Angular2 has this wonderful directive called NgClass. This directive applies or removes a class based on a boolean value (true or false). There are many ways to use this directive(see documentation: https://angular.io/docs/ts/latest/api/common/index/NgClass-directive.html) but we will focus on using it like so:
+Mas espere! Como esse código irá afetar a lista quando estamos apenas tocando a checkbox? Bom, o Angular2 tem maravilhosas diretrizes chamadas NgClass. Essas diretrizes aplicam ou removem uma classe baseada num valor booleano (verdadeiro ou falso). Existem diversas maneiras de utilizar a NgClass (veja a documentação: https://angular.io/docs/ts/latest/api/common/index/NgClass-directive.html), mas nós iremos focar na utilização abaixo: 
 
 ```html
 <some-element [ngClass]="{'first': true, 'second': true, 'third': false}">...</some-element>
 ```
 
-The 'first' and 'second' class will be applied to the element because they are given a true value, whereas, the 'third' class will not be applied because it is given a false value. So this is where our earlier code comes into play. Our completeItem() function will toggle between true and false values, thus dictating whether a class should be applied or removed.
+No exemplo acima, a classe 'first' e a 'second' vão aparecer no elemento porque tem valor verdadeiro, já a 'third' não irá ser aplicada pois o valor é falso. E é aqui que nosso código anterior começa a fazer sentido. Nossa função completeItem() irá mudar entre valores verdadeiros e falsos, ditando quando uma classe será aplicada ou removida.
 
-Let's add this NgClass directive to our todo title now:
+Vamos adicionar nossa NgClass no título da nossa lista agora:
 
 ```html
 <p class="todo-title" [ngClass]="{'todo-complete': isComplete}">
@@ -46,7 +45,7 @@ Let's add this NgClass directive to our todo title now:
 </p>
 ```
 
-And finally, add the css to our item.component.css file
+E finalmente, adicione o css em nosso arquivo item.component.css
 
 ```css
   .todo-complete {
@@ -54,4 +53,4 @@ And finally, add the css to our item.component.css file
   }
 ```
 
-Voila! Checking the checkbox should apply a line through the todo title, and unchecking the checkbox should remove the line.
+Voila! Quando você clica na checkbox, o css adiciona uma linha no título da lista, e se clicar novamente a checkbox irá remover a linha.
