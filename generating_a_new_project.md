@@ -12,20 +12,19 @@ Neste capítulo, mostramos todos os arquivos e pastas criados pelo Angular-CLI q
 
 ### Prefixo de aplicação
 
-The prefix is used to differentiate the components that you create in your application from components you use from other sources, and from HTML components. You can give your initials as the prefix if it's a personal project. If you're collaborating or working for a client, you can have the initials of the project name as the prefix. In this tutorial, the prefix will simply be `todo`.
+O prefixo é usado para diferenciar os componentes que você cria em sua aplicação dos componentes de outras fontes e de componentes HTML. Você pode dar suas iniciais como o prefixo se for um projeto pessoal. Se você está colaborando ou trabalhando para um cliente, você pode ter as iniciais do nome do projeto como o prefixo. Neste tutorial, o prefixo simplesmente será `todo`.
 
-Angular-CLI generated a configuration file for its own use: `angular-cli.json`. Open this file, find the `prefix` property and change its value from `app` to `todo`. From now on, each component and directive you will create using Angular-CLI will have this prefix in its selector.
+Angular-CLI gerou um arquivo de configuração para uso próprio: `angular-cli.json`. Abra este arquivo, encontre a propriedade `prefix` e altere seu valor de` app` para `todo`. De agora em diante, cada componente e diretiva que você criará usando Angular-CLI terá esse prefixo em seu seletor.
 
-We could have defined the prefix when we created the project, by adding `--prefix <prefix>`. Then even the root component that is generated would have this prefix. But we're fine with its current selector, `app-root`, and we will not change it at this moment.
+Poderíamos ter definido o prefixo quando criamos o projeto, adicionando `--prefix <prefixo>`. Então, mesmo o componente raiz que é gerado teria esse prefixo. Mas estamos bem com seu seletor atual, `app-root`, e não o mudaremos neste momento. 
 
 ### Estrutura da Aplicação
 
-the first thing to start with when you work with the cli is scaffold the initial project.  
-to do so you can simply create a folder and write `ng init`  
-from that point angular-cli will download all the dependencies and install them.  
-other way to scaffold the initial project is writing `ng new <project-name>` and angular-cli will create the folder for you and `ng init` in that folder.
+A primeira coisa a começar quando você trabalha com o cli é o projeto inicial do scaffold. Para fazê-lo, você pode simplesmente criar uma pasta e escrever `ng init` e a partir deste ponto o Angular-CLI irá baixar todas as dependências e instalá-las.
+Outra forma de implementar o projeto inicial é escrever `ng new <project-name>` e o Angular-CLI criará a pasta para você e o `ng init` nessa pasta.
 
-after we created the project we will get file in this format
+Depois de criarmos o projeto, iremos receber o arquivo nesse formato
+
 
 ```
 ├── angular-cli.json // angular cli configuration
@@ -57,14 +56,11 @@ after we created the project we will get file in this format
 └── tslint.json // linting configuration
 ```
 
-lets skip all the configurations files for now and jump right to the folder structure.  
-the app is the main component of the application from that point we start our app.  
-we will cover components in more depth in later tutorial but the main idea of the project is that we create a components and connect them to each other until we have an application.
+Vamos ignorar todos os arquivos de configurações por agora e pular diretamente para a estrutura da pasta. O aplicativo é o principal componente da aplicação e é a partir desse ponto em que iniciamos o nosso aplicativo.
+Vamos abordar os componentes mais detalhadamente no próximo tutorial, mas a principal idéia do projeto é que criamos componentes e os conectamos até ter um aplicativo.
 
-with angular-cli we can generate components and some other files which can help us in the future.  
-to do so we should write `ng generate component <component name>` for components and `ng generate route <route path>` for routes and many more which can be review in [angular cli docs](https://github.com/angular/angular-cli#generating-components-directives-pipes-and-services)
+Com Angular-CLI podemos gerar componentes e alguns outros arquivos que podem nos ajudar no futuro. Para fezê-los, devemos escrever `ng generate component <component name>` para componentes e `ng generate route <route path>` para rotas e muitos mais que podem ser revisados ​​em [angular cli docs](https://github.com/angular/angular-cli#generating-components-directives-pipes-and-services).
 
-now you probably ask how do you see and review your application?  
-your command for that would be `ng serve` and you'll be able to access you app in `http://localhost:4200`  
-and last but not least if you want to build your application for production you should write `ng build` and there you have it, easy way to scaffold you Angular application
+Agora, você provavelmente pergunta como você vê e testa sua aplicação?
+Para isso, você deverá rodar o comando `ng serve` e acessar sua aplicação em `http://localhost:4200` e por último, mas não menos importante, se você quer enviar seu projeto para produção, você deve escrever `ng build`.
 
