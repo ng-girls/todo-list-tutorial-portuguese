@@ -67,22 +67,22 @@ O objeto do evento emitido nos eventos `keyup` tem uma referência ao elemento q
        (keyup)="changeTitle($event.target.value)">
 ```
 
-Check it out in the browser. Now with every key stroke, you can see the title changes and reflects the input value.
+Teste em seu navegador. Agora, com cada tecla apertada, você consegue ver as mudanças no título e elas refletem o valor do input.
 
-### Pressing the Enter key
-You can limit the change to only a special key stroke, in our case it's the Enter key. Angular makes it really easy for us. The `keyup` event has properties which are more specific events. So just add the name of the key you'd like to listen to:
+### Apertando a tecla Enter
+Você pode limitar a mudança a um clique de tecla, em seu caso é o Enter. Angular deixa tudo bem mais fácil pra nós. O evento `keyup` tem propriedades que são eventos mais específicos. Então, adicione o nome da tecla que seu evento escutará:
 
 ```html
 <input [value]="title" 
        (keyup.enter)="changeTitle($event.target.value)">
 ```
 
-Now the title will change only when the user hits the Enter key while typing in the input.
+Agora o título irá mudar apenas quando o usuário apertar a tecla Enter enquanto digita no input.
 
-### Tip - explore the $event
-You can change the changeTitle method to log the `$event` object in the console. This way you can explore it and see what properties it has. 
+### Dica - explore o $event
+Você pode mudar o método changeTitle para registrar o objeto `$event` no console. Dessa forma você pode explorar e ver quais propriedades ele tem.
 
-Change the method `changeTitle`:
+Mude o método para `changeTitle`:
 ```ts
 changeTitle(event): void {
   console.log(event);
@@ -90,12 +90,15 @@ changeTitle(event): void {
 }
 ```
 
-Now change the argument you're passing in the template:
+Agora, mude o argumento que você está passando no modelo:
+
 ```html
 <input [value]="title" 
        (keyup.enter)="changeTitle($event)">
 ```
 
-Try it out!
+Teste!
 
-Don't forget to change back the code before we go on.
+Não esqueça de voltar para o código anterior à dica antes de continuar o tutorial.
+
+**Traduzido por Mariana Abad**
