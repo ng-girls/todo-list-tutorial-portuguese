@@ -33,7 +33,7 @@ Dentro da classe recém criada `itemComponent` (itemComponent) adicione a linha:
 ```ts
 @Input() itemTitle: string;
 ```
-It tells the component to expect an input of type string and to assign it to the class member called `itemTitle`. Certifique-se  de que o `Input` iestá adicionado na declaração de importação na primeira linha do arquivo.Agora, podemos usá-lo  dentro do template `itemComponent`:
+Ele diz ao componente que espera uma entrada do tipo string e atribue ao membro da classe chamada `itemTitle`. Certifique-se  de que o `Input` iestá adicionado na declaração de importação na primeira linha do arquivo.Agora, podemos usá-lo  dentro do template `itemComponent`:
 ```html
 {{ itemTitle }}
 ```
