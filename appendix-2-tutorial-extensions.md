@@ -1,5 +1,5 @@
-# Tutorial Extensions
+# Apliando o Tutorial
 
-Here you will find links and ideas for extending the todo-list app. 
+Aqui você encontrará links e idéias para ampliar o aplicativo todo-list.
 
-- [Add authentication using Auth0](https://kmaida.gitbooks.io/authenticate-angular-with-auth0/)
+- [Adicionar autenticação usando Auth0 - em inglês](https://kmaida.gitbooks.io/authenticate-angular-with-auth0/)
