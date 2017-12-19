@@ -101,4 +101,3 @@ Teste!
 
 Não esqueça de voltar para o código anterior à dica antes de continuar o tutorial.
 
-**Traduzido por Mariana Abad**
