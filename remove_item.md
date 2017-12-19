@@ -1,6 +1,6 @@
 # Remover item
 
-O usurio deve ser capaz de remover qualquer item. Independente se o item ainda está ativo ou se já foi completado.
+O usuário deve ser capaz de remover qualquer item. Independente se o item ainda está ativo ou se já foi completado.
 A remoção de um item será feita a partir de um click em um botão, apropriadamente chamado de 'Remover'. Neste tutorial, iremos aprender como adicionar essa funcionalidade ao nosso projeto.
 
 ### Arquivo: item.component.ts
@@ -22,7 +22,7 @@ Certifique-se de que importamos o EventEmitter e o Output em nossa classe:
 ```
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 ```
-(c) Adicione uma função a classe ItemComponent que realmente irá emitir o evento. Essa função ser chamada quando o usuário clicar no botão **remover**:
+(c) Adicione uma função a classe ItemComponent que realmente irá emitir o evento. Essa função será chamada quando o usuário clicar no botão **remover**:
 ```
 removeItem() {
   this.remove.emit(this.todoItem);
