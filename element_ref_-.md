@@ -60,7 +60,7 @@ Em seguida, vamos construir a lista de itens todo.
 
 ### Dica - explore a referência do elemento
 
-Assim como fizemos no capítulo anterior, quando registramos $event, você pode fazer o mesmo com `#inputElement`. Altere o método `changeTitle` para que ele receba toda a referência do elemento e registre-o no console.
+Assim como fizemos no capítulo anterior, quando registramos $event, você pode fazer o mesmo com `#ResourcesinputElement`. Altere o método `changeTitle` para que ele receba toda a referência do elemento e registre-o no console.
 
 ```html
 <input [value]="title"              
@@ -79,7 +79,7 @@ changeTitle(inputElementReference): void {
 
 ```
 
-## Resources
+## Recursos
 
 [Angular Template Reference Variables](https://angular.io/docs/ts/latest/guide/template-syntax.html#!#ref-vars)
 

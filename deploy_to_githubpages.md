@@ -7,12 +7,12 @@ https://github.com/angular-buch/angular-cli-ghpages
 * Você precisa fazer um commit de todas as suas alterações que você fez no projeto
 * Você precisa instalar o angular-cli-ghpages
 
-## Criando um usuáario no Github
+## Criando um usuário no Github
 Se você já possui um usuário no Github você pode pular esse passo.
 Criar um usuário no Github: https://github.com/
 Preencha o formulário de registro e faça a validação de seu e-mail
 
-## Criar um reposiório de seu APP
+## Criar um repositório de seu APP
 Depois de fazer o login no Github.
 Click no botão `Start a project`, e dê o nome do repositório de `ng-girls-todo` ou qualquer outro nome que você desejar.
 
