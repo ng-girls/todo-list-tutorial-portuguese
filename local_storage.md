@@ -325,7 +325,7 @@ A mudança acima irá garantir que quando adicionamos um item, nossa lista tamb�
 
 ## Resumo
 
-Neste tuturoal aprendemos o que é armazenamento local e como usá-lo.
+Neste tuturial aprendemos o que é armazenamento local e como usá-lo.
 Vimos que o armazenamento local é uma ótima e direta ferramenta para desenvolvedores armazenar dados localmente nos computadores/dispositivos dos usuários.
 Nós então implementamos um novo serviço que usa o armazenamento local para guardar os itens da lista de tarefas, e atualizamos o resto dos componentes para oferecer suporte esse novo serviço.
 
