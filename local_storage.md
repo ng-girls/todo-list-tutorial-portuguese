@@ -1,23 +1,21 @@
-# Local storage
+# Armazenamento Local
 
-## What is local storage?
+## O que é armazenamento local?
 
-Local storage, as it's name implies, is a tool for storing data locally.  
-As similar to cookies, local storage stores the data on the user's computer, and by that it lets us, as developers, a quick way to access this data for both reading and writing.
+Armazenamento Local (do inglês local storage), como sugere o nome, é uma ferramenta para armazenar dados localmente. Tão similar quanto os cookies, o armazenamento local armazena os dados no computador do usuário, e por isso nos permite, como desenvolvedores, um jeito mais rápido de acessar esses dados tanto para leitura e escrita.
 
-## Browser support
+## Apoio do Browser 
 
-As local storage was first introduced to us along with HTML5, all browsers that support HTML5 standard will also support local storage.  
-Basically it is supported by most modern web browsers, including IE 8.
+Como o armazenamento local nos foi apresentado pela primeira vez juntamente com o HTML5, todos os navegadores que suportam o padrão HTML5 também irão comportar o armazenamento local. Basicamente é suportado pela maioria dos web browsers modernos, incluindo o IE 8.
 
-## We want to see some code!
+## Queremos ver um pouco de código!
 
-First, in order to use local storage, we can simply access a localStorage instance which is exposed to us globally.  
-That means that we can call all available methods in this interface by simply using this instance.
+Primeiro, para usar o armazenamento local, podemos simplesmente acessar a uma instância do localStorage a qual está exposta para nós globalmente. 
+Isso significa que podemos chamar todos os métodos disponíveis nessa interface simplesmente usando essa instância. 
 
-Local storage stores the data in a form of key-value, so the interface is quite-simple and has two main methods: `getItem` and `setItem`.
+O armazenamento local guarda os dados no formato chave-valor, logo a interface é bastante simples e  possui dois métodos principais: `getItem` e `setItem`.
 
-An example usage:
+Um exemplo de uso:
 
 ```
 localStorage.setItem('name','Mor');
@@ -25,23 +23,22 @@ localStorage.setItem('name','Mor');
 let name = localStorage.getItem('name'); 
 alert('Hello '+name+'!');
 ```
-
-Another useful method is `clear` and it is used to clear the local storage from data:
+Outro método útil é o `clear` e é usado para limpar o armazenamento local de dados:
 
 `localStorage.clear();`
 
-There are a few more wonderful methods you can use, as described [here](https://developer.mozilla.org/en-US/docs/Web/API/Storage).
+Há mais outros métodos maravilhosos que você pode usar, como descritos [aqui](https://developer.mozilla.org/en-US/docs/Web/API/Storage).
 
-## Angular time \(back to our app\)
+## Hora do Angular \(de volta ao nosso app\)
 
-In the following section we will build a local storage service that later on will be used to store our todo list items.  
-As described in earlier tutorials, we will generate the service using `angular-cli`:
+Na seção a seguir vamos contruir um serviço de armazenamento local que mais tarde será usado para armazenar os itens da nossa lista de tarefas.
+Como foi dito nos tutoriais anteriores, vamos gerar um serviço usando `angular-cli`:
 
 ```
 ng g s todo-list-storage
 ```
 
-The new file `todo-list-storage.service.ts`, should be created with the following code:
+O novo arquivo `todo-list-storage.service.ts`, deve ser criado com o código abaixo:
 
 ```
 import { Injectable } from '@angular/core';
@@ -54,39 +51,38 @@ export class TodoListStorageService {
 }
 ```
 
-**If something looks unfamiliar/odd to you, please refer to the [Service tutorial](https://shmool.gitbooks.io/todo-list-tutorial/content/service.html) for more detailed information about services.**
+**Se algo parece não familiar/estranho para você, por favor consulte o [Tutorial do Serviço](https://shmool.gitbooks.io/todo-list-tutorial/content/service.html) para mais informações detalhadas sobre serviços.**
 
-We need to provide the service in our ngModule. Open `app.module.ts` and in the `providers` list add the new class:
+Precisamos fornecer o serviço em nosso ngModule. Abra`app.module.ts` e na lista de `providers` list adicione a nova classe:
 ```ts
 providers: [TodoListService, TodoListStorageService],
 ```
-Make sure the class is also imported into the file:
+Certifique-se de que a classe também foi importada para o arquivo:
 ```ts
 
 import { TodoListStorageService } from './todo-list-storage.service';
 ```
-
-Lets start by adding a private property to our service `todoList` which will hold the list items.
+Vamos começar adicionando uma propriedade privada para o nosso serviço `todoList` a qual irá conter os itens da lista. 
 
 `private todoList;`
 
-In addition, let's add a constant that will store the name of the key we want to use for our local storage, add it right after the imports:
+Além disso, vamos adicionar uma constante que irá armazenar o nome da chave que vamos usar para o nosso armazenamento local, adicione logo após as importações:
 
 `const storageName = 'aah_todo_list';`
 
-Now we want to initiliaze this property with data, by retriving it from localStorage, so within the constructor, add:
+Agora queremos inicializar essa propriedade com dados, recuperando do localStorage, dentro do construtor, adicione:
+
 ```ts
 constructor() {  
     this.todoList = JSON.parse(localStorage.getItem(storageName));  
 }
 ```
+Espera! Espera! Por que`JSON.parse`? A resposta é simples:
+Conforme descrito anteriormente nesse tutorial, o armazenamento  local memoriza os dados em uma forma de chave-valor, isso significa que os valores são armazenados como **strings**.
+Então, se quisermos ter um objeto real para tratar, devemos converter a string em um objeto válido.  
 
-Wait! Wait! why `JSON.parse`? The answer is simple:
-As described earlier in this tutorial, local storage stores data in a form of key-value, that means that the values are stored as **strings**.  
-So, if we want to have a real object to deal with, we must parse the strign into a valid object.
-
-Now lets start doing some real stuff, but first we will declare all the public methods we want to expose in this service, which are **get, post, put**, and **destroy**.  
-Our service should now look similiar to:
+Agora vamos começar fazendo algumas coisas reais, mas primeiro iremos declarar todos os métodos públicos que queros expor nesse serviço, que são **get, post, put**, and **destroy**.  
+Nosso serviço deve parecer algo similar à isso:
 
 ```
 import { Injectable } from '@angular/core';
@@ -117,11 +113,11 @@ export class TodoListStorageService {
 }
 ```
 
-We will now implement them one by one.
+Nós iremos agora implementá-los um por um.
 
 ### get
 
-This method will simply return the current state of items stored in the service:
+Esse método irá simplesmente retornar o estado atual dos itens armazenados no serviço:
 
 ```
 /**
@@ -133,12 +129,11 @@ This method will simply return the current state of items stored in the service:
   }
 ```
 
-If you are not familiar with the `...` operator, please refer to [this documentaion](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Spread_operator) for more information.
+Se você não está familiarizada com o operador  `...`, por favor verifique [essa documentação](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Spread_operator) para maiores informações.
 
 ### post
 
-This method will be responsible for adding a new item, and returning the new list.  
-It accepts one parameter, `item` which will be the item to add:
+Esse método será responsável por adicionar um novo item e retornar a nova lista. Ele aceita um parâmetro,`item` o qual será o item a ser adicionado:
 
 ```
 /**
@@ -152,14 +147,13 @@ It accepts one parameter, `item` which will be the item to add:
   }
 ```
 
-Some of you might notice that we just pushed a new item to the array.  
-But what about the local storage? we must also syncornize it with the new array!
+Algumas de vocês devem ter percebido que adicionamos um novo item no array. Mas e o armazenamento local? Devemos também sincronizá-lo com o novo array!
 
-Lets add a new **private** method in our service, which will be used internaly to update the stored list:
+Vamos adicionar um novo método **privado** em nosso serviço, o qual será usado internamente para atualizar a lista armazenada:
 
 ```
 /**
-   * Syncronize the local storage with the current list
+   * Sincroniza o armazenamento local com a lista atual
    * @returns {any[]}
    */
   private update() {
@@ -169,15 +163,15 @@ Lets add a new **private** method in our service, which will be used internaly t
   }
 ```
 
-Lets explain.  
-Here we use the simple method of `setItem`, which takes a key \(first argument\) and a string value \(second argument\) and stores it in the local storage.  
-After we updated the value, we simply return the new list using the `get` method we implemented earlier.
+Vamos explicar.  
+Aqui utilizamos o simples método de `setItem`, o qual pega uma chave \(primeiro argumento\) e um valor de string \(segundo argumento\) e armazena-o no armazenamento local.  
+Depois que atualizamos o valor, simplesmente retornamos a nova lista usando o método `get` que implementamos anteriormente.
 
-Now we need to modify our `post` function to use `update` so everyhing is syncronized in harmony:
+Agora precisamos modificar nossa função `post` para usar o `update` assim tudo será sincronizado em harmonia:
 
 ```
 /**
-   * Add a new todo item
+   * Adiciona um novo item ao todo 
    * @param item
    * @returns {any[]}
    */
@@ -189,12 +183,11 @@ Now we need to modify our `post` function to use `update` so everyhing is syncro
 
 ### put
 
-Here we want to update an existing item.  
-Before that, let's add another helper private method `findItemIndex`, which will simply return the index of an item with the list array:
-
+Aqui queremos atualizar um item existente.
+Antes disso, vamos adicionar outro método auxiliar privado`findItemIndex`, o qual simplesmente irá returnar o indíce de um item com a lista de array:
 ```
 /**
-   * find the index of an item in the array
+   * encontra o indíce de um item no array
    * @param item
    * @returns {number}
    */
@@ -203,11 +196,11 @@ Before that, let's add another helper private method `findItemIndex`, which will
   }
 ```
 
-Now, we can use `Object.assign` to update an existing item:
+Agora, podemos usar `Object.assign` para atualizar um item existente:
 
 ```
 /**
-   * Update an existing item
+   * Atualiza um item existente
    * @param item
    * @param changes
    * @returns {any[]}
@@ -218,19 +211,19 @@ Now, we can use `Object.assign` to update an existing item:
   }
 ```
 
-So what is going on here?   
-`Object.assign` takes a target object \(first argument\) and source objects \(all the rest of the argument\), and copies to the target object.  
-If a property existing on both target and source, this method will replace the old value with the new one.  
-Here we want to update an item in the list, so first we find it's index in the array, and then apply the changes on it.  
-At the end, we want to syncronize the local storage \(`this.update`\) and return the new list.
+Então, o que está acontecendo aqui?
+`Object.assign` pega um objeto alvo (target) \(primeiro argumento\) e objetos de origem (source)\(todo o resto do argumento \), e copia para o objeto alvo. 
+Se uma propriedade existe tanto no target e no source, esse método irá subsitutir o valor antigo pelo novo.
+Aqui queremos atualizar um item na lista, então primeiro encontramos o seu indíce no array e depois aplicamos as mudanças nele.  
+Por fim, queremos sincronizá-lo com o armazanamento local \(`this.update`\) e retornar a nova lista.
 
 ### destroy
 
-This method will remove an item from the list and then syncronize with local storage:
+Esse método irá remover um item da lista e sincronizar com o armazenamento local:
 
 ```
 /**
-   * Remove an item from the list
+   * Remove um item da lista
    * @param item
    * @returns {any[]}
    */
@@ -240,14 +233,15 @@ This method will remove an item from the list and then syncronize with local sto
   }
 ```
 
-The above code is quite simple.  
-`splice(i, n)` removes `n` items starting from index `i`.  
-In our code, we first find the index of the item to remove, and remove only it \(that's why we use 1 as the second parameter\).
+O código acima é bastante simples.
+`splice(i, n)` remove `n` itens começando pelo indíce `i`.  
+No nosso código, primeiro encontramos o indíce do item para remové-lo e removemos apenas ele \(porisso usamos 1 como segundo parâmetro\).
 
-## Add some default data
+## Adicionando alguns dados padrão
 
-Lets assume we want our todo list always have some default data to start with.   
-Then we can add it by modifying our service, by adding in the constants section \(after the imports\):
+Vamos assumir que queremos que a nossa lista de tarefas tenha alguns dados padrão para iniciar.
+
+Então podemos adicioná-lo modificando nosso serviço, adicionando na seção de constantes \(depois das importações\):
 
 ```
 const defaultList = [
@@ -260,7 +254,7 @@ const defaultList = [
 ];
 ```
 
-And then modify our constructor:
+E, em seguida, modificar nosso construtor:
 
 ```
 constructor() {
@@ -268,34 +262,34 @@ constructor() {
   }
 ```
 
-The above will make sure that if data was not yet set to localStorage, our service will still have some default data to return.
+O código acima irá garantir que se os dados ainda não estiverem configurados para o localStorage, nosso serviço continuará tendo alguns dados padrões para retornar. 
 
-## Almost done!
+## Quase lá!
 
-Our service is now ready for work!   
-But wait, we need to provide it, in order to use it.
+Nosso serviço está pronto para funcionar!
+Mas espere, precisamos fornecê-lo antes de usá-lo.
 
-Open `app.module.ts` and add `TodoListStorageService` to the `providers` array.  
-Now we are trully ready to use the service!
+Abra o `app.module.ts` e adicione `TodoListStorageService` ao array de `providers`.  
+Agora estamos realmente prontos para usar o serviço!
 
-Now for our app to use the new local storage service, let's open up `todo-list.service.ts` and modify it.
+Agora para o nosso app usar o novo serviço de armazenamento local, vamos abrir o `todo-list.service.ts` e modificá-lo.
 
-First we need to import the new service:
+Primeiro precisamos importar o novo serviço:
 
 `import { TodoListStorageService } from './todo-list-storage.service';`
 
-Then, we need to inject it in the constructor so we will have an instance to work with:
+Então, precisamos injeta-lo no construtor para que possamos ter uma instância para se trabalhar:
 
 ```
 constructor(private storage:TodoListStorageService) {
 }
 ```
 
-This will let us use `this.storage` across the todo-list service.
+Isso nos permitirá usar `this.storage` através do serviço do todo-list. 
 
-Let's also modify the current methods:
+Vamos também modificar os métodos a seguir:
 
-**Before**
+**Antes**
 
 ```
 getTodoList() {
@@ -307,7 +301,7 @@ addItem(item) {
 }
 ```
 
-**After**
+**Depois**
 
 ```
 getTodoList() {
@@ -319,7 +313,7 @@ addItem(item) {
 }
 ```
 
-Now we have one last modification to make. Open up `list-manager.component.ts`, and let's modify `addItem` method this way:
+Agora temos uma última modificação para fazer. Abra o `list-manager.component.ts`, e vamos modificar o método `addItem` desse jeito:
 
 ```
 addItem(title:string) {
@@ -327,13 +321,14 @@ addItem(title:string) {
 }
 ```
 
-The above change will make sure that when we add a new item, our list will also be updated visually.
+A mudança acima irá garantir que quando adicionamos um item, nossa lista também será atualizada visualmente.
 
-## Summary
+## Resumo
 
-In this tutorial we learned what is localStorage and how to use it.  
-We saw that localStorage is a great and a pretty straight-forward tool for developers to store data locally on the users' computers/devices.  
-We then implemented a new service that uses localStorage to store the todo-list items, and updated the rest of the components to support this new service.
+Neste tuturoal aprendemos o que é armazenamento local e como usá-lo.
+Vimos que o armazenamento local é uma ótima e direta ferramenta para desenvolvedores armazenar dados localmente nos computadores/dispositivos dos usuários.
+Nós então implementamos um novo serviço que usa o armazenamento local para guardar os itens da lista de tarefas, e atualizamos o resto dos componentes para oferecer suporte esse novo serviço.
 
-Enjoy the rest of the tutorial!
+Aproveite o resto do tutorial!
+
 
