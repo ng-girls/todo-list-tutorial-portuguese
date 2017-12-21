@@ -1,12 +1,13 @@
-# Refactor App Component
+# Refatorando o App Component
 
-We're going to perform a small refactoring. The app-root shouldn’t have such large template and all this logic. It should just call another component that will deal with that.
+Vamos realizar uma pequena refatoração. O componente principal do aplicativo não deve ter um HTML tão grande e com toda essa lógica. Deve apenas chamar outro componente que irá lidar com isso.
 
-* Create a new component called `list-manager`: 
+* Crie um novo componente chamado `list-manager`:
 
 `ng g c list-manager -it`
-* Move all the code from `appComponent` to `listManager`
-* Call the new component from the `appComponent` template:
+
+* Mova todo o código do `appComponent` para `listManager`
+* Referencie o novo componente de dentro do template do `appComponent`:
 
 ```
 `
@@ -14,5 +15,4 @@ We're going to perform a small refactoring. The app-root shouldn’t have such l
 `
 ```
 
-That's it! Now we can go on.
-
+Só isso! Agora podemos continuar.

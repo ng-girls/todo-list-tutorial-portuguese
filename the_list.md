@@ -1,6 +1,6 @@
-# The list
+# A lista
 
-Now, you are going to add the todo-list itself to the component `app-root`. Open the file `src/app/app.component.ts`. Add the list of items inside the `AppComponent` class as an array of objects for each item. At this stage each item will contains only a title:
+Agora, você vai adicionar a todo-list ao componente `app-root`. Abra o arquivo `src/app/app.component.ts`. Adicione a lista de items dentro da classe `AppComponent` como um array de objetos para cada item. Nesta fase cada item conterá apenas um título:
 
 ```js
 todoList = [
@@ -13,11 +13,12 @@ todoList = [
 ];
 ```
 
-> Putting info \(resources\) right inside your code is called hardcoding and considered an especially bad practice. Eventually we'll get the list from an outer resource, but even if not it's best to mock data in their own files. But let's advance step-by-step, so defining items this way is okay for now.
+> Colocar informação \(recursos\) dentro do seu código é chamado hardcoding e é considerada uma má prática. Eventualmente obteremos a lista de um recurso externo, but even if not it's best to mock data in their own files. Mas vamos avançar passo-a-passo, então definir items dessa forma é uma boa alternativa para o momento.
 
-Now, you have to tell the browser to display those items. For this, you will use the **Angular built-in directive, `*ngFor`**. It works as an enhanced loop in Java. `*` is a semantic though necessary notation which causes Angular to use the current element as template when rendering the list.
+Agora, você tem que dizer ao navegador para exibir esses items. Para isso, você usará a **diretiva Angular, `*ngFor`**. Ela trabalha como uma estrutura de repetição em Java.  `*` é uma notação semântica necessária que faz com que o Angular use o elemento atual como template quando renderizar a lista.
 
-Insert the loop right after `<todo-input></todo-input>`, this way:
+
+Insira o loop logo após `<todo-input></todo-input>`, dessa forma:
 
 ```html
 <todo-input></todo-input>
@@ -28,18 +29,19 @@ Insert the loop right after `<todo-input></todo-input>`, this way:
 </ul>
 ```
 
-This means "go over all items of todoList array defined below, and print out an unnumbered list which contains the items' titles". While looping over the `todoList`, each item is assigned to the variable `item`, and we can use this variable inside the `li` element and its children.
+Isso significa "percorrer todos items do array todoList definido abaixo, e imprimir uma lista não numerada que contém os títulos dos items". Ao percorrer a `todoList`, cada item é atribuído à variável `item`, e nós podemos usar esta variável dentro do elemento `li` e seus filhos.
 
-### Angular directives
 
-Directives are pieces of logic \(written as classes\) that can be attached to elements and components. They are used to change the display or the behavior of the element. Angular comes with some built-in directives.
+### Diretivas angular
 
-As we saw, the `ngFor` directive modifies the template in run-time by repeating the element it's called on and its content. Another directive, for example, is `ngIf`, which receives a Boolean expression. Only if the expression is true Angular renders the element and its content. It also needs the `*` prefix because it uses the target element as a template, similarly to the `*ngFor` directive. For example:
+Diretivas são pedaços de lógica \(escritos como classes\) que podem ser anexadas a elementos e componentes. Elas são usadas para mudar a visualização ou o comportamento do elemento. O Angular já possui algumas diretivas incorporadas. 
+
+Como nós vimos, a diretiva `ngFor` modifica o template em tempo de execução repetindo o elemento chamado e seu conteúdo. Outra diretiva, por exemplo, é o `ngIf`, que recebe uma expressão booleana. Apenas se a expressão for verdadeira, o Angular renderiza o elemento e seu conteúdo. Ela também necessita do prefixo `*` porque usa o elemento como um template, semelhante a diretiva `*ngFor`. Por exemplo:
 
 ```html
 <h1 *ngIf="userLoggedIn">Welcome!</h1>
 ```
 
-In this example, `userLoggedIn` should be a member of the component, and have a true or false value. If it's true, the element will be displayed. If false, the element will not exist on the DOM.
+Neste exemplo, `userLoggedIn` deve fazer parte do componente, e ter um valor verdadeiro ou falso. Se for verdadeiro, o elemento será exibido. Se for falso, o elemento não existirá no DOM.
 
-There are other directives in Angular which are not structural \(and are used without the `*`\). For example ngStyle and ngClass, with which you can dynamically apply style and classes to the element.
+Existem outras diretivas em Angular que não são estruturais \(e são usadas sem o `*`\). Por exemplo ngStyle e ngClass, que você pode aplicar estilo e classe dinamicamente ao elemento.

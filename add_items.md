@@ -1,28 +1,28 @@
-# Add items
+# Adicionando itens
 
-We want to add items to our list. With Angular we can do this easily and see the item added immediately. We will do this from within the `inputComponent` we created before. We'll change it so when hitting the Enter key or clicking the submit button, the value of the input box will become the title of the new item. And the new item will be added to the list.
+Queremos adicionar itens à nossa lista. Com Angular podemos fazer isso facilmente e ver o item adicionado imediatamente. Vamos fazer isso dentro do `inputComponent` que criamos antes. Vamos mudá-lo assim, ao pressionar a tecla Enter ou clicar no botão enviar, o valor da caixa de entrada se tornará o título do novo item. E o novo item será adicionado à lista.
 
-But we don't want the todo-input component to be responsible for adding a new item for the list. We want it to have minimal responsibility, and **delegate the action to its parent component**. One of the advantages of this approach is that this component will be reusable, and can be attached to a different action in different situations. 
+Mas não queremos que o componente todo-input seja responsável por adicionar um novo item para a lista. Queremos que ele tenha uma responsabilidade mínima, e **delegue a ação em seu componente pai**. Uma das vantagens desta abordagem é que este componente será reutilizável e pode ser anexado a uma ação diferente em diferentes situações.
 
-For example, in our case, we'll be able to use the `inputComponent` inside the `itemComponent`. Then we'll have an input box for each item and we'll be able to edit the item's title. In this case, pressing the Enter key or the save button will have a different effect.
+Por exemplo, no seu caso, poderemos usar o `inputComponent` dentro de `itemComponent`. Então, teremos uma caixa de entrada para cada item e poderemos editar o título do item. Neste caso, pressionar a tecla Enter ou o botão Salvar terá um efeito diferente.
 
-So what we actually want to do is to **emit an event** from the todo-input component whenever the title is changed. With Angular we can easily define and emit events from our components!
+Então, o que realmente queremos fazer é **emitir um evento** do componente todo-input sempre que o título for alterado. Com o Angular, podemos facilmente definir e emitir eventos de nossos componentes!
 
 ## @Output()
 
-Inside the `inputComponent` class add the following line, which defines an output for the component.
+Dentro da classe `inputComponent` adicione a linha de código a seguir, que define uma saída para o componente.
 
 ```ts
 @Output() submit: EventEmitter<string> = new EventEmitter();
 ```
 
-The output property is called `submit`. Make sure that Output and EventEmitter are added to the import declaration in the first line of the file: 
+A saída de propriedade será chamada de `submit`. Certifique-se de que Output e o EventEmitter foram adicionados à declaração de importação na primeira linha do arquivo:
 
 ```ts
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 ```
 
-Now, whenever we call `this.submit.emit()` an event will be emitted to the parent component. Let's call it in the changeTitle method:
+Agora, sempre que chamamos `this.submit.emit()` um evento será emitido para o componente pai. Vamos chamá-lo no método changeTitle:
 
 ```ts
 changeTitle(newTitle: string): void {
@@ -30,19 +30,19 @@ changeTitle(newTitle: string): void {
 }
 ```
 
-We delegate everything to the parent component - even actually changing the title of the item if needed. \(The method name may seem irrelevant right now. If you'd like you can change it to something more appropriate, such as `submitValue`. Remember to change it in the template as well.\)
+Delegamos tudo ao componente pai - mesmo que altere o título do item, se necessário. \(O nome do método pode parecer irrelevante agora. Se você quiser, pode mudá-lo para algo mais apropriado, como `submitValue`. Lembre de mudar isso no template também.\)
 
-We pass `newTitle` when we emit the event. Whatever we pass in `emit()` will be available for the parent as `$event`.
+Passamos `newTitle` quando emitimos o evento. O que quer que possamos passar em `emit ()` estará disponível para o pai como `$ event`.
 
-Nothing else is changed in the todo-input component. The events emitted from `keyup.enter` and `click` still call the same method, but the method itself has changed.
+Nada mais é alterado no componente todo-input. Os eventos emitidos por `keyup.enter` e` click` ainda chamam o mesmo método, mas o próprio método mudou.
 
-Now all we need to do is catch the event in the parent component and attach logic to it. Go to the app-root component and bind to the `submit` event in the `<todo-input>` component:
+Agora, tudo o que precisamos fazer é pegar o evento no componente principal e anexar lógica a ele. Vá para o componente app-root e vincule ao evento `submit` no componente` <todo-input>`:
 
 ```html
 <todo-input (submit)="addItem($event)"></todo-input>
 ```
 
-Now all is left is to implement the `addItem` method, which receives a string and adds it to the list:
+Agora tudo é deixado para implementar o método `addItem`, que recebe uma string e adiciona-a à lista:
 
 ```ts
 addItem(title: string): void {    
@@ -50,5 +50,4 @@ addItem(title: string): void {
 }
 ```
 
-Try it out!
-
+Teste!
