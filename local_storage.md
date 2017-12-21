@@ -81,7 +81,7 @@ Espera! Espera! Por que`JSON.parse`? A resposta é simples:
 Conforme descrito anteriormente nesse tutorial, o armazenamento  local memoriza os dados em uma forma de chave-valor, isso significa que os valores são armazenados como **strings**.
 Então, se quisermos ter um objeto real para tratar, devemos converter a string em um objeto válido.  
 
-Agora vamos começar fazendo algumas coisas reais, mas primeiro iremos declarar todos os métodos públicos que queros expor nesse serviço, que são **get, post, put**, and **destroy**.  
+Agora vamos começar fazendo algumas coisas reais, mas primeiro iremos declarar todos os métodos públicos que queros expor nesse serviço, que são **get, post, put**, e **destroy**.  
 Nosso serviço deve parecer algo similar à isso:
 
 ```
