@@ -51,7 +51,7 @@ export class TodoListStorageService {
 }
 ```
 
-**Se algo parece não familiar/estranho para você, por favor consulte o [Tutorial do Serviço](https://shmool.gitbooks.io/todo-list-tutorial/content/service.html) para mais informações detalhadas sobre serviços.**
+**Se algo está lhe parecendo estranho, por favor consulte o [Tutorial do Serviço](https://shmool.gitbooks.io/todo-list-tutorial/content/service.html) para mais informações detalhadas sobre serviços.**
 
 Precisamos fornecer o serviço em nosso ngModule. Abra`app.module.ts` e na lista de `providers` list adicione a nova classe:
 ```ts
