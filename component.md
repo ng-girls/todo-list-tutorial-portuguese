@@ -54,7 +54,7 @@ Vamos voltar atrás no arquivo `app.component.ts` e ver a meta-data do component
 ```
 Nós passamos um objeto de definições para o decorador, igual nós vimos no capitulo anterior com o ngModule. O segundo proprietário, `templateUrl` diz para o Angular onde procurar pelo template anexado ao componente. Há uma outra opção para apontar para o template, no qual é uma melhor prática: Escreva o template inteiro inline aqui, no componente de definição. Nós vamos discutir isso mais tarde.
 
-The third property, `styleUrls` tells Angular where to look for the CSS files that define the style of this component. It can have multiple CSS files. That's why the value of `styleUrls` is an array. You can take a look at the CSS file `app.component.css` - you'll see that it's empty. You can add some CSS style here, for example:
+A terceira propriedade, `styleUrls` diz ao Angular onde procurar pelos arquivos de CSS que definem o estilo desse componente. Pode ter multiplos arquivos CSS. É por isso que o valor do `styleUrls` é um array. Você pode dar uma olhada no arquivo de CSS `app.component.css` - você vai encontra-lo vazio. Você pode adicionar um pouco de CSS aqui, por exemplo: 
 
 ```css
 h1 {
@@ -62,39 +62,39 @@ h1 {
 }
 ```
 
-We'll add more style later on.
+Nós vamos adicionar mais estilos mais pra frente. 
 
-The first property, `selector`, tells Angular what will be the name of the tag that we'll use to call the component. As we saw in the file `src/index.html`, we use the app component inside the body:
+A primeira propriedade, `selector`, diz ao Angular qual será o nome da tag que nós vamos usar para chamar o componente. Como nós vimos no arquivo `src/index.html`, nós vamos usar o componente do App dentro do body:
 
 ```html
 <body>
   <todo-root>Loading...</todo-root>
 </body>
 ```
+O Elemento `todo-root` não é um elemento HTML. É o componente que foi criado com o seletor `todo-root`. Tente mudar o seletor. Você vai ver isso se você mudar apenas um dos arquivos, "Carregando..." será mostrado. Esse é o conteúdo que nós queremos dar para a tag no `index.html`, e será renderizado com tanto que o elemento não seja substituido com um componente do Angular. Você pode ver no console do navegador uma mensagem de erro. 
 
-The element `todo-root` is not an HTML element. It is the component that was created with the selector `todo-root`. Try changing the selector. You'll see that if you change it in only one of the files, "Loading..." will be displayed. This is the content that we gave to the tag in `index.html`, and it is rendered as long as the element is not replaced with an Angular component. You can see in the browser's console an error message.
-
-One last thing, the first line in the component file imports the code that defines the decorator `@Component`. It is needed to use the decorator, which is defined in the imported file \(or actually, in one of its own imports\). Try removing this line, and see the error.
+Uma ultima coisa, a primeira linha do componente importa o código que define o decorador `@Component`. Ele precisa usar o decorador, no qual é definido no arquivo importado \(ou na verdade, em um dos seu próprios importadores\). Tente remover essa linha e veja o erro. 
 
 #### Inline Template
-Let's move the template to be **inline** in the component definition. This will help us manage the template while looking at its functionality.
-In the file `app.component.ts`  replace the line
+Vamos mover o template para que seja **inline** na definição do componente. Isso vai nos ajudar a gerenciar o template enquanto olhamos sua funcionalidade.
+No arquivo `app.component.ts` substitua a linha
 
 ```js
 templateUrl: './app.component.html',
 ```
 
-with
+com
 
 ```js
 template: ``,
 ```
 
-Notice the **backticks** - they are used to define Template Literals, which are new in JavaSript \(ES6\). This way you can define multi-line strings. They have another cool ability: to easily use JavaScript variables and expressions within the string \(with no relation to Angular binding expressions in the template\). Read about it in the [MDN documentation](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals).
+Repare que **backticks** - eles são usados para definir literais de template, que é JavaScript novo \(ES6\). Dessa forma você pode definir multiplas linhas de string. Eles tem outra funcionalidade legal: usar facilmente variaveis JavaScript e expressões dentro da string \(sem relação com expressões de binding do Angular no template\). Leia sobre isso na [documentação MDN]
+(https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals).
 
-Make sure you replace `templateUrl` with `template` and don't forget the comma in the end of the line.
+Tenha certeza de que substituiu o `templateUrl` com `template` e não se esqueça da vírgula no fim da linha. 
 
-Now copy the entire template from `app.component.html` and paste it between the backticks.  We'll reformat the code a bit to have it easier on the eye:
+Agora copie o template inteiro do `app.component.html` e cole entre os backticks. Nós vamos formatar o código um pouco para ficar mais legivel:
 
 ```js
 template: `
@@ -104,13 +104,12 @@ template: `
 `,
 ```
 
-It is easier to manage the template when you see its controller at the same time. This is true as long as the template doesn't get too big and the controller doesn't get too complicated. If they do, it's a sign you should refactor your code by breaking it down to child components.
+É mais fácil administrar o template quando nós vemos o controlador ao mesmo tempo. Isso é verdade com tanto que o template não fique muito grande e o controlador não fique muito complicado. Se ele ficar, é um sinal de que você deve refatorar seu código quebrando ele em componentes filho. 
 
-At this point you can delete the file `app.component.html`.
->When generating a new project, you can state that you'd like an inline template for the root component by adding the flag `-it` (or `--inline-template`). Keep this in mind for your next project!
+Nesse ponto você pode deletar o arquivo `app.component.html`.
+>Quando gerar um novo projeto, você pode definir o estado que você gostaria em um template inline para o componente raiz adicionando a flag `-it` (ou `--inline-template`). Tenha isso em mente para o próximo projeto. 
 
-The same way we use inline template, we can use also inline styles. But for now we will keep the styles in a separate file.
+Da mesma forma nós usamos o template inline, nós também podemos usar estilos inline. Mas por enquanto vamos manter isso em um arquivo separado.
 
-### Summary
-We have explored the root component that was generated for us by Angular-CLI, and even refactored it. In the next chapter we will create a new component. We will start building the tree of components, which defines the structure of the application.
-
+### Sumário
+Nós exploramos o componente raiz que foi gerador por nós através do Angular-CLI, e até refatoramos. No próximo capitulo nós vamos criar um novo componente. Nós vamos iniciar a construir a arvore de componentes, no qua define a estrutura da aplicação. 
