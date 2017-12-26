@@ -8,7 +8,7 @@ Este tutorial é código aberto (open source) e foi escrito pela comunidade Angu
 
 Este tutorial é usado nos workshops do [ngGirls](http://ng-girls.org) do Brasil e do mundo. Caso tenha interesse em levar o evento ngGirls para a sua cidade ou caso tenha alguma sugestão para fazer, entre em contato com a gente através do e-mail [info@ng-girls.org](/mailto:info@ng-girls.org).
 
-![](/assets/ngGirls banner transparent.png)
+![](/assets/ngGirls%20banner%20transparent.png)
 
 ![](/assets/slogen.png)
 
