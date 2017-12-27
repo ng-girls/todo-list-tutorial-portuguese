@@ -1,6 +1,7 @@
 # Element ref
 
-In the last chapter, we ended with our input component that can reflect and change the value of title of our todo item. `input.component.ts` should look like this:
+No último capítulo, nós terminamos com o componente input que pode refletir e mudar o valor do título do nosso item todo.
+`input.component.ts` deve estar igual a:
 
 ```javascript
 import { Component, OnInit } from '@angular/core';
@@ -31,11 +32,11 @@ export class InputComponent implements OnInit {
 }
 ```
 
-Now, we want to take the value of the input (that the user typed) and change the title when we press the Save button.
+Agora, queremos pegar o valor do input (o que o usuário escreveu) e mudar o título quando for pressionado o botão de salvar.
 
-We already know how to create a button and react to click on it. We now need to pass to the method some data from a different element. We want to use the input's value from inside the button element.
+Nós já sabemos como criar um botão e reagir para clicar nele. Agora nós precisamos passar para o método alguma informação de algum elemente diferente. Agora precisamos passar para o método alguns dados de um elemento diferente. Queremos usar o valor da entrada dentro do elemento do botão.
 
-Angular helps us do exactly that. **We can get a reference to the element we want into a variable with the name we choose, **for example** `inputElement`, using a simple syntax - a hash.** Add `#inputElement` to the `input` element, and use it in the click event of the button:
+O Angular nos ajuda a fazer exatamente isso. **Podemos obter uma referência ao elemento que queremos em uma variável com o nome que escolhemos, como por exemplo** `inputElement`, usando uma sintaxe simple - uma hash. ** Adicione um `#inputElement` no `input` e use-o no evento click do botão:
 
 ```html
 <input [value]="title"              
@@ -47,18 +48,19 @@ Angular helps us do exactly that. **We can get a reference to the element we wan
 </button>
 ```
 
-Now we can use the value that the user entered in the input element in the method called when clicking the Save button!
+Agora, podemos usar o valor que o usuário inseriu no elemento de entrada no método chamado ao clicar no botão Salvar.
 
-What is that `#` we see ?
+O que é o `#` que vemos ?
 
-Angular lets us define a new local variable named `inputElement` \(or any name you choose\) that holds a reference to the element we defined it on, and then use it any way we want. In our case, to access the value property of the input.
+O Angular nos deixa definir uma nova variável local chamada `inputElement` \(ou qualquer nome que você desejar\) que contém uma referência ao elemento em que a definimos e a use de qualquer maneira que desejamos. Em nosso caso, para acessar a propriedade de valor da entrada.
 
-Instead of hunting down the elements via DOM query \(which is bad practice as we discussed\), we now can put element references in the template and access each element we want declaratively.
+Ao invés de caçar os elementos via DOM query \(o que é uma má prática como já discutimos\), agora podemos colocar referências de elementos no template e acessar cada elemento que queremos declarativamente.
 
-Next on, we'll build the list of todo items.
+Em seguida, vamos construir a lista de itens todo.
 
-### Tip - explore the element reference
-Just like we did in the previous chapter, when we logged $event, you can do the same with `#inputElement`. Change the method `changeTitle` so it will receive the whole element reference and log it to the console:
+### Dica - explore a referência do elemento
+
+Assim como fizemos no capítulo anterior, quando registramos $event, você pode fazer o mesmo com `#ResourcesinputElement`. Altere o método `changeTitle` para que ele receba toda a referência do elemento e registre-o no console.
 
 ```html
 <input [value]="title"              
@@ -77,7 +79,7 @@ changeTitle(inputElementReference): void {
 
 ```
 
-## Resources
+## Recursos
 
 [Angular Template Reference Variables](https://angular.io/docs/ts/latest/guide/template-syntax.html#!#ref-vars)
 
