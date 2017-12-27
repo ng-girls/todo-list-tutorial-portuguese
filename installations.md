@@ -113,17 +113,17 @@ Uma vez dentro do diretório do aplicativo, execute o aplicativo usando o seguin
 ng serve -o
 ```
 
-O sinalizador (flag) `-o` é uma abreviação para ` --open`, que abrirá seu navegador na URL: [`localhost: 4200`] (http: // localhost: 4200)
+O sinalizador (flag) `-o` é uma abreviação para `--open`, que abrirá seu navegador na URL: [`localhost: 4200`](http://localhost:4200)
 
 Você deverá ver uma página como esta:
 
-![image](https://github.com/bluebirrrrd/todo-list-tutorial/blob/master/assets/installation-result.png)
+![](https://github.com/bluebirrrrd/todo-list-tutorial/blob/master/assets/installation-result.png?raw=true)
 
 ### Parabéns!
 
 Você tem uma aplicação angular em execução! **Enquanto você estiver trabalhando no aplicativo, você deve manter o terminal aberto executando o comando anterior.** Qualquer alteração que você fizer no código do projeto será refletida imediatamente no navegador.
 Você pode abrir outro terminal para executar tarefas em paralelo.
 
-Para parar o comando em execução no terminal, pressione `Ctrl + C` no terminal ou feche o terminal.
+Para parar o comando em execução no terminal, pressione `ctrl + c` no terminal ou feche o terminal.
 
 Agora estamos prontas para começar a desenvolver!
