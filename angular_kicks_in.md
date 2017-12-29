@@ -1,7 +1,7 @@
 # Angular entra em ação
 
 Vamos olhar para o projeto e como Angular entra em cena. Todos os arquivos relevantes a partir desta fase existem dentro da pasta `src`.
-Leia mais sobre os arquivos gerados pelo Angular-CLI em [Apêndice 1: Gerando um novo projeto](https://ng-girls.gitbooks.io/todo-list-tutorial/generating_a_new_project.html).
+Leia mais sobre os arquivos gerados pelo Angular-CLI em [Apêndice 1: Gerando um novo projeto](./generating_a_new_project.html).
 
 Abra o arquivo `index.html`. O conteúdo que é processado na janela do navegador é tudo o que você vê dentro do elemento `<body>`. Tudo o que você pode ver agora é outro elemento não-HTML: `<todo-root>`. Este elemento é realmente um Componente Angular, definido no arquivo `app / app.component.ts` com a classe chamada **AppComponent**. (Vamos dar uma olhada nisso no próximo capítulo).
 

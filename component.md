@@ -21,7 +21,7 @@ export class AppComponent {
   title = 'todo funciona!';
 }
 ```
-Tem um membro chamado "titulo". É uma variavel no qual você pode atribuir um valor. O valor atribuido aqui é a string "todo funciona!".
+Tem um membro chamado "`title`". É uma variável no qual você pode atribuir um valor. O valor atribuido aqui é a string "todo funciona!".
 
 O Angular cuida da sincronização dos membros do componente com o componente template. Então podemos usar facilmente o membro `title` no template. Dê uma olhada no template anexado ao componente em:
 
@@ -30,11 +30,11 @@ O Angular cuida da sincronização dos membros do componente com o componente te
   {{ title }}
 </h1>
 ```
-As chaves duplas e seu conteúdo são chamados de **Interpolação**. Isso é uma das formas de ** data binding ** em Angular. Como nós mencionamos anteriormente, o código neste arquivo não é usado como quando o navegador renderiza o componente. Angular compila isso para o código Javascript. Em um dos passos de compilação ele procura pela Interpolações dentro do template. **O conteúdo da interpolação é uma expressão, escrita em Javascript.** Em tempo de execução a expressão é avaliada, e aí você vê o resultado. 
+As chaves duplas e seu conteúdo são chamados de **Interpolação**. Isso é uma das formas de **data binding** em Angular. Como nós mencionamos anteriormente, o código neste arquivo não é usado como quando o navegador renderiza o componente. Angular compila isso para o código Javascript. Em um dos passos de compilação ele procura pela Interpolações dentro do template. **O conteúdo da interpolação é uma expressão, escrita em Javascript.** Em tempo de execução a expressão é avaliada, e aí você vê o resultado. 
 
-Interpolação é um dass mais fortes e mais básicas caracteristicas em Angular. Existe desde o inicio do Angular - na primeira versão. Isso torna realmente simples a inserção de dados dinâmicos no View.  
+Interpolação é um das mais fortes e mais básicas características em Angular. Existe desde o inicio do Angular - na primeira versão. Isso torna realmente simples a inserção de dados dinâmicos na página.  
 
-Nesse componente, a expressão é simplesmente o membro da classe do componente, `title`. **Vamos tentar mudar isso**. Tente o que está a seguir e veja o resultado no navegador. \(Com cada mudança que você faz no arquivo, o navegador vai atualizar automaticamente!\)
+Neste componente, a expressão é simplesmente o membro da classe do componente, `title`. **Vamos tentar mudar isso**. Tente o que está a seguir e veja o resultado no navegador. \(Com cada mudança que você faz no arquivo, o navegador vai atualizar automaticamente!\)
 
 * Remova as chaves e mantenha o conteúdo `title`
 * Coloque de volta as chaves e substitua o conteúdo com algum tipo de expressão matemática, por exemplo: `{% raw %}{{ 2 + 2 }}{% endraw %}`. \(Os espaços não são mandatórios, eles apenas deixam o código mais legível.\)
