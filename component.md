@@ -1,54 +1,50 @@
 # Component
 
-One approach in Web development \(and software development generally\) is component-based architecture. In the past years it gains a lot of popularity. What is a component?
+Uma abordagem em desenvolvimento Web \(e desenvolvimento de software em geral\) é a arquitetura baseada em componentes (component-based architecture). No passar dos anos isso ganhou muita popularidade. O que é um componente? 
 
-Helmut Petritsch defines in [Service-Oriented Architecture \(SOA\) vs. Component Based Architecture](http://petritsch.co.at/download/SOA_vs_component_based.pdf):
+Helmut Petritsch define em [Service-Oriented Architecture \(SOA\) vs. Component Based Architecture](http://petritsch.co.at/download/SOA_vs_component_based.pdf):
 
-> A component is a software object, meant to interact with other components, encapsulating certain functionality or a set of functionalities. A component has a clearly defined interface and conforms to a prescribed behaviour common to all components within an architecture.
+> Um componente é um objeto de software, feito para interagir com outros componentes, encapsulando certas funcionalidades ou um conjunto de funcionalidades. Um componente possui uma interface claramente definida e está em conformidade com um comportamento prescrito comum a todos os componentes dentro de uma arquitetura.
 
-In Web applications, **a component controls a patch of screen called a view**. It's a part of what you will eventually see on the screen. It has a template, which defines its visual structure. It also has logic which defines the behavior and the dynamic values. The logic part is JavaScript code and is called the controller.
+Em aplicações Web, **um componente controla um fragmento de tela chamado de View (visualização)**. É uma parte do que você vai eventualmente ver na tela. Tem um template, no qual define sua estrutura visual. Também tem uma lógica no qual define o comportamento e os valores dinamicos. A parte lógica é código Javascript e é chamado de controlador. 
 
-Here's a diagram of a component in Angular, with the result below.  
+Aqui está o diagrama de um componente em Angular, com o resultado abaixo. 
 ![Angular 2 Component](Angular Component.001.jpeg)
 
-Directives, pipes and services are other building blocks in Angular, which we will discuss later in the tutorial.
+Diretivas, pipes e serviços são outros blocos de construção em Angular, no qual vamos discutir mais tarde neste tutorial. 
 
-Let's take a look at the component that was created by Angular-CLI. All the relevant files exist in the folder `src/app`. Open the file `app.component.ts`.
+Vamos dar uma olhada no componente que foi criado em Angular-CLI. Todos os arquivos relevantes estão na pasta `src/app`. Abra o arquivo `app.components.ts`.
 
-Just like ngModules that we saw in the previous chapter, a component is also defined by a class with a decorator. This is the class definition:
-
+Igual ao ngModules que nós vimos no capitulo anterior, um componente é também definido por uma classe com um decorador. Está é a definição da classe:
 ```js
 export class AppComponent {
-  title = 'todo works!';
+  title = 'todo funciona!';
 }
 ```
+Tem um membro chamado "titulo". É uma variavel no qual você pode atribuir um valor. O valor atribuido aqui é a string "todo funciona!".
 
-It has one member called "title". It is a variable to which you can assign a value. The value assigned to it here is the string "todo works!".
-
-Angular takes care of synchronizing the members of the component with the component template. So we can easily use the member `title` in the template. Take a look at the  template attached to the component in the :
+O Angular cuida da sincronização dos membros do componente com o componente template. Então podemos usar facilmente o membro `title` no template. Dê uma olhada no template anexado ao componente em:
 
 ```html
 <h1>
   {{ title }}
 </h1>
 ```
+As chaves duplas e seu conteúdo são chamados de **Interpolação**. Isso é uma das formas de ** data binding ** em Angular. Como nós mencionamos anteriormente, o código neste arquivo não é usado como quando o navegador renderiza o componente. Angular compila isso para o código Javascript. Em um dos passos de compilação ele procura pela Interpolações dentro do template. **O conteúdo da interpolação é uma expressão, escrita em Javascript.** Em tempo de execução a expressão é avaliada, e aí você vê o resultado. 
 
-The double curly braces and their content are called **Interpolation**. This is one form of ** data binding** in Angular. As we mentioned before, the code in this file is not used as is when the browser renders the component. Angular compiles it to JavaScript code. In one of the compilation steps it looks for Interpolations inside the template. **The content of the Interpolation is an expression, written in JavaScript.** In run time the expression is evaluated, and then you see the result.
+Interpolação é uma das mais fortes e mais básicas caracteristicas em Angular. Existe desde o inicio do Angular - na primeira versão. Isso torna realmente simples a inserção de dados dinâmicos no View.  
 
-Interpolation is one of the strongest, most basic features in Angular. It exists from the very beginning of Angular - in the first version. It makes it really simple to insert dynamic data into the view.
+Nesse componente, a expressão é simplesmente o membro da classe do componente, `title`. **Vamos tentar mudar isso**. Tente o que está a seguir e veja o resultado no navegador. \(Com cada mudança que você faz no arquivo, o navegador vai atualizar automaticamente!\)
 
-In this component, the expression is simply the member of the component class, `title`. **Let's try to change it**. Try out the following and see the result in the browser. \(With every change you make in the file, the browser will refresh automatically!\)
+* Remova as chaves e mantenha o conteúdo `title`
+* Coloque de volta as chaves e substitua o conteúdo com algum tipo de expressão matemática, por exemplo: `{% raw %}{{ 2 + 2 }}{% endraw %}`. \(Os espaços não são mandatórios, eles apenas deixam o código mais legível.\)
+* Escreva uma expressão matemática combinada com o membro `title`: `{% raw %}{{ title + 10 }}{% endraw %}`
+* Passe uma variavel indefinida para a expressão - uma variavel na qual não foi declarada na classe do componente. Por exemplo: `{% raw %}{{ x }}{% endraw %}`
+* Tente qualquer coisa que você gostaria. Não se preocupe - Você não vai fazer nada de mal para o navegador no seu computador! No pior caso, o navegador vai ficar sem memória e vai travar. \(Mas você tem que escrever algo realmente complicado para fazer isso acontecer!\)
 
-* Remove the curly braces and keep just the content `title`
-* Put back the curly braces and replace the content with some mathematical expression, for example: `{% raw %}{{ 2 + 2 }}{% endraw %}`. \(The spaces are not mandatory, they just make the code more readable.\)
-* Write a mathematical expression combined with the `title` member: `{% raw %}{{ title + 10 }}{% endraw %}`
-* Pass an undefined variable to the expression - a variable which was not declared in the component class. For example: `{% raw %}{{ x }}{% endraw %}`
-* Try out anything you'd like. Don't worry - you can't do any harm to the browser or the computer! In the worst case, the browser will run out of memory and will get stuck. \(But you'll have to write something really complicated to make that happen!\)
+Esse é o um dos caminhos em que você pode ligar membros dos componentes do controlador ao seu template. Como o Angular realmente sabe que isso é um template do componente do App?
 
-This is one way that you can bind members of the component's controller to its template. How does Angular know that this is the template of the App component?
-
-Let's go back to the file `app.component.ts` and look at the component's meta-data defined in the decorator `@Component` right above the class definition:
-
+Vamos voltar atrás no arquivo `app.component.ts` e ver a meta-data do componente definida no decorador `@Component` bem acima da definição da classe:
 ```js
 @Component({
   selector: 'todo-root',
@@ -56,10 +52,9 @@ Let's go back to the file `app.component.ts` and look at the component's meta-da
   styleUrls: ['./app.component.css']
 })
 ```
+Nós passamos um objeto de definições para o decorador, igual nós vimos no capitulo anterior com o ngModule. O segundo proprietário, `templateUrl` diz para o Angular onde procurar pelo template anexado ao componente. Há uma outra opção para apontar para o template, no qual é uma melhor prática: Escreva o template inteiro inline aqui, no componente de definição. Nós vamos discutir isso mais tarde.
 
-We pass an object of definitions to the decorator, just like we saw in the previous chapter with ngModule. The second property, `templateUrl` tells Angular where to look for the template attached to the component. There is another option to point to the template, which is better practice: to write the whole template inline here, in the component definition. We will discuss it later.
-
-The third property, `styleUrls` tells Angular where to look for the CSS files that define the style of this component. It can have multiple CSS files. That's why the value of `styleUrls` is an array. You can take a look at the CSS file `app.component.css` - you'll see that it's empty. You can add some CSS style here, for example:
+A terceira propriedade, `styleUrls` diz ao Angular onde procurar pelos arquivos de CSS que definem o estilo desse componente. Pode ter multiplos arquivos CSS. É por isso que o valor do `styleUrls` é um array. Você pode dar uma olhada no arquivo de CSS `app.component.css` - você vai encontra-lo vazio. Você pode adicionar um pouco de CSS aqui, por exemplo: 
 
 ```css
 h1 {
@@ -67,39 +62,39 @@ h1 {
 }
 ```
 
-We'll add more style later on.
+Nós vamos adicionar mais estilos mais pra frente. 
 
-The first property, `selector`, tells Angular what will be the name of the tag that we'll use to call the component. As we saw in the file `src/index.html`, we use the app component inside the body:
+A primeira propriedade, `selector`, diz ao Angular qual será o nome da tag que nós vamos usar para chamar o componente. Como nós vimos no arquivo `src/index.html`, nós vamos usar o componente do App dentro do body:
 
 ```html
 <body>
   <todo-root>Loading...</todo-root>
 </body>
 ```
+O Elemento `todo-root` não é um elemento HTML. É o componente que foi criado com o seletor `todo-root`. Tente mudar o seletor. Você vai ver isso se você mudar apenas um dos arquivos, "Carregando..." será mostrado. Esse é o conteúdo que nós queremos dar para a tag no `index.html`, e será renderizado com tanto que o elemento não seja substituido com um componente do Angular. Você pode ver no console do navegador uma mensagem de erro. 
 
-The element `todo-root` is not an HTML element. It is the component that was created with the selector `todo-root`. Try changing the selector. You'll see that if you change it in only one of the files, "Loading..." will be displayed. This is the content that we gave to the tag in `index.html`, and it is rendered as long as the element is not replaced with an Angular component. You can see in the browser's console an error message.
-
-One last thing, the first line in the component file imports the code that defines the decorator `@Component`. It is needed to use the decorator, which is defined in the imported file \(or actually, in one of its own imports\). Try removing this line, and see the error.
+Uma última coisa, a primeira linha do componente importa o código que define o decorador `@Component`. Ele precisa usar o decorador, no qual é definido no arquivo importado \(ou na verdade, em um dos seu próprios importadores\). Tente remover essa linha e veja o erro. 
 
 #### Inline Template
-Let's move the template to be **inline** in the component definition. This will help us manage the template while looking at its functionality.
-In the file `app.component.ts`  replace the line
+Vamos mover o template para que seja **inline** na definição do componente. Isso vai nos ajudar a gerenciar o template enquanto olhamos sua funcionalidade.
+No arquivo `app.component.ts` substitua a linha
 
 ```js
 templateUrl: './app.component.html',
 ```
 
-with
+com
 
 ```js
 template: ``,
 ```
 
-Notice the **backticks** - they are used to define Template Literals, which are new in JavaSript \(ES6\). This way you can define multi-line strings. They have another cool ability: to easily use JavaScript variables and expressions within the string \(with no relation to Angular binding expressions in the template\). Read about it in the [MDN documentation](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals).
+Repare que **backticks** - eles são usados para definir literais de template, que é JavaScript novo \(ES6\). Dessa forma você pode definir multiplas linhas de string. Eles tem outra funcionalidade legal: usar facilmente variaveis JavaScript e expressões dentro da string \(sem relação com expressões de binding do Angular no template\). Leia sobre isso na [documentação MDN]
+(https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals).
 
-Make sure you replace `templateUrl` with `template` and don't forget the comma in the end of the line.
+Tenha certeza de que substituiu o `templateUrl` com `template` e não se esqueça da vírgula no fim da linha. 
 
-Now copy the entire template from `app.component.html` and paste it between the backticks.  We'll reformat the code a bit to have it easier on the eye:
+Agora copie o template inteiro do `app.component.html` e cole entre os backticks. Nós vamos formatar o código um pouco para ficar mais legivel:
 
 ```js
 template: `
@@ -109,13 +104,12 @@ template: `
 `,
 ```
 
-It is easier to manage the template when you see its controller at the same time. This is true as long as the template doesn't get too big and the controller doesn't get too complicated. If they do, it's a sign you should refactor your code by breaking it down to child components.
+É mais fácil administrar o template quando nós vemos o controlador ao mesmo tempo. Isso é verdade com tanto que o template não fique muito grande e o controlador não fique muito complicado. Se ele ficar, é um sinal de que você deve refatorar seu código quebrando ele em componentes filho. 
 
-At this point you can delete the file `app.component.html`.
->When generating a new project, you can state that you'd like an inline template for the root component by adding the flag `-it` (or `--inline-template`). Keep this in mind for your next project!
+Nesse ponto você pode deletar o arquivo `app.component.html`.
+>Quando gerar um novo projeto, você pode definir o estado que você gostaria em um template inline para o componente raiz adicionando a flag `-it` (ou `--inline-template`). Tenha isso em mente para o próximo projeto. 
 
-The same way we use inline template, we can use also inline styles. But for now we will keep the styles in a separate file.
+Da mesma forma nós usamos o template inline, nós também podemos usar estilos inline. Mas por enquanto vamos manter isso em um arquivo separado.
 
-### Summary
-We have explored the root component that was generated for us by Angular-CLI, and even refactored it. In the next chapter we will create a new component. We will start building the tree of components, which defines the structure of the application.
-
+### Sumário
+Nós exploramos o componente raiz que foi gerador por nós através do Angular-CLI, e até refatoramos. No próximo capitulo nós vamos criar um novo componente. Nós vamos iniciar a construir a arvore de componentes, no qua define a estrutura da aplicação. 
