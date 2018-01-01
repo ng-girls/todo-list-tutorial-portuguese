@@ -22,7 +22,7 @@ Este tutorial foi traduzido do Inglês para o Português por um grupo incrível 
 
 Um agradecimento especial vai para:
 
-* Alexandre Henrique Teixeira
+* Alexandre Henrique Kavalerski Teixeira
 * Aline Bastos
 * Aline Bezzoco
 * Cynthia Zanoni
