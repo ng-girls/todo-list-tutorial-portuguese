@@ -37,3 +37,4 @@ Um agradecimento especial vai para:
 * Rosicleia Frasson
 * Stefanie Melo
 * Thaysa Santos
+* Vanessa Me Tonini
