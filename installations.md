@@ -30,7 +30,7 @@ Se optar por usar o VSCode, recomendamos instalar os seguintes Plugins para Angu
 - [Angular.ng-template](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
 - [natewallace.angular2-inline](https://marketplace.visualstudio.com/items?itemName=natewallace.angular2-inline)
 
-![image](https://user-images.githubusercontent.com/1223799/30781828-88bf447c-a126-11e7-9128-4c1cdec4002c.png)
+![Angular Language Service e Angular2-inline plugins para VS Code](./assets/vscode-plugins.png)
 
 ### Git
 
@@ -113,17 +113,17 @@ Uma vez dentro do diretório do aplicativo, execute o aplicativo usando o seguin
 ng serve -o
 ```
 
-O sinalizador (flag) `-o` é uma abreviação para ` --open`, que abrirá seu navegador na URL: [`localhost: 4200`] (http: // localhost: 4200)
+O sinalizador (flag) `-o` é uma abreviação para `--open`, que abrirá seu navegador na URL: [`localhost: 4200`](http://localhost:4200)
 
 Você deverá ver uma página como esta:
 
-![image](https://github.com/bluebirrrrd/todo-list-tutorial/blob/master/assets/installation-result.png)
+![Tela de boas vindas padrão da aplicação Angular iniciada com a CLI](./assets/installation-result.png)
 
 ### Parabéns!
 
 Você tem uma aplicação angular em execução! **Enquanto você estiver trabalhando no aplicativo, você deve manter o terminal aberto executando o comando anterior.** Qualquer alteração que você fizer no código do projeto será refletida imediatamente no navegador.
 Você pode abrir outro terminal para executar tarefas em paralelo.
 
-Para parar o comando em execução no terminal, pressione `Ctrl + C` no terminal ou feche o terminal.
+Para parar o comando em execução no terminal, pressione `ctrl + c` no terminal ou feche o terminal.
 
 Agora estamos prontas para começar a desenvolver!

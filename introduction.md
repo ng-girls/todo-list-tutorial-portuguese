@@ -4,11 +4,11 @@ Angular é muito mais que um framework. É uma plataforma completa para criar ap
 
 ![](/assets/angular.png)
 
-Neste tutorial você irá aprender como desenvolver uma aplicação básica usando Angular. Você irá conhecer os blocos utilizados para construir uma aplicação funcional: módulos, componentes e serviços. o Angular-CLI irá lhe ajudar nos passos necessários de várias maneiras e simplificará o processo de desenvolvimento.
+Neste tutorial você irá aprender como desenvolver uma aplicação básica usando Angular. Também conhecerá os blocos utilizados para construir uma aplicação funcional: módulos, componentes e serviços. A Angular CLI irá lhe ajudar nos passos necessários de várias maneiras e simplificará o processo de desenvolvimento.
 
-Ao final deste tutorial, você terá um aplicativo de lista de tarefas pronta (CRUD de todos), que mostra uma lista de itens e permite adicionar ou excluir itens. Você ainda poderá alterar o título de um item existente.
+Ao final deste tutorial, você terá um aplicativo de lista de tarefas pronta (To-do's list). O aplicativo vai exibir uma lista de itens, e permitir adicionar e excluir itens. Como também poderá atualizar o título de um item existente. Em outras palavras realizar as quatro operações básicas de uma aplicação, o CRUD - *Create, Read, Update e Delete*. 
 
-A lista é salva no armazenamento local do navegador (local storage). Todas as alterações ficarão salvas mesmo quando você atualizar o navegador (refresh) ou até mesmo desligar o computador \ (desde que você use o mesmo navegador no mesmo computador e não no modo privado (aba anônima) \).
+Os dados da lista de tarefas da aplicação que iremos construir serão salvos no armazenamento local do navegador (*local storage*) em seu computador, e mesmo quando você atualizar o navegador ou mesmo desligar o computador eles serão mantidos. Portanto, durante este tutorial utilize o mesmo navegador no mesmo computador. Caso contrário, ou usando o navegador no modo privado (aba anônima) os dados serão perdidos (ou não estarão lá).
 
 Você também irá publicar a aplicação na Web, para que outras pessoas possam utilizar!
 
