@@ -32,14 +32,14 @@ O Angular cuida da sincronização dos membros do componente com o componente te
 ```
 As chaves duplas e seu conteúdo são chamados de **Interpolação**. Isso é uma das formas de **data binding** em Angular. Como nós mencionamos anteriormente, o código neste arquivo não é usado como quando o navegador renderiza o componente. Angular compila isso para o código Javascript. Em um dos passos de compilação ele procura pela Interpolações dentro do template. **O conteúdo da interpolação é uma expressão, escrita em Javascript.** Em tempo de execução a expressão é avaliada, e aí você vê o resultado. 
 
-Interpolação é um das mais fortes e mais básicas características em Angular. Existe desde o inicio do Angular - na primeira versão. Isso torna realmente simples a inserção de dados dinâmicos na página.  
+Interpolação é uma das mais fortes e mais básicas caracteristicas em Angular. Existe desde o inicio do Angular - na primeira versão. Isso torna realmente simples a inserção de dados dinâmicos no View.  
 
 Neste componente, a expressão é simplesmente o membro da classe do componente, `title`. **Vamos tentar mudar isso**. Tente o que está a seguir e veja o resultado no navegador. \(Com cada mudança que você faz no arquivo, o navegador vai atualizar automaticamente!\)
 
 * Remova as chaves e mantenha o conteúdo `title`
 * Coloque de volta as chaves e substitua o conteúdo com algum tipo de expressão matemática, por exemplo: `{% raw %}{{ 2 + 2 }}{% endraw %}`. \(Os espaços não são mandatórios, eles apenas deixam o código mais legível.\)
 * Escreva uma expressão matemática combinada com o membro `title`: `{% raw %}{{ title + 10 }}{% endraw %}`
-* Passe umaa variavel indefinida para a expressão - uma variavel na qual não foi declarada na classe do componente. Por exemplo: `{% raw %}{{ x }}{% endraw %}`
+* Passe uma variavel indefinida para a expressão - uma variavel na qual não foi declarada na classe do componente. Por exemplo: `{% raw %}{{ x }}{% endraw %}`
 * Tente qualquer coisa que você gostaria. Não se preocupe - Você não vai fazer nada de mal para o navegador no seu computador! No pior caso, o navegador vai ficar sem memória e vai travar. \(Mas você tem que escrever algo realmente complicado para fazer isso acontecer!\)
 
 Esse é o um dos caminhos em que você pode ligar membros dos componentes do controlador ao seu template. Como o Angular realmente sabe que isso é um template do componente do App?
@@ -73,7 +73,7 @@ A primeira propriedade, `selector`, diz ao Angular qual será o nome da tag que 
 ```
 O Elemento `todo-root` não é um elemento HTML. É o componente que foi criado com o seletor `todo-root`. Tente mudar o seletor. Você vai ver isso se você mudar apenas um dos arquivos, "Carregando..." será mostrado. Esse é o conteúdo que nós queremos dar para a tag no `index.html`, e será renderizado com tanto que o elemento não seja substituido com um componente do Angular. Você pode ver no console do navegador uma mensagem de erro. 
 
-Uma ultima coisa, a primeira linha do componente importa o código que define o decorador `@Component`. Ele precisa usar o decorador, no qual é definido no arquivo importado \(ou na verdade, em um dos seu próprios importadores\). Tente remover essa linha e veja o erro. 
+Uma última coisa, a primeira linha do componente importa o código que define o decorador `@Component`. Ele precisa usar o decorador, no qual é definido no arquivo importado \(ou na verdade, em um dos seu próprios importadores\). Tente remover essa linha e veja o erro. 
 
 #### Inline Template
 Vamos mover o template para que seja **inline** na definição do componente. Isso vai nos ajudar a gerenciar o template enquanto olhamos sua funcionalidade.

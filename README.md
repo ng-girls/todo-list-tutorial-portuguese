@@ -15,3 +15,25 @@ Este tutorial é usado nos workshops do [ngGirls](http://ng-girls.org) do Brasil
 **Sobre a autora:** Shmuela Jacobs é desenvolvedora front-end e consultora sênior de Angular. 
 Durante os seus estudos acadêmicos \(Mestre em Gestão de Sistemas de Informação e Bacharel em Física\) e lá combinou suas paixões por códigos e ensino como desenvolvedora de software, assistente, guia de museu ciências e 
 pesquisadora. Hoje Shmuela continua exercendo essas atividades, trabalhando como desenvolvedora em tempo integral, compartilhando seu conhecimento e experiência em meetups e conferências. Shmuela é a fundadora da ngGirls e organizadora do Meetup Angular AfterHours.
+
+## Tradução
+
+Este tutorial foi traduzido do Inglês para o Português por um grupo incrível de voluntários.
+
+Um agradecimento especial vai para:
+
+* Alexandre Henrique Teixeira
+* Aline Bastos
+* Aline Bezzoco
+* Cynthia Zanoni
+* Diego França
+* Fagner Candido
+* Joana Souza
+* Loiane Groner
+* Mariana Beilune Abad
+* Mateus Duraes
+* Murilo Viviani
+* Rafael Dantas
+* Rosicleia Frasson
+* Stefanie Melo
+* Thaysa Santos
