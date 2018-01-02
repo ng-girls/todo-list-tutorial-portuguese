@@ -2,31 +2,40 @@
 
 Neste capítulo, escreveremos um novo componente. Isso nos permitirá adicionar um item à lista de tarefas. Será composto pelos elementos HTML `input` e `button`.
 
-Utilizaremos o Angular-CLI para gerar todos os arquivos e boilerplate para nosso app. No seu terminal, execute o seguinte comando:
+Utilizaremos o Angular-CLI para gerar todos os arquivos para nosso app. Em um **novo** terminal execute o seguinte comando:
 
 ```cmd
 ng g c input -it
 ```
 
-> Observe que você precisa abrir um novo terminal (janela ou guia) para executar
-> o novo comando. Inserindo o comando acima para o shell onde `ng serve` roda
-> não terá nenhum efeito.
+> É importante observar que você precisa abrir um novo terminal (janela ou aba) para executar este comando. Inserir o comando acima no terminal onde `ng serve` está executando não terá nenhum efeito.
 
-Como vimos anteriormente, `ng` é o comando para ser usar o Angular-CLI. `g` é um atalho para `generate`. `c` é um atalho para  `component`. `input` é o nome que daremos ao componente. `-it` é um atalho para `--inline-template`.
+Como vimos anteriormente:  
+ * `ng` é o comando para usar a CLI;
+ * `g` é um atalho para `generate`;
+ * `c` é um atalho para  `component`; 
+ * `input` é o nome que daremos ao componente;
+ * `-it` é um atalho para `--inline-template`.
 
-Então, a versão longa do comando é:
-
+O comando que executamos está versão abreviada. A sua a versão longa é:
 ```
 ng generate component input --inline-template
 ```
 
-> Você pode evitar usar `-it` cada vez que você gera um componente configurando modelos inline como padrão no arquivo de configuração `angular-cli.json`.
->
-> Não se preocupe com o nome do componente `input`. Ele não irá substituir os elementos HTML `input`. Isso é graças ao prefixo que a Angular-CLI dá aos nossos componentes. O prefixo padrão é `app`, então o seletor de componentes seria `app-input`. Se você criou o projeto indicando o prefixo de sua escolha, ou alterou-o posteriormente no arquivo `angular-cli.json`, este será o prefixo do seletor. Quando criamos o projeto, definimos o prefixo para "todo", então o seletor será `todo-input`.
+Você pode evitar usar `-it` cada vez que você gera um componente configurando modelos inline como padrão no arquivo de configuração `.angular-cli.json` dessa maneira:
 
-Vejamos o que a Angular-CLI criou para nós.
+ ``` 
+"defaults": {
+  "inline": {
+    "style": true, 
+    "template": true
+  }
+}
+```
 
-Ele criou uma nova pasta chamada `src/app/input`. Existem três arquivos lá:
+> Não se preocupe com o nome do componente `input`. Ele não irá substituir os elementos HTML `input`. Isso é graças ao prefixo que a Angular-CLI dá aos nossos componentes. O prefixo padrão é `app`, então o seletor de componentes seria `app-input`. Se você criou o projeto indicando o prefixo de sua escolha, ou alterou-o posteriormente no arquivo `.angular-cli.json`, este será o prefixo do seletor. Quando criamos o projeto, definimos o prefixo para "todo", então o seletor será `todo-input`.
+
+Vejamos o que a CLI criou para nós. Foi criada uma nova pasta chamada `src/app/input`. Existem três arquivos lá:
 
 * `input.component.css` - este é o arquivo em que o estilo específico do componente será colocado.
 * `input.component.spec.ts` - este é um arquivo para testar o componente. Não vamos lidar com isso neste tutorial.
@@ -71,7 +80,6 @@ export class InputComponent implements OnInit {
   title: string = '';
   ...
 ```
-
 
 Isso não irá interferir com o `title` do componente `todo-root`, uma vez que o conteúdo de cada componente encapsulado dentro dele.
 
