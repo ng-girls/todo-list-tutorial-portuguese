@@ -9,7 +9,7 @@ Helmut Petritsch define em [Service-Oriented Architecture \(SOA\) vs. Component 
 Em aplicações Web, **um componente controla um fragmento de tela chamado de View (visualização)**. É uma parte do que você vai eventualmente ver na tela. Tem um template, no qual define sua estrutura visual. Também tem uma lógica no qual define o comportamento e os valores dinamicos. A parte lógica é código Javascript e é chamado de controlador. 
 
 Aqui está o diagrama de um componente em Angular, com o resultado abaixo. 
-![Angular 2 Component](Angular Component.001.jpeg)
+![Angular 2 Component](./assets/Angular Component.001.jpeg)
 
 Diretivas, pipes e serviços são outros blocos de construção em Angular, no qual vamos discutir mais tarde neste tutorial. 
 
@@ -89,12 +89,11 @@ com
 template: ``,
 ```
 
-Repare que **backticks** - eles são usados para definir literais de template, que é JavaScript novo \(ES6\). Dessa forma você pode definir multiplas linhas de string. Eles tem outra funcionalidade legal: usar facilmente variaveis JavaScript e expressões dentro da string \(sem relação com expressões de binding do Angular no template\). Leia sobre isso na [documentação MDN]
-(https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals).
+Repare que usamos **crases** (ou *backticks*) ao invés de aspas simples - esta é uma nova forma para fazer templates literais (ou template strings), que foi lançada no JavaScript novo \(ES6\). Dessa forma você pode escrever uma string com multiplas linhas, e funcionalidade legal é usar facilmente variáveis JavaScript e expressões dentro da string \(sem relação com expressões de binding do Angular no template\). Leia sobre isso na [documentação MDN](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals).
 
 Tenha certeza de que substituiu o `templateUrl` com `template` e não se esqueça da vírgula no fim da linha. 
 
-Agora copie o template inteiro do `app.component.html` e cole entre os backticks. Nós vamos formatar o código um pouco para ficar mais legivel:
+Agora copie o template inteiro do `app.component.html` e cole entre os backticks. Nós vamos formatar o código um pouco para ficar mais legível:
 
 ```js
 template: `
@@ -104,7 +103,7 @@ template: `
 `,
 ```
 
-É mais fácil administrar o template quando nós vemos o controlador ao mesmo tempo. Isso é verdade com tanto que o template não fique muito grande e o controlador não fique muito complicado. Se ele ficar, é um sinal de que você deve refatorar seu código quebrando ele em componentes filho. 
+É mais fácil de entender o template quando nós vemos a classe (controller) ao mesmo tempo. Porém usamos isto apenas quando o template é simples e pequeno, ou quando a classe não é muito complicada. Se a classe começar a ficar grande, é um sinal de que você deve refatorar seu código quebrando em componentes filho. 
 
 Nesse ponto você pode deletar o arquivo `app.component.html`.
 >Quando gerar um novo projeto, você pode definir o estado que você gostaria em um template inline para o componente raiz adicionando a flag `-it` (ou `--inline-template`). Tenha isso em mente para o próximo projeto. 
@@ -112,4 +111,4 @@ Nesse ponto você pode deletar o arquivo `app.component.html`.
 Da mesma forma nós usamos o template inline, nós também podemos usar estilos inline. Mas por enquanto vamos manter isso em um arquivo separado.
 
 ### Sumário
-Nós exploramos o componente raiz que foi gerador por nós através do Angular-CLI, e até refatoramos. No próximo capitulo nós vamos criar um novo componente. Nós vamos iniciar a construir a arvore de componentes, no qua define a estrutura da aplicação. 
+Exploramos o componente `root` (raiz) que foi gerado por nós através da CLI, e refatoramos alguns pontos. No próximo capítulo vamos criar um novo componente, e vamos iniciar a árvore de componentes, no qual define a estrutura da aplicação. 

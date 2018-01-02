@@ -8,9 +8,9 @@ Este tutorial é código aberto (*open source*) e foi escrito pela comunidade An
 
 Este tutorial é usado nos workshops do [ngGirls](http://ng-girls.org) do Brasil e do mundo. Caso tenha interesse em levar o evento ngGirls para a sua cidade ou caso tenha alguma sugestão para fazer, entre em contato com a gente através do e-mail [info@ng-girls.org](/mailto:info@ng-girls.org).
 
-![](/assets/ngGirls%20banner%20transparent.png)
+![ngGirls](/assets/ngGirls%20banner%20transparent.png)
 
-![](/assets/slogen.png)
+![Angular After Hours}](/assets/slogen.png)
 
 **Sobre a autora:** Shmuela Jacobs é desenvolvedora front-end e consultora sênior de Angular. 
 Durante os seus estudos acadêmicos \(Mestre em Gestão de Sistemas de Informação e Bacharel em Física\) e lá combinou suas paixões por códigos e ensino como desenvolvedora de software, assistente, guia de museu ciências e 
