@@ -4,13 +4,6 @@ O que e por que
 ------------
 Serviços são funções Javascript que são responsáveis somente por tarefas específicas. Serviços em Angular são injetados, usando um mecanismo de injeção de dependências e incluindo um valor, função ou feature necessária para aplicação. Em nosso ToDo app, nós vamos precisar de um serviço para salvar todas as tarefas e ele será utilizado via injeção de dependências nos componentes. 
 
-Create
-------------
-In order to create a new service by **angular-cli**, we need to type this command on the root folder:
-
-    ng g s todoList
-
-This command will generate the service and put it under src/app/todo-list.service.ts
 
 Criar
 ------------
