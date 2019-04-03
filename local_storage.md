@@ -31,7 +31,7 @@ Há mais outros métodos maravilhosos que você pode usar, como descritos [aqui]
 
 ## Hora do Angular \(de volta ao nosso app\)
 
-Na seção a seguir vamos contruir um serviço de armazenamento local que mais tarde será usado para armazenar os itens da nossa lista de tarefas.
+Na seção a seguir vamos construir um serviço de armazenamento local que mais tarde será usado para armazenar os itens da nossa lista de tarefas.
 Como foi dito nos tutoriais anteriores, vamos gerar um serviço usando `angular-cli`:
 
 ```
@@ -78,10 +78,10 @@ constructor() {
 }
 ```
 Espera! Espera! Por que`JSON.parse`? A resposta é simples:
-Conforme descrito anteriormente nesse tutorial, o armazenamento  local memoriza os dados em uma forma de chave-valor, isso significa que os valores são armazenados como **strings**.
+Conforme descrito anteriormente nesse tutorial, o armazenamento local memoriza os dados em uma forma de chave-valor, isso significa que os valores são armazenados como **strings**.
 Então, se quisermos ter um objeto real para tratar, devemos converter a string em um objeto válido.  
 
-Agora vamos começar fazendo algumas coisas reais, mas primeiro iremos declarar todos os métodos públicos que queros expor nesse serviço, que são **get, post, put**, e **destroy**.  
+Agora vamos começar fazendo algumas coisas reais, mas primeiro iremos declarar todos os métodos públicos que queremos expor nesse serviço, que são **get, post, put**, e **destroy**.  
 Nosso serviço deve parecer algo similar à isso:
 
 ```
@@ -133,7 +133,7 @@ Se você não está familiarizada com o operador  `...`, por favor verifique [es
 
 ### post
 
-Esse método será responsável por adicionar um novo item e retornar a nova lista. Ele aceita um parâmetro,`item` o qual será o item a ser adicionado:
+Esse método será responsável por adicionar um novo item e retornar a nova lista. Ele aceita um parâmetro, `item` o qual será o item a ser adicionado:
 
 ```
 /**
@@ -184,10 +184,10 @@ Agora precisamos modificar nossa função `post` para usar o `update` assim tudo
 ### put
 
 Aqui queremos atualizar um item existente.
-Antes disso, vamos adicionar outro método auxiliar privado`findItemIndex`, o qual simplesmente irá returnar o indíce de um item com a lista de array:
+Antes disso, vamos adicionar outro método auxiliar privado `findItemIndex`, o qual simplesmente irá retornar o índice de um item com a lista de array:
 ```
 /**
-   * encontra o indíce de um item no array
+   * encontra o índice de um item no array
    * @param item
    * @returns {number}
    */
@@ -213,9 +213,9 @@ Agora, podemos usar `Object.assign` para atualizar um item existente:
 
 Então, o que está acontecendo aqui?
 `Object.assign` pega um objeto alvo (target) \(primeiro argumento\) e objetos de origem (source)\(todo o resto do argumento \), e copia para o objeto alvo. 
-Se uma propriedade existe tanto no target e no source, esse método irá subsitutir o valor antigo pelo novo.
-Aqui queremos atualizar um item na lista, então primeiro encontramos o seu indíce no array e depois aplicamos as mudanças nele.  
-Por fim, queremos sincronizá-lo com o armazanamento local \(`this.update`\) e retornar a nova lista.
+Se uma propriedade existe tanto no target e no source, esse método irá substituir o valor antigo pelo novo.
+Aqui queremos atualizar um item na lista, então primeiro encontramos o seu índice no array e depois aplicamos as mudanças nele.  
+Por fim, queremos sincronizá-lo com o armazenamento local \(`this.update`\) e retornar a nova lista.
 
 ### destroy
 
@@ -234,12 +234,12 @@ Esse método irá remover um item da lista e sincronizar com o armazenamento loc
 ```
 
 O código acima é bastante simples.
-`splice(i, n)` remove `n` itens começando pelo indíce `i`.  
-No nosso código, primeiro encontramos o indíce do item para remové-lo e removemos apenas ele \(porisso usamos 1 como segundo parâmetro\).
+`splice(i, n)` remove `n` itens começando pelo índice `i`.  
+No nosso código, primeiro encontramos o índice do item para removê-lo e removemos apenas ele \(por isso usamos 1 como segundo parâmetro\).
 
-## Adicionando alguns dados padrão
+## Adicionando alguns dados padrões
 
-Vamos assumir que queremos que a nossa lista de tarefas tenha alguns dados padrão para iniciar.
+Vamos assumir que queremos que a nossa lista de tarefas tenha alguns dados padrões para iniciar.
 
 Então podemos adicioná-lo modificando nosso serviço, adicionando na seção de constantes \(depois das importações\):
 
@@ -325,10 +325,8 @@ A mudança acima irá garantir que quando adicionamos um item, nossa lista tamb�
 
 ## Resumo
 
-Neste tuturial aprendemos o que é armazenamento local e como usá-lo.
+Neste tutorial aprendemos o que é armazenamento local e como usá-lo.
 Vimos que o armazenamento local é uma ótima e direta ferramenta para desenvolvedores armazenar dados localmente nos computadores/dispositivos dos usuários.
 Nós então implementamos um novo serviço que usa o armazenamento local para guardar os itens da lista de tarefas, e atualizamos o resto dos componentes para oferecer suporte esse novo serviço.
 
 Aproveite o resto do tutorial!
-
-

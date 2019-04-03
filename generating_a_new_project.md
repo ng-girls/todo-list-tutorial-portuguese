@@ -59,8 +59,7 @@ Depois de criarmos o projeto, iremos receber o arquivo nesse formato
 Vamos ignorar todos os arquivos de configurações por agora e pular diretamente para a estrutura da pasta. O aplicativo é o principal componente da aplicação e é a partir desse ponto em que iniciamos o nosso aplicativo.
 Vamos abordar os componentes mais detalhadamente no próximo tutorial, mas a principal idéia do projeto é que criamos componentes e os conectamos até ter um aplicativo.
 
-Com Angular-CLI podemos gerar componentes e alguns outros arquivos que podem nos ajudar no futuro. Para fezê-los, devemos escrever `ng generate component <component name>` para componentes e `ng generate route <route path>` para rotas e muitos mais que podem ser revisados ​​em [angular cli docs](https://github.com/angular/angular-cli#generating-components-directives-pipes-and-services).
+Com Angular-CLI podemos gerar componentes e alguns outros arquivos que podem nos ajudar no futuro. Para fazê-los, devemos escrever `ng generate component <component name>` para componentes e `ng generate route <route path>` para rotas e muitos mais que podem ser revisados ​​em [angular cli docs](https://github.com/angular/angular-cli#generating-components-directives-pipes-and-services).
 
 Agora, você provavelmente pergunta como você vê e testa sua aplicação?
 Para isso, você deverá rodar o comando `ng serve` e acessar sua aplicação em `http://localhost:4200` e por último, mas não menos importante, se você quer enviar seu projeto para produção, você deve escrever `ng build`.
-

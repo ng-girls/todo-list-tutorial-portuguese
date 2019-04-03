@@ -31,7 +31,7 @@ export class InputComponent implements OnInit {
 }
 ```
 
-`OnInit` é uma **interface** - a definição de uma estrura, que não é implementada como uma clase. Ela define quais propriedades e/ou métodos devem existir na classe que a implementa. Neste caso, `OnInit` é uma interface para os componentes Angular que implementam o método `ngOnInit`. Este método é um **método do ciclo de vida do componente**. O Angular irá chamar este método depois que a instância tiver sido criada.
+`OnInit` é uma **interface** - a definição de uma estrutura, que não é implementada como uma classe. Ela define quais propriedades e/ou métodos devem existir na classe que a implementa. Neste caso, `OnInit` é uma interface para os componentes Angular que implementam o método `ngOnInit`. Este método é um **método do ciclo de vida do componente**. O Angular irá chamar este método depois que a instância tiver sido criada.
 
 O Angular-CLI adiciona esta declaração para nos lembrar de que é melhor inicializar as coisas no componente através do método `ngOnInit`. Você pode ver que ele também adicionou o método no corpo da classe:
 

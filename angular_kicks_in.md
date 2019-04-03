@@ -55,4 +55,3 @@ Há até renderizadores para o Arduino, com os quais você pode conectar sensore
 Nós vimos como dizemos ao Angular onde e como começar seu trabalho, como definimos o módulo raiz e o componente raiz, e como usamos o componente raiz.
 
 No próximo capítulo, veremos como um componente está definido em Angular.
-

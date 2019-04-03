@@ -23,5 +23,3 @@ addItem(item): void {
 
 - Pode ser necessário utilizar lógica adicional quando esses métodos forem chamados no DB (nós iremos implementar isso mais tarde)
 - É considerado um jeito melhor de lidar com dados se os objetos forem imutáveis, assim não haverão ligações - as referências irão mudar (porém nós não iremos implementar redux nesse tutorial agora).
-
-

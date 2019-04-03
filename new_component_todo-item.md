@@ -24,7 +24,7 @@ Use o componente  no template do `appComponent` - dentro do elemento `<li>`:
 Confira o resultado no navegador. O que você vê? Por que?
 
 ## @Input()
-Nós queremos exibir o título de cada item dentro do componente `todo-item`. Precisamos passar o titulo atual do item  no loop(ou o item inteiro) para o o componente `todo-item`. 
+Nós queremos exibir o título de cada item dentro do componente `todo-item`. Precisamos passar o titulo atual do item no loop(ou o item inteiro) para o o componente `todo-item`. 
 
 Novamente, Angular faz com que seja muito fácil para nós, fornecendo-nos o decorator `Input`.
 
@@ -32,7 +32,7 @@ Dentro da classe recém criada `itemComponent` (itemComponent) adicione a linha:
 ```ts
 @Input() itemTitle: string;
 ```
-Ele diz ao componente que espera uma entrada do tipo string e atribue ao membro da classe chamada `itemTitle`. Certifique-se  de que o `Input` seja adicionado à declaração de importação na primeira linha do arquivo. Agora, podemos usá-lo  dentro do template `itemComponent`:
+Ele diz ao componente que espera uma entrada do tipo string e atribui ao membro da classe chamada `itemTitle`. Certifique-se  de que o `Input` seja adicionado à declaração de importação na primeira linha do arquivo. Agora, podemos usá-lo  dentro do template `itemComponent`:
 ```html
 {{ itemTitle }}
 ```
@@ -53,7 +53,7 @@ O `itemTitle` entre colchetes é o mesmos que foi declarado como componente no `
 Nós usamos a propriedade Binding em um elemento que nós mesmos criamos! E agora podemos realmente ver e entender que a vinculação da propriedade Binding se liga a propriedade atual do componente.
 
 ## Passando o item inteiro
-Vamos refatorar um pouco o nosso código para que possamos facilmente implementar mais funcionalidades no componente `todo-item`, por exemplo, editando e removendo o item. Em vez de passar apenas o título ao componente, poderiamos passar todo o item, e deixar o componente extrair o título quando necessário.
+Vamos refatorar um pouco o nosso código para que possamos facilmente implementar mais funcionalidades no componente `todo-item`, por exemplo, editando e removendo o item. Em vez de passar apenas o título ao componente, poderíamos passar todo o item, e deixar o componente extrair o título quando necessário.
 
 No `itemComponent` mudamos a interpolação no template para:
 ```html

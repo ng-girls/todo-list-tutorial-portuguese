@@ -36,7 +36,7 @@ Passamos `newTitle` quando emitimos o evento. O que quer que possamos passar em 
 
 Nada mais é alterado no componente todo-input. Os eventos emitidos por `keyup.enter` e` click` ainda chamam o mesmo método, mas o próprio método mudou.
 
-Agora, tudo o que precisamos fazer é pegar o evento no componente principal e anexar lógica a ele. Vá para o componente app-root e vincule ao evento `submit` no componente` <todo-input>`:
+Agora, tudo o que precisamos fazer é pegar o evento no componente principal e anexar lógica a ele. Vá para o componente app-root e vincule ao evento `submit` no componente `<todo-input>`:
 
 ```html
 <todo-input (submit)="addItem($event)"></todo-input>

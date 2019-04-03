@@ -90,7 +90,7 @@ export class TodoListService {
 
 Injetando ao componente list-manager e utilizando o serviço
 ------------
-Depois de criar uma instância para o serviço, precisamos intejar no nosso componente list-manager. Vá para o arquivo /src/app/list-manager/list-manager.component.ts e adicione o código de importação abaixo: 
+Depois de criar uma instância para o serviço, precisamos injetar no nosso componente list-manager. Vá para o arquivo /src/app/list-manager/list-manager.component.ts e adicione o código de importação abaixo: 
 
 ```javascript
 import { TodoListService } from '../todo-list.service'; 
@@ -109,4 +109,3 @@ ngOnInit() {
     this.todoList = this.todoListService.getTodoList();
 }
 ```
-
