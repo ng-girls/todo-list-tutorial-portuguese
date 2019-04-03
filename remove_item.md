@@ -52,4 +52,3 @@ removeItem(item) {
 }
 ```
 Essa função chama o método destroy() que já criamos em um momento anterior no arquivo **todo-list-storage.service.ts**.
-

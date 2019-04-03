@@ -34,7 +34,7 @@ export class InputComponent implements OnInit {
 
 Agora, queremos pegar o valor do input (o que o usuário escreveu) e mudar o título quando for pressionado o botão de salvar.
 
-Nós já sabemos como criar um botão e reagir para clicar nele. Agora nós precisamos passar para o método alguma informação de algum elemente diferente. Agora precisamos passar para o método alguns dados de um elemento diferente. Queremos usar o valor da entrada dentro do elemento do botão.
+Nós já sabemos como criar um botão e reagir para clicar nele. Agora nós precisamos passar para o método alguma informação de algum elemento diferente. Agora precisamos passar para o método alguns dados de um elemento diferente. Queremos usar o valor da entrada dentro do elemento do botão.
 
 O Angular nos ajuda a fazer exatamente isso. **Podemos obter uma referência ao elemento que queremos em uma variável com o nome que escolhemos, como por exemplo** `inputElement`, usando uma sintaxe simple - uma hash. ** Adicione um `#inputElement` no `input` e use-o no evento click do botão:
 
@@ -82,4 +82,3 @@ changeTitle(inputElementReference): void {
 ## Recursos
 
 [Angular Template Reference Variables](https://angular.io/docs/ts/latest/guide/template-syntax.html#!#ref-vars)
-

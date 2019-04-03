@@ -36,8 +36,8 @@ Se optar por usar o VSCode, recomendamos instalar os seguintes Plugins para Angu
 
 O Git é uma ferramenta que ajuda a gerenciar versões do seu código e trabalhar de forma colaborativa com outros membros da equipe. Existe muita coisa para se aprender sobre Git, porém, neste tutorial vamos abordar apenas o uso básico.
 
-Você pode baixár o Git e seguir as instruções de instalação clicando [aqui](https://git-scm.com/).
-Quando o assitente de instalação perguntar se você gostaria de instalar o **git bash**, escolha sim.
+Você pode baixar o Git e seguir as instruções de instalação clicando [aqui](https://git-scm.com/).
+Quando o assistente de instalação perguntar se você gostaria de instalar o **git bash**, escolha sim.
 
 ### Github
 

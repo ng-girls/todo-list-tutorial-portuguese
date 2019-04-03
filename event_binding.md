@@ -100,4 +100,3 @@ Agora, mude o argumento que você está passando no modelo:
 Teste!
 
 Não esqueça de voltar para o código anterior à dica antes de continuar o tutorial.
-
