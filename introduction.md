@@ -1,4 +1,4 @@
-# Introdução
+# \#0 Introdução
 
 Angular é muito mais que um framework. É uma plataforma completa para criar aplicações que podem ser executadas não apenas em um navegador, mas em qualquer lugar. O Angular fornece ferramentas com recursos avançados, como poder criar componentes dinâmicos facilmente, definir rotas de navegação e muito mais.
 
@@ -9,6 +9,8 @@ Neste tutorial você irá aprender como desenvolver uma aplicação básica usan
 Ao final deste tutorial, você terá um aplicativo de lista de tarefas pronta (To-do's list). O aplicativo vai exibir uma lista de itens, e permitir adicionar e excluir itens. Como também poderá atualizar o título de um item existente. Em outras palavras realizar as quatro operações básicas de uma aplicação, o CRUD - *Create, Read, Update e Delete*. 
 
 Os dados da lista de tarefas da aplicação que iremos construir serão salvos no armazenamento local do navegador (*local storage*) em seu computador, e mesmo quando você atualizar o navegador ou mesmo desligar o computador eles serão mantidos. Portanto, durante este tutorial utilize o mesmo navegador no mesmo computador. Caso contrário, ou usando o navegador no modo privado (aba anônima) os dados serão perdidos (ou não estarão lá).
+
+![](.gitbook/assets/todo-app-final%20%281%29.gif)
 
 Você também irá publicar a aplicação na Web, para que outras pessoas possam utilizar!
 
