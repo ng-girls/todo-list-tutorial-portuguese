@@ -134,7 +134,7 @@ Este método irá salvar os dados \(objeto, lista, etc.\) fornecidos sob uma cha
 
 > Como mencionado anteriormente, este serviço poder ter uma API mais ampla com métodos mais robustos. Quando se escreve um serviço para acessar um banco de dados, existe outros métodos para adicionar, modificar e excluir itens especifícos.
 
-## Use the ListStorageService
+## Usando o ListStorageService
 
 Nós gostaríamos de usar o seriço recém-criado de dentro do `TodoListService`. Primeiro precisaremos injetar o `StorageService` no `TodoListService`, assim como injetamos no `ListManagerComponent`. Vamos pedir por uma instância do serviço no construtor e garantir que a sua classe seja importada. Vamos mover a lista de tarefas padrão para fora da classe. Também iremos adicionar uma constante com a chave do nosso armazenamento.
 
