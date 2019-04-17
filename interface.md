@@ -25,7 +25,7 @@ export interface TodoItem {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Agora, podemos deifinir que propriedades e/ou métodos cada objeto do tipo TodoItem deve ter. Neste ponto iremos adicionar dois métodos:
+Agora, podemos definir que propriedades e/ou métodos cada objeto do tipo TodoItem deve ter. Neste ponto iremos adicionar dois métodos:
 
 * `title` que deve ser do tipo `string`
 * `completed` que é do tipo `boolean` e é um membro opcional
@@ -41,7 +41,7 @@ export interface TodoItem {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Vamos definir o item @Input para ser do tipo que criamos. Isso vai permitir que o IDE nos sugira membros disponíveis quando usarmos o item na classe e no modelo do componente.
+Vamos definir o item @Input para ser do tipo que criamos. Isso vai permitir que a IDE nos sugira membros disponíveis quando usarmos o item na classe e no modelo do componente.
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/todo-item/todo-item.component.ts" %}
