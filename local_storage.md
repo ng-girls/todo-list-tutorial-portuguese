@@ -73,7 +73,7 @@ export class StorageService {
 
 Se algo está lhe parecendo estranho, por favor consulte o [Capítulo: Criar um Serviço](creating-a-service.md) para mais informações detalhadas sobre serviços.
 
-Precisamos fornecer o serviço em nosso ngModule. Abra `app.module.ts` e na lista de `providers` list adicione a nova classe:
+Precisamos fornecer o serviço em nosso ngModule. Abra `app.module.ts` e na lista de `providers` adicione a nova classe:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.module.ts" %}
@@ -96,11 +96,11 @@ import { StorageService } from './services/storage.service';
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Como não podemos acessar um item na lista diretamente no armazenamento local, implementaremos apenas dois métodos: obter os dados e salvar os dados. Mudar a lista será feito pelo TodoListService. Para cada método, vamos passar a chave (nome) dos dados que queremos.
+Como não podemos acessar um item na lista diretamente no armazenamento local, implementaremos apenas dois métodos: obter os dados \(getData\) e salvar os dados \(setData\). A mudança da lista será feito pelo TodoListService. Para cada método, vamos passar a chave (nome) dos dados que queremos.
 
 ### getData
 
-Este método irá pegar e retornar os dados \(objetos, lista, etc.\) armazenados no serviço sob a chave:
+Este método irá obter e retornar os dados \(objetos, lista, etc.\) armazenados no serviço sob a chave:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/storage.service.ts" %}
@@ -138,7 +138,7 @@ Este método irá salvar os dados \(objeto, lista, etc.\) fornecidos sob uma cha
 
 Nós gostaríamos de usar o seriço recém-criado de dentro do `TodoListService`. Primeiro precisaremos injetar o `StorageService` no `TodoListService`, assim como injetamos no `ListManagerComponent`. Vamos pedir por uma instância do serviço no construtor e garantir que a sua classe seja importada. Vamos mover a lista de tarefas padrão para fora da classe. Também iremos adicionar uma constante com a chave do nosso armazenamento.
 
-> Uma boa prática é usar os arquivos de ambientes para armazenar as chaves. Dessa forma, é possível gerenciar diferentes chaves para cada ammbiente - desenvolmento, produção, staging, etc.
+> Uma boa prática é usar os arquivos de ambientes para armazenar as chaves. Dessa forma, é possível gerenciar diferentes chaves para cada ammbiente - desenvolvimento, produção, staging, etc.
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/todo-list.service.ts" %}
@@ -215,7 +215,7 @@ updateItem(item: TodoItem, changes) {
 {% endcode-tabs %}
 
 Então o que está acontecendo aqui?
-Nós localizamos o item na lista. Em seguida, no mesmo local, atribuímo um novo objeto, que é construído a partir do item original e das alterações feitas nele. Estamos usando o operador spread para isso: um novo objeto é construído, composto pelo conjunto original de chaves-valores \(`...item`\) que são substituídos pelas chaves-valores de `changes`. \(Se uma chave em `changes` não existe em `item`, ela é adicionada ao novo objeto.\)
+Nós localizamos o item na lista. Em seguida, no mesmo local, atribuímo um novo objeto, que é construído a partir do item original e das alterações feitas nele. Estamos usando o operador *spread* para isso: um novo objeto é construído, composto pelo conjunto original de chaves-valores \(`...item`\) que são substituídos pelas chaves-valores de `changes`. \(Se uma chave em `changes` não existe em `item`, ela é adicionada ao novo objeto.\)
 
 ### DRY - Don't Repeat Yourself (Não repita você mesmo)
 
