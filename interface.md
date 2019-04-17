@@ -91,4 +91,4 @@ import { TodoItem } from './interfaces/todo-item';
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Agora tente excluir o título de um dos objetos na lista. O que acontece?
+Agora tente excluir o título \(title\) de um dos objetos na lista. O que acontece?
