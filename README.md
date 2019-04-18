@@ -38,3 +38,4 @@ Um agradecimento especial vai para:
 * Stefanie Melo
 * Thaysa Santos
 * Vanessa Me Tonini
+* Elaine Mattos

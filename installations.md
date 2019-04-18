@@ -9,7 +9,7 @@ Além disso, o Git é recomendado para gerenciar versões de seu código e o Git
 
 Nossa primeira ferramenta é o **navegador** (browser). Iremos usar o navegador para ver o resultado do nosso trabalho e depurá-lo (debugar). Recomendamos o [Google Chrome](https://www.google.com/chrome/browser/desktop/) - que possui excelentes ferramentas para desenvolvedoras. O [Firefox](https://www.mozilla.org/en-US/firefox/new/) também é incrível. Se você ainda não possui algum desses instalados no seu computador, basta clicar no respectivo link e seguir as instruções para baixar e instalar o navegador de sua escolha.
 
-### IDE
+## IDE
 
 Nossa próxima ferramenta é a **IDE** (integrated development environment) - ambiente de desenvolvimento integrado. É um software que nos ajuda a escrever o código. IDEs podem fazer muitas coisas incríveis, tais como:
 
