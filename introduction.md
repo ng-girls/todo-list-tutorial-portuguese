@@ -1,4 +1,4 @@
-# \#0 <g-emoji class="g-emoji" alias="dancer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f483.png"><img class="emoji" alt="dancer" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f483.png"></g-emoji> Introdução
+# \#0 <img class="emoji" alt="dancer" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f483.png">Introdução
 
 Angular é muito mais que um framework. É uma plataforma completa para criar aplicações que podem ser executadas não apenas em um navegador, mas em qualquer lugar. O Angular fornece ferramentas com recursos avançados, como poder criar componentes dinâmicos facilmente, definir rotas de navegação e muito mais.
 
