@@ -12,7 +12,7 @@ Este comando irá gerar o serviço no arquivo `src/app/services/todo-list.servic
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/todo-list.service.ts" %}
-```text
+```ts
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -35,7 +35,7 @@ Para começar a usar o serviço, primeiro precisamos provê-lo ao `NgModule`. N�
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.module.ts" %}
-```typescript
+```ts
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +60,7 @@ Certifique-se que o serviço está importado:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.module.ts" %}
-```typescript
+```ts
 import { TodoListService } from './services/todo-list.service';
 ```
 {% endcode-tabs-item %}
@@ -72,7 +72,7 @@ Agora nós podemos mover o array `todoList` do `ListManagerComponent` para o nos
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/todo-list.service.ts" %}
-```typescript
+```ts
 private todoList: TodoItem[] = [  {title: 'install NodeJS'},
   {title: 'install Angular CLI'},
   {title: 'create new app'},
@@ -88,7 +88,7 @@ Tenha certeza de que a interface TodoItem está importada:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/todo-list.service.ts" %}
-```typescript
+```ts
 import { TodoItem } from '../interfaces/todo-item';
 ```
 {% endcode-tabs-item %}
@@ -100,7 +100,7 @@ Nós adicionaremos o método `getTodoList` que retornará o array `todoList`. O 
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/todo-list.service.ts" %}
-```typescript
+```ts
 import { Injectable } from '@angular/core';
 import { TodoItem } from '../interfaces/todo-item';
 
@@ -132,7 +132,7 @@ export class TodoListService {
 
 Depois de criar o serviço, nós podemos injetá-lo no nosso componente `list-manager`. Na Injeção de Dependência do Angular isso é muito simples. Nós o passamos como um parâmetro no construtor - o tipo do parâmetro é o nome da classe do serviço. O Angular atribui a instância criada ao nome do parâmetro e nós podemos usá-lo a partir do construtor. Antes de implementarmos por nós mesmos, vamos ver como isso funciona: 
 
-```typescript
+```ts
 constructor(todoListService: TodoListService) {
   todoListService.getTodoList();
 }
@@ -140,7 +140,7 @@ constructor(todoListService: TodoListService) {
 
 O Typescript nos ajuda ainda mais nos fornecendo um atalho para atribuir o parâmetro a um membro de classe. Adicionando `private` ou `public` antes do nome do parâmetro ele é automaticamente atribuído ao `this`. Então, em vez de declarar e atribuir a propriedade por nós mesmos: 
 
-```typescript
+```ts
 export class ListManagerComponent implements OnInit {
   todoListService: TodoListService;
   
@@ -152,7 +152,7 @@ export class ListManagerComponent implements OnInit {
 
 ...nós podemos reduzir muito código da seguinte forma:
 
-```typescript
+```ts
 export class ListManagerComponent implements OnInit {
   
   constructor(private todoListService:TodoListService) { }
@@ -161,10 +161,10 @@ export class ListManagerComponent implements OnInit {
 
 Então vamos continuar e usar o serviço no componente `list-manager`.
 
-* Remova a lista codificada do componente e mantenha apenas a declaração de propriedade `todoList`.
+* Remova a lista codificada no componente e mantenha apenas a declaração de propriedade `todoList`.
 * Injete o `TodoListService` usando o construtor.
 
-```typescript
+```ts
 export class ListManagerComponent implements OnInit {
   todoList: TodoItem[];
   
@@ -175,7 +175,7 @@ export class ListManagerComponent implements OnInit {
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
-```typescript
+```ts
 import { TodoListService } from '../services/todo-list.service';
 ```
 {% endcode-tabs-item %}
@@ -185,7 +185,7 @@ import { TodoListService } from '../services/todo-list.service';
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
-```typescript
+```ts
 ngOnInit() {
   this.todoList = this.todoListService.getTodoList();
 }
