@@ -26,6 +26,7 @@ Um agradecimento especial vai para:
 * Aline Bastos
 * Aline Bezzoco
 * Cynthia Zanoni
+* Jéssica Lopes
 * Daniel Tapias Morales
 * Diego França
 * Fagner Candido
