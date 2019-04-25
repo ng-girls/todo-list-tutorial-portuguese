@@ -41,3 +41,4 @@ Um agradecimento especial vai para:
 * Thaysa Santos
 * Vanessa Me Tonini
 * Elaine Mattos
+* Evelise Vazquez
