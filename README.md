@@ -42,3 +42,4 @@ Um agradecimento especial vai para:
 * Vanessa Me Tonini
 * Elaine Mattos
 * Evelise Vazquez
+* Jéssica Valeska da Silva
