@@ -1,43 +1,55 @@
 # Adicionando uma CheckBox
 
-Agora nós somos capazes de interagir com nossa lista removendo itens. Mas e se quisermos completar itens e ainda poder vê-los em nossa lista, por exemplo, ter uma marcação no título da nossa lista? Aí entra o Checkbox!
+Agora nós somos capazes de interagir com nossa lista removendo itens. Mas, e se quisermos completar itens e ainda poder vê-los em nossa lista, por exemplo, com uma linha no título do item? Aí entra o checkbox!
 
 Nós iremos ver como:
 
 * Adicionar uma checkbox
-* Adicionar uma funcionalidade que quando você clica na checkbox adiciona uma classe CSS, que adiciona um estilo strike-through é adicionada aos nossos itens da lista
+* Adicionar uma funcionalidade que, quando você clica na checkbox, adiciona uma classe CSS - que adiciona um estilo ~~riscado~~, a ser adicionada aos nossos itens da lista
 * Editar a lista para responder ao checkbox
 * Adicionar uma nova classe CSS
 
-Agora vamos avançar e adicionar uma checkbox em nosso arquivo item.component.ts. Coloque o código abaixo antes da tag `<p>` contendo `{{ todoItem.title}}`:
+Agora vamos avançar e adicionar um checkbox em nosso arquivo `todo-item.component.ts`. Coloque o código abaixo antes da tag `{{ item.title }}`:
 
 ```html
   <input type="checkbox"/>
 ```
-Agora, para que o checkbox faça alguma coisa, precisamos adicionar um evento de clique que chamaremos de completeItem(). Vamos fazer isso agora:
+Agora, para que o checkbox faça alguma coisa, precisamos adicionar um evento de `clique` que chamaremos de `completeItem`. Nós também adicionaremos uma classe css, colocar o elemento envolto e a interpolação juntos para estilo. Vamos fazer isso agora:
 
 ```html
-  <input type="checkbox" (click)="completeItem()"/>
+  <div>
+    <input type="checkbox"
+          class="todo-checkbox"
+          (click)="completeItem()"/>
+    {{ item.title }}
+  </div>
 ```
-Quando clicamos no checkbox o programa irá rodar a função completeItem(). Vamos falar sobre o que essa função precisa fazer. Nós queremos adicionar estilos com CSS em nosso título, assim, quando a checkbox está clicada teremos uma linha riscando ela, e nenhuma linha quando não está clicada. Para fazer isso, nós vamos colocar uma variável que será positiva ou negativa para representar os dois estados da nossa checkbox. Adicione o código abaixo na classe ItemComponent:
+Quando clicamos no checkbox, o programa irá rodar a função `completeItem`. Vamos falar sobre o que essa função precisa realizar. Nós precisamos adicionar estilos com CSS no título do item, então, quando o checkbox estiver clicado, teremos uma linha riscando ele. Nós também queremos salvar o status do item no local storage. Para alcançar isso, nós iremos emitir um evento de updae com o novo status do item e obter isso no componente pai.
 
 ```js
-isComplete: boolean = false;
+export class TodoItemComponent implements OnInit {
+  @Input() item: TodoItem;
+  @Output() remove: EventEmitter<TodoItem> = new EventEmitter();
+  @Output() update: EventEmitter<any> = new EventEmitter();
 
-completeItem() {
-  this.isComplete = !this.isComplete;
-}
+  // put this method below ngOnInit
+  completeItem() {
+    this.update.emit({
+      item: this.item,
+      changes: {completed: !this.item.completed}
+    });
+  }
 ```
 
-Mas espere! Como esse código irá afetar a lista quando estamos apenas tocando a checkbox? Bom, o Angular2 tem maravilhosas diretrizes chamadas NgClass. Essas diretrizes aplicam ou removem uma classe baseada num valor booleano (verdadeiro ou falso). Existem diversas maneiras de utilizar a NgClass (veja a documentação: https://angular.io/docs/ts/latest/api/common/index/NgClass-directive.html), mas nós iremos focar na utilização abaixo: 
+Mas espere! Como esse código irá afetar a lista quando estamos apenas tocando o checkbox? Bom, o Angular tem essa maravilhosa diretriz chamada NgClass. Essa diretriz aplica ou remove uma classe CSS baseada num valor booleano (verdadeiro ou falso). Existem diversas maneiras de utilizar essa diretiva ([veja a documentação da diretiva NgClass](https://angular.io/api/common/NgClass)), mas nós iremos focar na utilização abaixo: 
 
 ```html
 <some-element [ngClass]="{'first': true, 'second': true, 'third': false}">...</some-element>
 ```
 
-No exemplo acima, a classe 'first' e a 'second' vão aparecer no elemento porque tem valor verdadeiro, já a 'third' não irá ser aplicada pois o valor é falso. E é aqui que nosso código anterior começa a fazer sentido. Nossa função completeItem() irá mudar entre valores verdadeiros e falsos, ditando quando uma classe será aplicada ou removida.
+No exemplo acima, a classe 'first' e a 'second' vão ser aplicadas no elemento porque têm valor verdadeiro. Já a 'third' não irá ser aplicada, pois seu valor é falso. É aqui que nosso código anterior começa a fazer sentido. Nossa função `completeItem` irá mudar entre valores verdadeiros e falsos, ditando quando uma classe será aplicada ou removida.
 
-Vamos adicionar nossa NgClass no título da nossa lista agora:
+Vamos adicionar o título do item em um `<span>`, então usar NgClass para aplicar o estilo. Dependendo do item atual completado, nós iremos mostrar uma linha de decoração ou não:
 
 ```html
 <p class="todo-title" [ngClass]="{'todo-complete': isComplete}">
@@ -45,7 +57,7 @@ Vamos adicionar nossa NgClass no título da nossa lista agora:
 </p>
 ```
 
-E finalmente, adicione o css em nosso arquivo item.component.css
+E, finalmente, adicione o CSS em nosso arquivo `todo-item.component.css`:
 
 ```css
   .todo-complete {
@@ -53,4 +65,29 @@ E finalmente, adicione o css em nosso arquivo item.component.css
   }
 ```
 
-Voila! Quando você clica na checkbox, o css adiciona uma linha no título da lista, e se clicar novamente a checkbox irá remover a linha.
+Próximo passo é falar para o gerenciador de listas do componente pai o que fazer quando o evento de update for emitido. Para fazer isso, nós temos que ligar a ação de update e o método de update que irá acionar a função apropriada no TodoListService. Então aplicamos aqui:
+
+```html
+<app-todo-item [item]="todoItem"
+               (remove)="removeItem($event)"></app-todo-item>
+</div>
+```
+
+Próximas modificações:
+
+```html
+<app-todo-item [item]="todoItem"
+             (remove)="removeItem($event)"
+             (update)="updateItem($event.item, $event.changes)"></app-todo-item>
+</div>
+```
+
+E crie um método adicional para gerenciar o evento de update de item. Muito similar com a função `removeItem`:
+
+```html
+updateItem(item, changes) {
+  this.todoListService.updateItem(item, changes);
+}
+```
+
+Voila! Quando você clica no checkbox, o css deve adicionar uma linha no título da lista, e se clicar novamente, o checkbox irá remover a linha.
