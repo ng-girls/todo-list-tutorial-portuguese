@@ -45,3 +45,4 @@ Um agradecimento especial vai para:
 * Elaine Mattos
 * Evelise Vazquez
 * Jéssica Valeska da Silva
+* Mikaeri Ohana Estevam Candido
