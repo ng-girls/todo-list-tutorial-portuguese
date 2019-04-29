@@ -1,4 +1,4 @@
-# Remover item
+# \#18: 🗑 Remover item
 
 O usuário deverá ser capaz de remover qualquer item, independente de que o item esteja ativo ou de que já tenha sido completado.
 A remoção de um item será feita a partir do click em um botão, apropriadamente chamado de 'remover'. 

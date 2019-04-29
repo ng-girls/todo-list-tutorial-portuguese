@@ -26,6 +26,7 @@ Um agradecimento especial vai para:
 * Aline Bastos
 * Aline Bezzoco
 * Alvaro Camillo Neto
+* Catiane Matiello
 * Cynthia Zanoni
 * Jéssica Lopes
 * Daniel Tapias Morales
