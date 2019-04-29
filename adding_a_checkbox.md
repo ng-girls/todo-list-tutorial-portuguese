@@ -84,7 +84,7 @@ Próximas modificações:
 
 E crie um método adicional para gerenciar o evento de update de item. Muito similar com a função `removeItem`:
 
-```html
+```js
 updateItem(item, changes) {
   this.todoListService.updateItem(item, changes);
 }
