@@ -1,4 +1,4 @@
-# \#19: 🔘 Adicionando uma CheckBox
+# \#19: 🔘 Adicionando um CheckBox
 
 Agora nós somos capazes de interagir com nossa lista removendo itens. Mas, e se quisermos completar itens e ainda poder vê-los em nossa lista, por exemplo, com uma linha no título do item? Aí entra o checkbox!
 
