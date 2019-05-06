@@ -27,18 +27,25 @@ Um agradecimento especial vai para:
 * Alexandre Henrique Kavalerski Teixeira
 * Aline Bastos
 * Aline Bezzoco
+* Alvaro Camillo Neto
+* Catiane Matiello
 * Cynthia Zanoni
+* Daniel Tapias Morales
 * Diego França
+* Elaine Mattos
+* Evelise Vazquez
 * Fagner Candido
+* Jéssica Lopes
+* Jéssica Valeska da Silva
 * Joana Souza
 * Kamila Santos Oliveira
 * Loiane Groner
 * Mariana Beilune Abad
 * Mateus Duraes
+* Mikaeri Ohana Estevam Candido
 * Murilo Viviani
 * Rafael Dantas
 * Rosicleia Frasson
 * Stefanie Melo
 * Thaysa Santos
 * Vanessa Me Tonini
-

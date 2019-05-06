@@ -1,54 +1,77 @@
-# Remover item
+# \#18: 🗑 Remover item
 
-O usuário deve ser capaz de remover qualquer item. Independente se o item ainda está ativo ou se já foi completado.
-A remoção de um item será feita a partir de um click em um botão, apropriadamente chamado de 'Remover'. Neste tutorial, iremos aprender como adicionar essa funcionalidade ao nosso projeto.
+O usuário deverá ser capaz de remover qualquer item, independente de que o item esteja ativo ou de que já tenha sido completado.
+A remoção de um item será feita a partir do click em um botão, apropriadamente chamado de 'remover'. 
+Neste tutorial, iremos aprender como adicionar essa funcionalidade ao nosso projeto.
 
-### Arquivo: item.component.ts
-Primeiramente, precisamos adicionar o botão ao item, então iremos trabalhar no arquivo *item.component.ts*.
+### Adicionando o botão "remover"
+Primeiramente, precisamos adicionar o botão ao item, então iremos trabalhar no arquivo *todo-item.component.ts*.
 
-(a) Adicione um evento de **(click)** ao botão **remover** no template do item.
-```
-<button (click)="removeItem()">
-  remove
-</button>
-```
+Adicione um botão "remover" ao template do item, com um handler de click que chama o método *removeItem* (que iremos criar em breve):
 
-(b) Adicione uma nova saída **(emissor de evento / Output)** na classe ItemComponent, que será emitida para o gerenciador da lista quando um usuário clicar no botão remover de um item específico.
+{% code-tabs %} {% code-tabs-item title="src/app/todo-item/todo-item.component.ts" %}
+
 ```
-@Output() remove:EventEmitter<any> = new EventEmitter();
+template: `
+  <div class="todo-item">
+    {{ item.title }}
+
+    <button class="btn btn-red" (click)="removeItem()">
+      remove
+    </button>
+  </div>
+`,
 ```
+{% endcode-tabs-item %} {% endcode-tabs %}
+
+
+Adicione uma nova saída à classe TodoItemComponent, que emitirá o item removido para o gerenciador de listas quando um usuário pressionar o botão remover: 
+
+{% code-tabs %} {% code-tabs-item title="src/app/todo-item/todo-item.component.ts" %}
+```
+@Output() remove: EventEmitter<TodoItem> = new EventEmitter();
+```
+{% endcode-tabs-item %} {% endcode-tabs %}
+
 
 Certifique-se de que importamos o EventEmitter e o Output em nossa classe:
+
+{% code-tabs %} {% code-tabs-item title="src/app/todo-item/todo-item.component.ts" %}
 ```
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 ```
-(c) Adicione uma função a classe ItemComponent que realmente irá emitir o evento. Essa função será chamada quando o usuário clicar no botão **remover**:
+{% endcode-tabs-item %} {% endcode-tabs %}
+
+
+Adicione um método na classe ItemComponent que realmente irá emitir o evento. Esse método será chamado quando o usuário clicar no botão **remover**:
+
 ```
 removeItem() {
   this.remove.emit(this.todoItem);
 }
 ```
 
-### Arquivo: list-manager.component.ts
+### Removendo o ToDo item
 
 Agora que cada **ToDo item** pode emitir a sua própria remoção, vamos nos certificar de que o gerenciador da lista realmente remova este mesmo item da lista. Para isso, iremos trabalhar no arquivo *list-manager.component.ts*.
 
 (a) Precisamos responder ao evento **remove** - vamos adicionar isso ao template, dentro da tag <todo-item>:
-```
-(remove)="removeItem($event)"
-```
-(b) Agora só precisamos adicionar a função *removeItem()* a classe ListManagerComponent:
-```
-removeItem(item) {
-  this.todoList = this.todoListService.removeItem(item);
-}
-```
 
-### Arquivo: todo-list.service.ts
-A remoção do item é tratada no ```service``` - abra o arquivo *todo-list.service.ts* e adicione uma função chamada removeItem() a classe TodoListService:
+{% code-tabs %} {% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
+```
+<app-todo-item [item]="todoItem"
+               (remove)="removeItem($event)"></app-todo-item>
+```
+{% endcode-tabs-item %} {% endcode-tabs %}
+
+
+(b) Agora só precisamos adicionar o método *removeItem()* à classe ListManagerComponent e usar o método *deleteItem*, do todoListService, que irá remover o item da lista e atualizará o armazenamento local:
+
+{% code-tabs %} {% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
 ```
 removeItem(item) {
-  return this.storage.destroy(item);
+  this.todoListService.deleteItem(item);
 }
 ```
-Essa função chama o método destroy() que já criamos em um momento anterior no arquivo **todo-list-storage.service.ts**.
+{% endcode-tabs-item %} {% endcode-tabs %}
+
