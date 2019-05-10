@@ -1,76 +1,74 @@
-# Novo componente todo-item
+# \#10: ➕ Novo componente todo-item
 
-Vamos criar um novo componente que será usado para cada item que é exibido na lista. Será um componente simples no começo, mas irá crescer
-posteriormente. O que é importante é que **ele receberá o todo item como uma entrada para o componente pai**. Deste modo poderá ser um componente reusável, e não depende da aplicação diretamente.
+Vamos criar um novo componente que mostre cada todo-item presente na lista. Será um componente simples no começo, mas irá crescer posteriormente. O importante é que **ele receberá o todo-item como uma entrada para o componente pai**. Deste modo poderá ser um componente reutilizável, e não dependerá diretamente dos dados e estados da aplicação.
 
-Criaremos um novo componente chamado `item`: 
+Crie um novo componente chamado `todo-item`: 
 
 ```
-ng g c item -it
+ng g c todo-item
 ```
 
-Você pode ver uma nova pasta criada com os arquivos  do componente.
+Você pode ver uma nova pasta criada - `src/app/todo-item` com os arquivos do componente.
 
-Use o componente  no template do `appComponent` - dentro do elemento `<li>`:
+Use o novo componente no template do `app-root` - dentro do elemento `<li>`:
 
 ```html
 <ul>
-  <li *ngFor="let item of todoList">
-    <todo-item></todo-item>
+  <li *ngFor="let todoItem of todoList">
+    <app-todo-item></app-todo-item>
   </li>
 </ul>
 ```
 
 Confira o resultado no navegador. O que você vê? Por que?
 
-## @Input()
-Nós queremos exibir o título de cada item dentro do componente `todo-item`. Precisamos passar o titulo atual do item no loop(ou o item inteiro) para o o componente `todo-item`. 
+## @Input\(\)
+
+Nós queremos exibir o título de cada item dentro do componente `todo-item`. Precisamos passar o título atual do item no loop (ou o item inteiro) para o o componente `todo-item`. 
 
 Novamente, Angular faz com que seja muito fácil para nós, fornecendo-nos o decorator `Input`.
 
-Dentro da classe recém criada `itemComponent` (itemComponent) adicione a linha:
+Dentro da classe recém criada `TodoItemComponent` em `todo-item.component.ts` adicione a linha:
+
 ```ts
-@Input() itemTitle: string;
-```
-Ele diz ao componente que espera uma entrada do tipo string e atribui ao membro da classe chamada `itemTitle`. Certifique-se  de que o `Input` seja adicionado à declaração de importação na primeira linha do arquivo. Agora, podemos usá-lo  dentro do template `itemComponent`:
-```html
-{{ itemTitle }}
+@Input() item;
 ```
 
-Você pode adicionar qualquer outro elemento HTML que você gostaria aqui.
+Ele diz ao componente para esperar uma entrada e a atribuir ao membro da classe `item`. Certifique-se de que `Input` está adicionado na declaração de importação na primeira linha do arquivo. Agora podemos usá-lo  dentro do `todo-item` template e extrair o título do item com a interpolação : `{{ item.title }}`
 
-Agora precisamos passar uma String, qual é o título do item, onde nós usamos o componente. Volte ao `appComponent` e passe o titulo do item ao `todo-item`:
+O componente deverá ser apresentado como:
+
+```typescript
+import { Component, Input, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-todo-item',
+  template: `
+    {{ item.title }}
+  `,
+  styleUrls: ['./todo-item.component.css']
+})
+export class TodoItemComponent implements OnInit {
+  @Input() item;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+```
+
+Agora nós precisamos passar um item do qual utilizamos o componente. Volte para o componente `app-root` e passe o título do item para o `todo-item`.
+
 ```html
 <ul>
-  <li *ngFor="let item of todoList">
-    <todo-item [itemTitle]="item.title"></todo-item>
+  <li *ngFor="let todoItem of todoList">
+    <app-todo-item [item]="todoItem"></app-todo-item>
   </li>
 </ul>
 ```
 
-O `itemTitle` entre colchetes é o mesmos que foi declarado como componente no `@Input`.
+O `item` entre colchetes é o mesmo declarado como o `@Input` do componente.
 
-Nós usamos a propriedade Binding em um elemento que nós mesmos criamos! E agora podemos realmente ver e entender que a vinculação da propriedade Binding se liga a propriedade atual do componente.
-
-## Passando o item inteiro
-Vamos refatorar um pouco o nosso código para que possamos facilmente implementar mais funcionalidades no componente `todo-item`, por exemplo, editando e removendo o item. Em vez de passar apenas o título ao componente, poderíamos passar todo o item, e deixar o componente extrair o título quando necessário.
-
-No `itemComponent` mudamos a interpolação no template para:
-```html
-{{ todoItem.title }}
-```
-Renomeamos o Input e mudamos o tipo:
-```ts
-@Input() todoItem: any;
-```
-
-Agora passamos todo o item à propriedade renomeada no `appComponent` (retire o .title):
-```html
-<ul>
-  <li *ngFor="let item of todoList">
-    <todo-item [todoItem]="item"></todo-item>
-  </li>
-</ul>
-```
-
-Agora temos uma lista de componentes, então cada componente recebeu seus dados de um loop do componente pai. Agora, veremos  como esta lista pode ser dinâmica.
+Usamos a vinculação de propriedades em um elemento que nós mesmas criamos! E agora podemos realmente ver e entender que a vinculação de propriedades se vincula a uma propriedade real do componente. Em breve, veremos como essa lista pode ser dinâmica.
