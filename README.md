@@ -41,6 +41,7 @@ Um agradecimento especial vai para:
 * Kamila Santos Oliveira
 * Loiane Groner
 * Mariana Beilune Abad
+* Marjorie Nunes Ribeiro
 * Mateus Duraes
 * Mikaeri Ohana Estevam Candido
 * Murilo Viviani
