@@ -1,4 +1,4 @@
-# Gerando um novo projeto
+# Apêndice 1: Gerando um novo projeto
 
 Em todos os projetos há formas diferentes de começar, a maioria deles se refere a ferramentas de scaffolding como Yeoman ou Slush. Essas ferramentas geram um projeto inicial e ajudam você a gerar os arquivos necessários e cuidar da construção e execução do projeto.
 
@@ -16,6 +16,8 @@ O prefixo é usado para diferenciar os componentes que você cria em sua aplica�
 
 Angular-CLI gerou um arquivo de configuração para uso próprio: `angular-cli.json`. Abra este arquivo, encontre a propriedade `prefix` e altere seu valor de` app` para `todo`. De agora em diante, cada componente e diretiva que você criará usando Angular-CLI terá esse prefixo em seu seletor.
 
+Quando você alterar seu prefixo, você tem que mantê-lo em mente pelo restante do tutorial!
+
 Poderíamos ter definido o prefixo quando criamos o projeto, adicionando `--prefix <prefixo>`. Então, mesmo o componente raiz que é gerado teria esse prefixo. Mas estamos bem com seu seletor atual, `app-root`, e não o mudaremos neste momento. 
 
 ### Estrutura da Aplicação
@@ -27,13 +29,13 @@ Depois de criarmos o projeto, iremos receber o arquivo nesse formato
 
 
 ```
-├── angular-cli.json // angular cli configuration
-├── e2e // end to end testing
-├── karma.conf.js // testing configuration file
-├── package.json // package configuration file
-├── protractor.conf.js // testing configuration file
-├── README.md // your readme
-├── src // your code in here
+├── angular-cli.json // configuração angular cli
+├── e2e // teste end-to-end
+├── karma.conf.js // arquivo de configuração de teste
+├── package.json // arquivo de configuração package
+├── protractor.conf.js // arquivo de configuração de teste
+├── README.md // seu readme
+├── src // seu código vem aqui
 │   ├── app
 │   │   ├── app.component.css
 │   │   ├── app.component.html
@@ -41,19 +43,19 @@ Depois de criarmos o projeto, iremos receber o arquivo nesse formato
 │   │   ├── app.component.ts
 │   │   ├── app.module.ts
 │   │   └── index.ts
-│   ├── assets // pictures etc
-│   ├── environments // environments variables
+│   ├── assets // imagens etc
+│   ├── environments // variáveis de ambiente
 │   │   ├── environment.prod.ts
 │   │   └── environment.ts
-│   ├── favicon.ico // the browser icon
+│   ├── favicon.ico // ícone para o navegador
 │   ├── index.html
 │   ├── main.ts
 │   ├── polyfills.ts
 │   ├── styles.css
 │   ├── test.ts
-│   ├── tsconfig.json // typescript configuration
+│   ├── tsconfig.json // configuração typescript
 │   └── typings.d.ts
-└── tslint.json // linting configuration
+└── tslint.json // configuração linting
 ```
 
 Vamos ignorar todos os arquivos de configurações por agora e pular diretamente para a estrutura da pasta. O aplicativo é o principal componente da aplicação e é a partir desse ponto em que iniciamos o nosso aplicativo.
