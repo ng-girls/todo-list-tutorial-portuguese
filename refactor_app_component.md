@@ -1,6 +1,6 @@
 # #13: 🚧 Refatorando o App Component
 
-Vamos realizar uma pequena refatoração. O `app-root` não deve ter um tempalte tão grande e com toda essa lógica. Deve apenas chamar outro componente que irá lidar com isso.
+Vamos realizar uma pequena refatoração. O `app-root` não deve ter um template tão grande e com toda essa lógica. Deve apenas chamar outro componente que irá lidar com isso.
 
 * Crie um novo componente chamado `list-manager`:
 
