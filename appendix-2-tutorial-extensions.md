@@ -1,4 +1,4 @@
-# Aplicando o Tutorial
+# Apêndice 2: Ampliando o Tutorial
 
 Aqui você encontrará links e ideias para ampliar o aplicativo todo-list.
 
