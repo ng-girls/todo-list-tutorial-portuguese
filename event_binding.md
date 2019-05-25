@@ -114,7 +114,7 @@ Agora o título irá mudar apenas quando o usuário apertar a tecla Enter enquan
 
 ### Explore o $event
 
-![lab-icon](.gitbook/assets/lab%20%281%29.jpg)**Playground:** Você pode mudar o método changeTitle para registrar o objeto `$event` no console. Dessa forma você pode explorar e ver quais propriedades ele tem.
+> Você pode mudar o método changeTitle para registrar o objeto `$event` no console. Dessa forma você pode explorar e ver quais propriedades ele tem.
 
 Mude o método para `changeTitle`:
 ```ts
