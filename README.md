@@ -35,6 +35,7 @@ Um agradecimento especial vai para:
 * Elaine Mattos
 * Evelise Vazquez
 * Fagner Candido
+* Gabi Dombrowski
 * Jéssica Lopes
 * Jéssica Valeska da Silva
 * Joana Souza
