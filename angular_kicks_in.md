@@ -1,4 +1,4 @@
-# Angular entra em ação
+# \#2: 🅰 Angular entra em ação
 
 Vamos olhar para o projeto e como Angular entra em cena. Se você ainda não fez, abra a pasta todo-list no seu IDE, assim podemos inspecionar os arquivos. Todos os arquivos relevantes a partir desta fase existem dentro da pasta `src`.
 
@@ -19,7 +19,7 @@ Angular precisa que definamos o que queremos que ele compile. Para isso, definim
 A última linha no arquivo define uma classe JavaScript:
 
 ```js
-export class AppModule { }
+export class AppModule {}
 ```
 
 `export` é uma palavra reservada em JavaScript que informa que tudo o que for definido depois deve ser exposto a outros arquivos que importam isto usando a instrução `import`. Você pode ver exemplos de classes importadas de outros arquivos nas primeiras linhas deste arquivo.
@@ -36,12 +36,13 @@ O que passamos pela função do decorador é usado pelo Angular para decorar a c
 
 **imports**: uma lista de outros NgModules que são necessários para este módulo. Por exemplo, nós podemos usar coisas do `FormsModule` - diretivas e serviços, dentro de `AppComponent`.
 
-**bootstrap**: este membro é relevante apenas para o ngModule raiz. Você não o encontrará nos módulos da lista de importações, por exemplo. Ele diz a Angular qual componente deve ser usado como o componente raiz da aplicação. Cada componente pode usar outros componentes em seu template. Temos um componente raiz que inicia toda a estrutura. Então nós realmente temos uma **estrutura de árvore** dos componentes que compõem nossa aplicação. Nesse caso, o componente raiz é `AppComponent` (com o seletor `app-root`). Vimos isso usado em `index.html` como o único componente dentro do `<body> `.
+**bootstrap**: este membro é relevante apenas para o ngModule raiz. Você não o encontrará nos módulos da lista de importações, por exemplo. Ele diz a Angular qual componente deve ser usado como o componente raiz da aplicação. Cada componente pode usar outros componentes em seu template. Temos um componente raiz que inicia toda a estrutura. Então nós realmente temos uma **estrutura de árvore** dos componentes que compõem nossa aplicação. Nesse caso, o componente raiz é `AppComponent` (com o seletor `app-root`). Vimos isso usado em `index.html` como o único componente dentro do `<body>`.
 
 Como o Angular sabe que o `AppModule` é o ngModule raiz? Isso é definido no arquivo `main.ts` na última linha:
 
 ```js
-platformBrowserDynamic().bootstrapModule(AppModule)
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
   .catch(err => console.log(err));
 ```
 
