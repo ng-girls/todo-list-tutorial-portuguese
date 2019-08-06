@@ -1,96 +1,84 @@
-# Um novo componente
+4# ✏ Um novo componente
 
-Neste capítulo, escreveremos um novo componente. Isso nos permitirá adicionar um item à lista de tarefas. Será composto pelos elementos HTML `input` e `button`.
+Neste capítulo nós escreveremos um componente totalmente novo. Isso permitirá que nós adicionemos um item a nossa lista de tarefas, que será composto pelos elementos HTML `input` e `button`. Nós vamos chamá-lo de **input-button**
 
-Utilizaremos o Angular-CLI para gerar todos os arquivos para nosso app. Em um **novo** terminal execute o seguinte comando:
+Utilizaremos o Angular-CLI para gerar todos os arquivos que precisamos para nosso app. Nós podemos abrir um novo terminal (janela ou aba) ao invés de parar o processo do `ng serve`. Dessa forma, o que for modificado será atualizado imediatamente no navegador.
+
+Abra um **novo** terminal e execute o seguinte comando:
 
 ```cmd
-ng g c input -it
+ng g c input-button
 ```
 
-> É importante observar que você precisa abrir um novo terminal (janela ou aba) para executar este comando. Inserir o comando acima no terminal onde `ng serve` está executando não terá nenhum efeito.
+Como vimos anteriormente, `ng`é um comando do Angular-CLI. `g` significa "gerar"; `c` representa a palavra "componente". input-button é o nome que demos para o nosso component.
 
-Como vimos anteriormente:  
- * `ng` é o comando para usar a CLI;
- * `g` é um atalho para `generate`;
- * `c` é um atalho para  `component`; 
- * `input` é o nome que daremos ao componente;
- * `-it` é um atalho para `--inline-template`.
-
-O comando que executamos está versão abreviada. A sua a versão longa é:
+A versão longa do comando seria essa (Não execute!):
+```cmd
+ng generate component input-button
 ```
-ng generate component input --inline-template
+Agora vamos dar uma olhada no que o Angular-CLI criou para nós. É possível identificar três documentos ali (ou 4, se você não estiver usando inline-template):
+
+`input-button.component.css` - onde fica o estilo específico do componente.
+`input-button.component.spec.ts` - é um documento de testes. Não falaremos dele nesse tutorial
+`input-button.component.ts` - onde colocaremos a lógica do nosso componente.
+`input-button.component.html` - onde fica o seu template HTML se você não estiver utilizando inline-template.
+
+Abra o documento `input-button.component.ts`. Você pode notar que o Angular-CLI já gerou toda a configuração inicial desse componente para nós, inclusive o seu seletor e um template padrão. 
+
+Aqui utilizaremos o inline-template para visualizar melhor o nosso componente
+
+-> src/app/input-button-unit/input-button-unit.component.ts
 ```
-
-Você pode evitar usar `-it` cada vez que você gera um componente configurando modelos inline como padrão no arquivo de configuração `.angular-cli.json` dessa maneira:
-
- ``` 
-"defaults": {
-  "inline": {
-    "style": true, 
-    "template": true
-  }
-}
-```
-
-> Não se preocupe com o nome do componente `input`. Ele não irá substituir os elementos HTML `input`. Isso é graças ao prefixo que a Angular-CLI dá aos nossos componentes. O prefixo padrão é `app`, então o seletor de componentes seria `app-input`. Se você criou o projeto indicando o prefixo de sua escolha, ou alterou-o posteriormente no arquivo `.angular-cli.json`, este será o prefixo do seletor. Quando criamos o projeto, definimos o prefixo para "todo", então o seletor será `todo-input`.
-
-Vejamos o que a CLI criou para nós. Foi criada uma nova pasta chamada `src/app/input`. Existem três arquivos lá:
-
-* `input.component.css` - este é o arquivo em que o estilo específico do componente será colocado.
-* `input.component.spec.ts` - este é um arquivo para testar o componente. Não vamos lidar com isso neste tutorial.
-* `input.component.ts` - este é o arquivo componente onde vamos definir o modelo e a lógica.
-
-Abra o arquivo `input.component.ts`. Você pode ver que o Angular-CLI gerou um template padrão:
-
-```js
-template: `
+@Component({
+  selector: 'app-input-button',
+  template: `
     <p>
-      input Works!
+      input-button works!
     </p>
   `,
+  styleUrls: ['./input-button.component.css']
+})
 ```
 
-Ele também adicionou um seletor de acordo com o nome que do componente, com o prefixo que configuramos:
+> Note que o prefixo `app` será adicionado no seletor de todos os componentes que você gerar. Isso é para evitar que haja conflito entre o nome do componente criado e os elementos HTML. Dessa forma, se você criar um componente `input` ele não entrará em conflito com a tag HTML `<input>`, já que o seletor do seu componente será `app-input`.
 
-```js
-selector: 'todo-input',
-```
+> `app` é um prefixo padrão, o que é ótimo para sua aplicação principal. Entretanto, se você está escrevendo uma biblioteca de componentes para ser utilizado em outros projetos, você pode utilizar um prefixo diferente. Por exemplo, a biblioteca do Angular Material usa o prefixo `mat` para seus componentes. Você pode criar um projeto com o prefixo da sua preferência usando o comando `--prefix`, ou modificando posteriormente no documento `angular.json`
 
 Nós podemos usar este componente como está e ver o resultado!
 
-Abra o arquivo root do componente, `app.component.ts` e adicione a tag do todo-input em qualquer lugar do template:
+Abra o arquivo root do componente, `app.component.ts` e adicione a tag do `app-input-button` em qualquer lugar do template:
 
-```js
+```
 template: `
   <h1>
-    {{title}}
+    Bem vindo ao {{ title }}!
   </h1>
 
-  <todo-input></todo-input>
+  <app-input-button></app-input-button>
 `,
 ```
 
 Veja as atualizações no browser!
 
-Retorne ao arquivo `input.component.ts` e adicione algum conteúdo. Primeiro, adicione um membro do `title` que usaremos como título do item todo:
+Vamos adicionar um novo conteúdo no seu novo componente! Primeiro, retorne ao arquivo `input.component.ts` e adicione um membro do `title` que usaremos como título do item todo:
 
 ```ts
-export class InputComponent implements OnInit {
-  title: string = '';
+export class InputButtonComponent implements OnInit {
+  title: 'Hello World';
   ...
 ```
 
-Isso não irá interferir com o `title` do componente `todo-root`, uma vez que o conteúdo de cada componente encapsulado dentro dele.
-
-Você pode adicionar uma string inicial ao título, como fizemos no componente `todo-root`.
+Isso não irá interferir com o `title` do componente `app-root`, uma vez que o conteúdo de cada componente encapsulado dentro dele.
 
 Em seguida, adicione um elemento de entrada, um botão e um binding ao título, dentro modelo:
 
-```html
-<input>
-<button>Save</button>
-<p>The title is: {{ title }}</p>
+```ts
+template: `
+  <p>
+    input-button works!
+    O título é {{ title }}
+  </p>
+`,
 ```
 
 Veja os resultados!
