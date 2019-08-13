@@ -1,4 +1,4 @@
-4# ✏ Um novo componente
+# 4# ✏ Um novo componente
 
 Neste capítulo nós escreveremos um componente totalmente novo. Isso permitirá que nós adicionemos um item a nossa lista de tarefas, que será composto pelos elementos HTML `input` e `button`. Nós vamos chamá-lo de **input-button**
 
