@@ -1,4 +1,4 @@
-# Component
+# \#3: 📐 Component
 
 Uma abordagem em desenvolvimento Web \(e desenvolvimento de software em geral\) é a arquitetura baseada em componentes (component-based architecture). No passar dos anos isso ganhou muita popularidade. O que é um componente? 
 
