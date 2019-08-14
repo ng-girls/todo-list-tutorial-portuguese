@@ -9,7 +9,7 @@ Helmut Petritsch define em [Service-Oriented Architecture \(SOA\) vs. Component 
 Em aplicações Web, **um componente controla um fragmento de tela chamado de View (visualização)**. É uma parte do que você vai eventualmente ver na tela. Tem um template, no qual define sua estrutura visual. Também tem uma lógica no qual define o comportamento e os valores dinâmicos. A parte lógica é código Javascript e é chamado de controlador. 
 
 Aqui está o diagrama de um componente em Angular, com o resultado abaixo. 
-![AngularComponent](assets/Angular Component.001.jpeg)
+![](assets/Angular Component.001.jpeg)
 
 Diretivas, pipes e serviços são outros blocos de construção em Angular, no qual vamos discutir mais tarde neste tutorial. 
 
