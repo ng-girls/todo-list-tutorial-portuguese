@@ -47,6 +47,7 @@ Um agradecimento especial vai para:
 * Mateus Duraes
 * Mikaeri Ohana Estevam Candido
 * Murilo Viviani
+* Nádia Regina de Oliveira
 * Rafael Dantas
 * Rosicleia Frasson
 * Stefanie Melo
