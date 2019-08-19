@@ -1,114 +1,183 @@
-# Property binding
+# \#6: 📥 Property binding
 
-Agora temos nosso componente input, mas ele não faz muita coisa. Queremos torná-lo dinâmico.
+Agora temos nosso componente input-button-unit, mas ele não faz muita coisa. Nós queremos dar vida a ele.
 
-Vamos fazer o texto de controle do input retornar o valor da propriedade `title`.
+Vamos adicionar um elemento de input HTML e fazer com que o texto do controle reflita no valor da propriedade 'title'
 
-É assim que nosso componente input parece agora:
+Vamos reverter o componente para esse estado antes dos nosso experimentos com seus métodos:
 
-```javascript
+{% code-tabs %}
+{% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
+```typescript
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'todo-input',
-  template: `                           
-    <input>
-    <button>Save</button>
-    <p>The title is: {{ title }}</p>    
-  `,  
-  styleUrls: ['./input.component.css']  
-})    
-export class InputComponent implements OnInit {
-  title: string = 'My First Todo Title !!!';           
+  selector: 'app-input-button-unit',
+  template: `
+    <p>input-button-unit works! The title is: {{ title }}</p>
+  `,
+  styleUrls: ['./input-button-unit.component.css']
+})
+export class InputButtonUnitComponent implements OnInit {
+  title = 'Hello World';
 
-  constructor() { }                     
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }
 ```
 
-Nós usamos interpolação para exibir o valor da propriedade `title`: `{{ title }}`
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
-O Angular então exibe o valor de `title` cada vez que nosso componente todo-input é exibido.
+Vamos adicionar um elemento de input e um botão no template:
 
-E se nós quiséssemos mostrar o valor do título dentro do próprio elemento HTML input? 
+{% code-tabs %}
+{% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
 
-Todo elemento `input` tem uma propriedade chamada `value`, que armazena a string que é exibida dentro da caixa de texto do `input`. Com HTML nós podemos passar uma string diretamente para o atributo `value` do elemento:
+```markup
+template: `
+  <p>
+    input-button-unit works!
+    The title is: {{ title }}
+  </p>
 
-```html
+  <input>
+  <button>Save</button>
+`,
+```
+
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+Lembrete: Nós utilizamos interpolação para apresentar o valor da propriedade `title` : `{{ title }}`. O Angular irá apresentar o valor de `title` cada vez que nosso componente `app-input-button-unit` for visualizado.
+
+E se quisermos mostrar o valor do título dentro do próprio controle input do HTML?
+
+Todo elemento `input` tem uma propriedade chamada `value`, que contém a string que é vista dentro da caixa do `input`. No HTML, nós podemos passar a string diretamente pelo atributo `value` do elemento:
+
+{% code-tabs %}
+{% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
+```markup
 <input value="Hello World">
 ```
 
-Mas nós perdemos o binding dinâmico entre a propriedade no controller e o template.
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
-Angular 2 nos permite vincular propriedades para o template de forma fácil e conveniente. Nós vimos isto com interpolação. Agora, veremos como realizar o bind para uma **propriedade do elemento** (não confundir com propriedade de classe...). **Nós colocamos a propriedade desejada entre colchetes e a passamos a propriedade da classe**:
+Porém nós perdemos o bind dinâmico entre as propriedades do controller e do template.
 
-```html
+O Angular permite ligar as propriedades do template de uma forma fácil e conveniente; Nós vimos isso através da interpolação. Agora nós veremos como fazer o bind a uma **propriedade do elemento** \(não confunda com a propriedade da classe\). **Nós cercamos a propriedade que queremos com colchetes e assim passamos para o membro da classe**:
+
+{% code-tabs %}
+{% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
+```markup
 <input [value]="title">
 ```
 
-Você pode ir para o próximo capítulo, mas se quiser aprender mais sobre detecção de mudança(change detection) continue lendo.
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
-## Detecção de mudança (Change Detection)
+Tente isso e veja o resultado no navegador!
+
+## a\# Binding para Métodos
+
+As expressões que podemos fazer o bind no template não são limitadas às propriedades da classe. Elas podem ser uma chamada de método ou qualquer outra expressão JavaScript válida.
+
+Por exemplo, vamos fazer o bind do value de um input para a chamada de um método que retorna um valor.
+Primeiro, vamos adicionar o método `generateTitle()` em qualquer lugar dentro da classe exceto dentro de algum dos seus métodos.
+
+{% code-tabs %}
+{% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
+```typescript
+generateTitle(): string {
+  return 'This title was generated by a method.';
+}
+```
+
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+Substitua um ou ambos os bindings do título no template pela chamada do método \(não se esqueça dos parênteses!\):
+
+{% code-tabs %}
+{% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
+```markup
+  <input [value]="generateTitle()">
+
+  {{ generateTitle() }}
+```
+
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+## b\# Detecção de mudança \(Change Detection\)
 
 Angular tem um mecanismo de detecção de mudança muito eficiente. Ele procura por bindings no template do componente e então atualiza o valor toda vez que a expressão ligada é alterada.
 
 Para exibir isto, vamos mudar o valor do título depois de alguns segundos e ver o que acontece. Chame a função `setTimeout` dentro de `ngOnInit`:
 
-```ts
+{% code-tabs %}
+{% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
+```typescript
 ngOnInit() {
   setTimeout(() => {
-    this.title = 'This is not the title you are looking for';  
+    this.title = 'This is not the title you are looking for';
   }, 3000);
 }
 ```
 
-`setTimeout` é uma função JavaScript. Seu primeiro parâmetro é o que queremos que aconteça - uma função de nossa escolha. O segundo parâmetro é o quanto queremos atrasá-la, em milissegundos. Neste exemplo, nós passamos uma função anônima que altera o valor de `this.title`. Para isto nós usamos uma das novas features do JavaScript (ES6) **arrow function**.
- 
-## Binding para Métodos
-As expressões que podemos fazer o bind no template não são limitadas às propriedades da classe. Elas podem ser uma chamada de método ou qualquer outra expressão JavaScript válida.
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
-Por exemplo, vamos fazer o bind do value de um input para a chamada de um método que retorna um valor.
-Primeiro, vamos adicionar o método `generateTitle()` em qualquer lugar dentro da classe exceto dentro de algum dos seus métodos. A melhor prática é termos nossos métodos customizados sob o método do ciclo de vida (nesse caso, `ngOnInit`).
+`setTimeout` é uma função JavaScript. Seu primeiro parâmetro é o que queremos que aconteça - uma função de nossa escolha. O segundo parâmetro é o quanto queremos atrasá-la, em milissegundos. Neste exemplo, nós passamos uma **função anônima** que altera o valor de `this.title`. Para isto nós usamos uma das novas features do JavaScript (ES6) **arrow function**.
 
-```ts
-generateTitle(): string {
-  return 'This title was generated by a method.';
-}
+## c\# Binding para Métodos
 
-```
+As expressões que podemos fazer o bind no template não são limitadas às propriedades da classe. Elas podem ser uma chamada de método ou quase qualquer expressão de template Angular válida.
 
-Substitua um ou ambos os bindings do título no template pela chamada do método (não se esqueça dos parênteses!):
+## d\# Recursos
 
-```html                    
-  <input [value]="generateTitle()">
-  
-  {{ generateTitle() }}
-```
+[Angular Guide - Template Property Binding](https://angular.io/guide/template-syntax#property-binding--property-)
 
-Então por agora, nós temos nosso controle de entrada exibindo o título do nosso todo nele. Agora queremos fazer o input mudar o valor do título ao inserirmos o valor nele e pressionarmos enter. Como fazer isso? Vamos para o próximo capítulo e descobriremos...
-
-## Recursos
-
-[Angular Guide - Template Property Binding](https://angular.io/docs/ts/latest/guide/template-syntax.html#!#property-binding)
-
-### Nota sobre acesso ao DOM
+## e\# Nota sobre acesso ao DOM
 
 Usando JavaScript puro, podemos inserir o valor para um input através de suas propriedades. Nós vamos buscar o elemento do DOM e atribuir o valor da propriedade `title` para a propriedade `value` do elemento.
 
-```javascript
-let inputElement = document.getElementById('#my-input');
+{% code-tabs %}
+{% code-tabs-item title="code for example" %}
+
+```typescript
+let inputElement = document.getElementById('my-input');
 inputElement.value = this.title;
 ```
 
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
 Com JavaScript, nós encontramos o elemento input no DOM através do seu id, e então alteramos sua propriedade `value` para o valor da variável title. Nós precisamos adicionar o id ao elemento `input`, então:
 
-```html
+{% code-tabs %}
+{% code-tabs-item title="code for example" %}
+
+```markup
 <input id="my-input">
 ```
 
-Excelente.
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
-De qualquer forma, **isto é altamente desencorajado no Angular 2. Você nunca pode acessar o DOM diretamente!**
+Isso irá funcionar no navegador
+
+De qualquer forma, **isto é altamente desencorajado no Angular. Você nunca pode acessar o DOM diretamente!**
 Isso é porque você pode atribuir diferentes renders para o Angular e executar a aplicação em diferentes plataformas. Elas podem ser mobile, desktop, o até um robô. E elas não terão um objeto `document` do qual você poderia manipular o resultado!
+
+{% hint style="success" %}
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/06-property-binding)
+{% endhint %}
