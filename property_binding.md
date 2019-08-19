@@ -4,7 +4,7 @@ Agora temos nosso componente input-button-unit, mas ele não faz muita coisa. N�
 
 Vamos adicionar um elemento de input HTML e fazer com que o texto do controle reflita no valor da propriedade 'title'
 
-Vamos reverter o componente para esse estado antes dos nosso experimentos com seus métodos:
+Vamos reverter o componente para esse estado antes dos nossos experimentos com seus métodos:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
