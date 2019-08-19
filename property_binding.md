@@ -177,7 +177,3 @@ Isso irá funcionar no navegador
 
 De qualquer forma, **isto é altamente desencorajado no Angular. Você nunca pode acessar o DOM diretamente!**
 Isso é porque você pode atribuir diferentes renders para o Angular e executar a aplicação em diferentes plataformas. Elas podem ser mobile, desktop, o até um robô. E elas não terão um objeto `document` do qual você poderia manipular o resultado!
-
-{% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/06-property-binding)
-{% endhint %}
