@@ -28,6 +28,5 @@ Este tutorial é destinado a iniciantes. Como tal, tenta abordar boas práticas,
 
 Esperamos que este tutorial lhe ajude nos primeiros passos do desenvolvimento Web usando Angular!
 
-Divirta-se!
-
+Divirta-se!!!
 
