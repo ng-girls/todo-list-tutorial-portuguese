@@ -65,7 +65,7 @@ Para mais informações, veja [https://github.com/angular-schule/angular-cli-ghp
 
 ### Tela branca \(e erro 404 no DevTools do Browser\)
 
-Se o deploy ocorreu com sucesso, mas apareceu uma tela branca no browser, provavelmente foram utilizadas letras maiúsculas no nome do seu repositório. Tente criar um novo repositório contendo apenas letras minúsculas. Depois, remova a conexão antiga no seu ambiente local:
+Se o deploy ocorreu com sucesso, mas apareceu uma tela branca no browser, provavelmente foram utilizadas letras maiúsculas no nome do seu repositório. Tente criar um novo, contendo apenas letras minúsculas. Depois, remova a conexão antiga no seu ambiente local:
 
 ```text
 git remote rm
