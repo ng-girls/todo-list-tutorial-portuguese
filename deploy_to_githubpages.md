@@ -34,7 +34,7 @@ Faça um commit de todas as suas alterações executando o seguinte comando na p
 git add -A && git commit -m "Your Message"
 ```
 
-Execute o seguinte comando para conectar seu código ao repositório, certificando-se de substituir o {YOUR\_USERNAME} e o {YOUR\_REPO} com o seu usuário do GitHub e o nome do repositório:
+Execute este comando para conectar seu código ao repositório, certificando-se de substituir o {YOUR\_USERNAME} e o {YOUR\_REPO} com o seu usuário do GitHub e o nome do repositório:
 
 ```text
 git remote add origin https://github.com/{YOUR_USERNAME}/{YOUR_REPO}.git
