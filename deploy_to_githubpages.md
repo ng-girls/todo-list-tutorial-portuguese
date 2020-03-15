@@ -86,7 +86,7 @@ angular-cli-ghpages --dir=dist/todo-list
 
 ### Problemas no Windows
 
-Em máquinas \(windows\) você provavelmente vai se deparar com um erro como esse:
+Em algumas máquinas \(windows\) você pode se deparar com um erro como esse:
 
 ```text
 An error occurred!
