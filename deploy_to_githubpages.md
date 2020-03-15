@@ -9,10 +9,12 @@ Siga as instruções da página referente ao [StackBlitz](stackblitz.md) para re
 Para fazer o deploy das suas alterações para o GitHub Pages, nós usaremos o pacote angular-cli-ghpages:
 [https://github.com/angular-schule/angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages).
 
-* Você precisa ter um usuário no GitHub
-* Você precisa criar um repositório para o seu projeto
-* Você precisa fazer um commit de todas as alterações do projeto
-* Você precisa instalar o angular-cli-ghpages
+Para realizamos esse processo, temos alguns requisitos:
+
+* Você precisa ter um usuário no GitHub;
+* Você precisa criar um repositório para o seu projeto;
+* Você precisa fazer um commit de todas as alterações do projeto;
+* Você precisa instalar o angular-cli-ghpages.
 
 ## Criando um usuário no GitHub
 
@@ -53,7 +55,7 @@ Então execute o comando:
 ng build --prod --base-href="/[your-repo-name]/"
 angular-cli-ghpages --dir=dist/todo-list
 ```
-💡 `./[your-repo-name]` é um placeholder para o nome do seu repositório no GitHub. Sendo assim, caso o seu projeto esteja em  `https://github.com/myname/ng-girls`, o valor será `--base-href="./ng-girls"` ... Em outros sistemas operacionais, também pode ser "/ng-girls/".
+💡 `./[your-repo-name]` é um placeholder para o nome do seu repositório no GitHub. Sendo assim, caso o seu projeto esteja em  `https://github.com/myname/ng-girls`, o valor será `--base-href="./ng-girls"` . Em outros sistemas operacionais, também pode ser "/ng-girls/".
 
 Seu app estará disponível em [https://\[your-GH-username\].github.io/\[repo-name\]/](https://[your-GH-username].github.io/[repo-name])
 
@@ -63,7 +65,7 @@ Para mais informações, veja [https://github.com/angular-schule/angular-cli-ghp
 
 ### Tela branca \(e erro 404 no DevTools do Browser\)
 
-Se o deploy ocorreu com sucesso, mas apareceu uma tela branca no browser, provavelmente você utilizou letras maiúsculas para o nomear o seu repositório. Tente criar um novo repositório contendo apenas letras minúsculas. Depois, remova a conexão antiga no seu ambiente local:
+Se o deploy ocorreu com sucesso, mas apareceu uma tela branca no browser, provavelmente foram utilizadas letras maiúsculas no nome do seu repositório. Tente criar um novo repositório contendo apenas letras minúsculas. Depois, remova a conexão antiga no seu ambiente local:
 
 ```text
 git remote rm
@@ -96,16 +98,16 @@ An error occurred!
     ...
 ```
 
-Tente debugá-lo com `angular-cli-ghpages -S` . Você pode obter o seguinte erro:
+Tente debugá-lo com `angular-cli-ghpages -S` . Você pode obter o seguinte problema:
 
 ```text
 fatal: could not read Username for \'https://github.com\': No error\n',
 ```
 
-Nesse caso, execute os seguintes passos:
+Nesse caso, execute estes passos:
 
 1. Crie um Personal Access Token através deste link: [https://github.com/settings/tokens](https://github.com/settings/tokens)
-2. Execute o seguinte comando, informando o token, repositório, username e e-mail:
+2. Execute o comando a seguir, informando o token, repositório, username e e-mail:
 
    ```text
    angular-cli-ghpages --repo=https://<personal-access-token>@github.com/organisation/your-repo.git --name="Displayed Username" --email=mail@example.org
