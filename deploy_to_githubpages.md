@@ -1,12 +1,12 @@
 # \#20: 🛰 Deploy para o GitHub Pages
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](assets/stackblitz-hint.svg)
+**Instruções para o StackBlitz** ![](assets/stackblitz-hint.svg)
 
-Siga as instruções da página [StackBlitz instructions](stackblitz.md) para renomear o seu projeto no StackBlitz e compartilhar o link da sua aplicação.
+Siga as instruções da página referente ao [StackBlitz](stackblitz.md) para renomear o seu projeto e compartilhar o link da sua aplicação.
 {% endhint %}
 
-Para fazer o deploy das suas alterações para o GitHub Pages, nós usaremos o pacote angular-cli-ghpages
+Para fazer o deploy das suas alterações para o GitHub Pages, nós usaremos o pacote angular-cli-ghpages:
 [https://github.com/angular-schule/angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages).
 
 * Você precisa ter um usuário no GitHub
@@ -20,7 +20,7 @@ Se você já possui um usuário no GitHub, pode pular esse passo. Para criar um 
 
 ## Criar um repositório de seu APP
 
-Depois de fazer o login no GitHub, clique no botão `Start a project`, e dê o nome do repositório de `ng-girls-todo` ou qualquer outro nome que desejar.
+Depois de fazer o login no GitHub, clique no botão `Start a project`, e dê o nome do repositório de `ng-girls-todo` ou qualquer outro que desejar.
 
 _**Dica**_ O GitHub Pages é case sensitive. Nesse caso, é melhor utilizar letras minúsculas para nomear o repositório.
 
