@@ -1,10 +1,9 @@
 
 # \#8: 📎 Element ref - \#
 
-No último capítulo, nós terminamos o component input mudando o título da nossa lista de todo. O arquivo `input.component.ts` deve ficar assim:
+Ao final do último capítulo, nosso component input estava apto para exibir e mudar o título do nosso item. O arquivo `input.component.ts` deve estar assim:
 
-{% code-tabs %}
-{% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+{% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
 import { Component, OnInit } from '@angular/core';
 
@@ -38,30 +37,26 @@ export class InputButtonUnitComponent implements OnInit {
   }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
-Primeiro, devemos remover um pouco do template que não precisamos. Remova estas linhas:
+Primeiro, devemos remover uma parte do template que não precisamos. Remova estas linhas:
 
-{% code-tabs %}
-{% code-tabs-item title="remove this from src/app/input-button-unit/input-button-unit.component.ts" %}
+{% code title="remove this from src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
 <p>
   input-button-unit works!
   The title is: {{ title }}
 </p>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Agora queremos pegar o valor do input \(que o usuário digitou\) e mudar o título quando o botão `Save` for clicado.
 
-Nos já sabemos como criar um botão e capturar o evento de clique. Agora precisamos passar para o método valores de um elemento diferente. Queremos usar o valor do `input` de dentro do elemento `button`.
+Nos já sabemos como criar um botão e capturar o evento de clique. Agora precisamos passar para o método valores de um elemento diferente. Queremos usar o valor do `input` dentro do elemento `button`.
 
-O Angular nos ajuda a fazer exatamente isso. **Nós conseguimos guardar a referência de um elemento que queremos em uma variável com o nome que escolhermos,** por exemplo `inputElementRef`, **usando uma sintaxe simples como a hash.** Adicione `#inputElementRef` no elemento de input, e use no evento de `click` do botão:
+O Angular nos ajuda a fazer exatamente isso. **Nós conseguimos guardar a referência de um elemento que queremos em uma variável com o nome que escolhermos,** por exemplo `inputElementRef`, **usando uma sintaxe simples - um hash.** Adicione `#inputElementRef` no elemento de `input` e use no evento `click` do botão:
 
-{% code-tabs %}
-{% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+{% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
 template: `
   <input #inputElementRef
@@ -73,49 +68,19 @@ template: `
   </button>
 `,
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
-Agora podemos usar o valor que o usuário inseriu no elemento de `input` no método chamado pelo clique do botão `Save`!
-
-
-### O que é a `#` que usamos?
-
-O Angular permite definir uma variável local chamada `inputElementRef` \(ou um nome de sua preferência\) que contém a referência do elemento definido, e a use da melhor forma que desejarmos. No nosso caso, nós usamos para acessar a propriedade `value` do `input`.
-
-Ao invés de buscar os elementos via DOM query \(o que é uma pratica ruim, como já discutimos anteriormente\), agora podemos inserir referências via template e acessar o elemento que queremos declarativamente.
-
-Em seguida, vamos criar a lista de todo.
-
-## Explore as referências do elemento
+Agora podemos usar o valor que o usuário inseriu no elemento de `input` dentro do método chamado pelo clique do botão `Save`!
 
 
-Assim como fizemos no capítulo anterior, quando registramos o $event, você pode fazer o mesmo com `#inputElementRef`.
+## O que é a `#` que usamos?
 
-![lab-icon](.gitbook/assets/lab%20%283%29.jpg) Altere o método `changeTitle` para que ele receba toda a referência do elemento e registre-o no console.
+O Angular nos permite definir uma variável local chamada `inputElementRef` \(ou um nome de sua preferência\), que contém a referência do elemento definido, e utilizá-la da forma que desejarmos. No nosso caso, nós usamos para acessar a propriedade `value` do `input`.
 
-{% code-tabs %}
-{% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
-```markup
-<input #inputElementRef
-       [value]="title"              
-       (keyup.enter)="changeTitle(inputElementRef)">
+Ao invés de buscar os elementos via DOM query \(que é uma prática ruim, como já discutimos anteriormente\), agora podemos inserir referências via template e acessar o elemento que queremos declarativamente.
 
-<button (click)="changeTitle(inputElementRef)">
-  Save
-</button>
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+Em seguida, vamos criar a lista.
 
-```typescript
-changeTitle(inputElementReference) {
-  console.log(inputElementReference);
-  this.title = inputElementReference.value;
-}
-```
-Não se esqueça de colocar o código de volta do jeito que estava depois de terminar de experimentar! É melhor passar para um método exatamente o valor que ele precisa, em vez do objeto inteiro.
-
-## Referências
-
-[Angular Template Reference Variables](https://angular.io/guide/template-syntax#template-reference-variables--var-)
+{% hint style="success" %}
+[Veja os resultados através do StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/08-element-ref)
+{% endhint %}
