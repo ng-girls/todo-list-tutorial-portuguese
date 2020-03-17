@@ -22,8 +22,6 @@ Você também irá publicar a aplicação na Web, para que outras pessoas possam
 
 Depois de concluir este tutorial, recomendamos que você continue desenvolvendo o aplicativo e adicionando seu toque pessoal.
 
-Depois de concluir este tutorial, encorajamos que você continue desenvolvendo a aplicação, adicionando seu toque pessoal.
-
 Este tutorial é destinado a iniciantes. Como tal, tenta abordar boas práticas, porém, devido à sua simplicidade, nem sempre isso é possível.
 
 Esperamos que este tutorial lhe ajude nos primeiros passos do desenvolvimento Web usando Angular!
