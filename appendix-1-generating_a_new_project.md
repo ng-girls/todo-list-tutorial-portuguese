@@ -14,25 +14,26 @@ Neste capítulo, mostramos todos os arquivos e pastas criados pelo Angular-CLI q
 
 O prefixo é usado para diferenciar os componentes que você cria em sua aplicação dos componentes de outras fontes e de componentes HTML. Você pode dar suas iniciais como o prefixo se for um projeto pessoal. Se você está colaborando ou trabalhando para um cliente, você pode ter as iniciais do nome do projeto como o prefixo. Neste tutorial, o prefixo simplesmente será `todo`.
 
-Angular-CLI gerou um arquivo de configuração para uso próprio: `angular-cli.json`. Abra este arquivo, encontre a propriedade `prefix` e altere seu valor de` app` para `todo`. De agora em diante, cada componente e diretiva que você criará usando Angular-CLI terá esse prefixo em seu seletor.
+O Angular-CLI gera um arquivo de configuração para uso próprio: `angular.json`. Abra este arquivo, encontre a propriedade `prefix` e altere seu valor de` app` para `todo`. De agora em diante, cada componente e diretiva que você criará usando Angular-CLI terá esse prefixo em seu seletor.
 
+{% hint style="info" %}
 Quando você alterar seu prefixo, você tem que mantê-lo em mente pelo restante do tutorial!
+{% endhint %}
 
 Poderíamos ter definido o prefixo quando criamos o projeto, adicionando `--prefix <prefixo>`. Então, mesmo o componente raiz que é gerado teria esse prefixo. Mas estamos bem com seu seletor atual, `app-root`, e não o mudaremos neste momento. 
 
 ### Estrutura da Aplicação
 
-A primeira coisa a começar quando você trabalha com o cli é o projeto inicial do scaffold. Para fazê-lo, você pode simplesmente criar uma pasta e escrever `ng init` e a partir deste ponto o Angular-CLI irá baixar todas as dependências e instalá-las.
-Outra forma de implementar o projeto inicial é escrever `ng new <project-name>` e o Angular-CLI criará a pasta para você e o `ng init` nessa pasta.
+A primeira coisa a fazer quando você trabalha com o CLI é o projeto inicial do scaffold. Para fazê-lo, você pode usar o comando (no terminal) `ng new <nome-do-projeto>` e o Angular-CLI criará a pasta para você e irá inicializar o projeto e irá fazer o download de todas as dependências necessárias.
 
-Depois de criarmos o projeto, iremos receber o arquivo nesse formato
+Depois de criarmos o projeto, teremos um projeto nesse formato
 
 
-```
-├── angular-cli.json // configuração angular cli
+```text
+├── angular.json // configuração Angular CLI
 ├── e2e // teste end-to-end
 ├── karma.conf.js // arquivo de configuração de teste
-├── package.json // arquivo de configuração package
+├── package.json // arquivo de configuração de pacotes
 ├── protractor.conf.js // arquivo de configuração de teste
 ├── README.md // seu readme
 ├── src // seu código vem aqui
@@ -58,10 +59,10 @@ Depois de criarmos o projeto, iremos receber o arquivo nesse formato
 └── tslint.json // configuração linting
 ```
 
-Vamos ignorar todos os arquivos de configurações por agora e pular diretamente para a estrutura da pasta. O aplicativo é o principal componente da aplicação e é a partir desse ponto em que iniciamos o nosso aplicativo.
-Vamos abordar os componentes mais detalhadamente no próximo tutorial, mas a principal idéia do projeto é que criamos componentes e os conectamos até ter um aplicativo.
+Vamos ignorar todos os arquivos de configurações por agora e pular diretamente para a estrutura da pasta. O aplicativo (app) é o principal componente da aplicação e é a partir desse ponto em que iniciamos o nossa aplicação.
+Vamos abordar os componentes mais detalhadamente no próximo tutorial, mas a principal idéia do projeto é que criamos componentes e os conectarmos até ter uma aplicação.
 
-Com Angular-CLI podemos gerar componentes e alguns outros arquivos que podem nos ajudar no futuro. Para fazê-los, devemos escrever `ng generate component <component name>` para componentes e `ng generate route <route path>` para rotas e muitos mais que podem ser revisados ​​em [angular cli docs](https://github.com/angular/angular-cli#generating-components-directives-pipes-and-services).
+Com o Angular-CLI podemos gerar componentes e alguns outros arquivos que podem nos ajudar no futuro. Para fazê-los, devemos escrever `ng generate component <nome-do-componente>` para componentes e `ng generate route <caminho da rota>` para rotas e muitos mais que podem ser revisados ​​em [documentação do angular cli](https://angular.io/cli/generate).
 
-Agora, você provavelmente pergunta como você vê e testa sua aplicação?
-Para isso, você deverá rodar o comando `ng serve` e acessar sua aplicação em `http://localhost:4200` e por último, mas não menos importante, se você quer enviar seu projeto para produção, você deve escrever `ng build`.
+Agora, você provavelmente pergunta como você pode acessar e testar sua aplicação?
+Para isso, você deverá rodar o comando `ng serve` e acessar sua aplicação em `http://localhost:4200` e por último, mas não menos importante, se você quer enviar seu projeto para produção, você deve usar o comando `ng build`.

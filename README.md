@@ -4,7 +4,7 @@
 
 # Criando uma lista de tarefas (todo-list app) 
 
-Este é um tutorial que irá ensiná-la passo a passo como criar seu primeiro aplicativo em Angular (v2+). Durante este tutorial usaremos a [Angular CLI](https://cli.angular.io/) (*Command Line Interface*) para iniciar o projeto, e também o armazenamento local do navegador (*local storage*) para salvar os dados, por fim o Github Pages para publicação e hospedagem da aplicação.
+Este é um tutorial que irá ensiná-la passo a passo como criar seu primeiro aplicativo em Angular, uma lista de tarefas (versão 6 em diante). Durante este tutorial usaremos a **Angular CLI** (*Command Line Interface*) para iniciar o projeto, e também o armazenamento local do navegador (*local storage*) para salvar os dados, por fim o Github Pages para publicação e hospedagem da aplicação.
 
 Este tutorial é código aberto (*open source*) e foi escrito pela comunidade Angular. Sinta-se à vontade caso queira enviar sugestões e *pull-requests*. Agradecimentos especiais aos membros do grupo [Meetup Angular AfterHours](http://www.meetup.com/Angular-AfterHours/events/235151422/) por terem inicializado este tutorial! 
 
