@@ -52,8 +52,8 @@ No exemplo acima, a classe 'first' e a 'second' vão ser aplicadas no elemento p
 Vamos adicionar o título do item em um `<span>`, então usar NgClass para aplicar o estilo. Dependendo do item atual completado, nós iremos mostrar uma linha de decoração ou não:
 
 ```html
-<p class="todo-title" [ngClass]="{'todo-complete': isComplete}">
-  {{ todoItem.title }}
+<p class="todo-title" [ngClass]="{'todo-complete': item.completed}">
+  {{ item.title }}
 </p>
 ```
 
