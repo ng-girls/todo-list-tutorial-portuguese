@@ -12,10 +12,10 @@ Uma pequena caixa de texto irá aparecer no topo do painel do editor. Digite `in
 
 Você agora tem um novo componente!
 
-Agora nós iremos manualmente mover o HTML para fazer com que esse componente utilize o inline template. Nós iremos repetir o que fizemos no capíutlo [\#3: 📐 Component](https://github.com/ng-girls/todo-list-tutorial-portuguese/blob/master/component.md).
+Agora nós iremos manualmente mover o HTML para fazer com que esse componente utilize o inline template. Nós iremos repetir o que fizemos no capíutlo [\#3: 📐 Component](https://github.com/ng-girls/todo-list-tutorial-portuguese/blob/master/component.md#inline-template).
 
 Copie todo o código do arquivo `input-button-unit.html`. No arquivo `input-button-unit.component.ts`, mude `templateUrl` para `template` e cole o HTML entre **backticks**.
 
 Você deve deletar o arquivo `input-button-unit.html`.
 
-Retorne a página anterior para [continuar o tutorial](https://github.com/ng-girls/todo-list-tutorial-portuguese/blob/master/a-new-component/a_new_component.md).
+Retorne a página anterior para [continuar o tutorial](a_new_component.md).
