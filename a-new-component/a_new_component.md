@@ -96,5 +96,5 @@ Veja os resultados!
 Este componente não faz muito neste momento. Nos próximos capítulos, aprenderemos sobre a classe de componentes e, em seguida, implementaremos a lógica do componente.
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/04-a-new-component%20)
+[Veja o resultado no StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/04-a-new-component%20)
 {% endhint %}
