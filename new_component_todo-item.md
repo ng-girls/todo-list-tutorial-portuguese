@@ -1,10 +1,10 @@
 # \#10: ➕ Novo componente todo-item
 
-Vamos criar um novo componente que mostre cada todo-item presente na lista. Será um componente simples no começo, mas irá crescer posteriormente. O importante é que **ele receberá o todo-item como uma entrada para o componente pai**. Deste modo poderá ser um componente reutilizável, e não dependerá diretamente dos dados e estados da aplicação.
+Vamos criar um novo componente que mostre cada todo-item presente na lista. Será um componente simples no começo, mas irá crescer posteriormente. O importante é que **ele receberá o todo-item como uma entrada do componente pai**. Deste modo poderá ser um componente reutilizável, e não dependerá diretamente dos dados e estados da aplicação.
 
 Crie um novo componente chamado `todo-item`: 
 
-```
+```bash
 ng g c todo-item
 ```
 
@@ -30,14 +30,20 @@ Novamente, Angular faz com que seja muito fácil para nós, fornecendo-nos o dec
 
 Dentro da classe recém criada `TodoItemComponent` em `todo-item.component.ts` adicione a linha:
 
+{% code-tabs %}
+{% code-tabs-item title="src/app/todo-item/todo-item.component.ts" %}
 ```ts
 @Input() item;
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Ele diz ao componente para esperar uma entrada e a atribuir ao membro da classe `item`. Certifique-se de que `Input` está adicionado na declaração de importação na primeira linha do arquivo. Agora podemos usá-lo  dentro do `todo-item` template e extrair o título do item com a interpolação : `{{ item.title }}`
 
 O componente deverá ser apresentado como:
 
+{% code-tabs %}
+{% code-tabs-item title="src/app/todo-item/todo-item.component.ts" %}
 ```typescript
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -58,6 +64,8 @@ export class TodoItemComponent implements OnInit {
 
 }
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Agora nós precisamos passar um item do qual utilizamos o componente. Volte para o componente `app-root` e passe o título do item para o `todo-item`.
 
