@@ -25,7 +25,7 @@ export interface TodoItem {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Agora, podemos definir que propriedades e/ou métodos cada objeto do tipo TodoItem deve ter. Neste ponto iremos adicionar dois métodos:
+Agora, podemos definir que propriedades e/ou métodos cada objeto do tipo TodoItem deve ter. Neste ponto iremos adicionar dois membros:
 
 * `title` que deve ser do tipo `string`
 * `completed` que é do tipo `boolean` e é um membro opcional

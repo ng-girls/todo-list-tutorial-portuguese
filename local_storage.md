@@ -4,7 +4,7 @@ Nós gostariamos de manter a lista de tarefas em nosso computador para que, ao a
 
 ## O que é armazenamento local?
 
-Armazenamento Local (do inglês local storage), como sugere o nome, é uma ferramenta para armazenar dados localmente. Tão similar quanto os cookies, o armazenamento local armazena os dados no computador do usuário, e por isso nos permite, como desenvolvedores, um jeito mais rápido de acessar esses dados tanto para leitura e escrita.
+Armazenamento Local (do inglês local storage), como sugere o nome, é uma ferramenta para armazenar dados localmente. Tão similar quanto os cookies, o armazenamento local salva os dados no computador do usuário, e por isso nos permite, como desenvolvedores, um jeito  rápido de acessar esses dados tanto para leitura e escrita.
 
 > Existem bibliotecas que você pode usar que oferecem uma grande variedade de métodos genéricos e robustos para gerenciar os dados no armazenamento local. Aqui iremos implementar uma solução simples.
 
@@ -71,7 +71,8 @@ export class StorageService {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Se algo está lhe parecendo estranho, por favor consulte o [Capítulo: Criar um Serviço](creating-a-service.md) para mais informações detalhadas sobre serviços.
+Se algo está lhe parecendo estranho ou confuso, por favor consulte o [Capítulo: Criar um Serviço](creating-a-service.md) para mais informações detalhadas sobre serviços.
+
 
 Precisamos fornecer o serviço em nosso ngModule. Abra `app.module.ts` e na lista de `providers` adicione a nova classe:
 
@@ -215,7 +216,7 @@ updateItem(item: TodoItem, changes) {
 {% endcode-tabs %}
 
 Então o que está acontecendo aqui?
-Nós localizamos o item na lista. Em seguida, no mesmo local, atribuímo um novo objeto, que é construído a partir do item original e das alterações feitas nele. Estamos usando o operador *spread* para isso: um novo objeto é construído, composto pelo conjunto original de chaves-valores \(`...item`\) que são substituídos pelas chaves-valores de `changes`. \(Se uma chave em `changes` não existe em `item`, ela é adicionada ao novo objeto.\)
+Nós localizamos o item na lista. Em seguida, no mesmo local, atribuímos um novo objeto, que é construído a partir do item original e das alterações feitas nele. Estamos usando o operador *spread* para isso: um novo objeto é construído, composto pelo conjunto original de chaves-valores \(`...item`\) que são substituídos pelas chaves-valores de `changes`. \(Se uma chave em `changes` não existe em `item`, ela é adicionada ao novo objeto.\)
 
 ### DRY - Don't Repeat Yourself (Não repita você mesmo)
 
@@ -322,5 +323,5 @@ export class TodoListService {
 ## Resumo
 
 Neste capítulo aprendemos o que é armazenamento local e como usá-lo.
-Vimos que o `localStorage` é uma ótima e direta ferramenta para desenvolvedores armazenar dados localmente nos computadores/dispositivos dos usuários.
+Vimos que o `localStorage` é uma ótima e direta ferramenta para desenvolvedores armazenarem dados localmente nos computadores/dispositivos dos usuários.
 Nós então implementamos um novo serviço que usa o `localStorage` para guardar os dados que nosso `TodoListService` usa para salvar os itens da lista de tarefas.
